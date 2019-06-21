@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="SkyAzure.top is a blog in order to record my learning and growth">
+<meta name="description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Azure - Just do it">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Azure - Just do it">
-<meta property="og:description" content="SkyAzure.top is a blog in order to record my learning and growth">
+<meta property="og:description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Azure - Just do it">
-<meta name="twitter:description" content="SkyAzure.top is a blog in order to record my learning and growth">
+<meta name="twitter:description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
 
 
 
@@ -325,26 +325,27 @@
       
         
           
-            <p>####起因</p>
+            <p>#起因</p>
 <p>Hexo初始有一篇”Hello World”文章，我准备先删除掉它来开始我的blog生涯。但是一波操作之后，<a href="skyazure.top">刷新界面</a>它还是在那个地方看着，于是学习了一下就有了这篇文章</p>
-<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>一般文章的删除步骤为：</p>
+<p>#步骤</p>
+<p>一般文章的删除步骤为：</p>
 <ul>
-<li>删除本地文件，</li>
-</ul>
-<p><code>本地博客目录位置/source/_posts/你的文章</code></p>
-<ul>
-<li>生成</li>
+<li><p>删除本地文件，</p>
+</li>
+<li><p>生成</p>
+</li>
+<li><p>部署</p>
+</li>
 </ul>
 <p><code>hexo g</code> </p>
-<ul>
-<li>部署</li>
-</ul>
+<p><code>本地博客目录位置/source/_posts/你的文章</code></p>
 <p><code>hexo d</code></p>
-<p>但是我试过一次发现本地删掉了，可是网站上还是存在这篇文章的。网上查阅后发现原因是_post文件夹不能为空，新建一篇就好了</p>
-<p>####解决办法</p>
+<p>但是我试过一次发现本地删掉了，<code>hexo g</code>报错，博客上还是存在这篇文章的。网上查阅后发现原因是_post文件夹不能为空，新建一篇就好了</p>
+<p>#解决办法</p>
 <p><code>hexo n &quot;博客名字&quot;</code></p>
 <p><strong>保证_post文件夹不为空就好了</strong></p>
-<h5 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h5><p>在使用hexo写文章时，如果文章的title中包含双引号”abc”、&#36;符号时会编译出错，文章无法渲染。<br>由于这里的写法是yml语法，”、$这些都是特殊符号，执行hexo -s时到编译title这里就会出现错误</p>
+<p>##拓展</p>
+<p>在使用hexo写文章时，如果文章的title中包含双引号”abc”、&#36;符号时会编译出错，文章无法渲染。<br>由于这里的写法是yml语法，”、$这些都是特殊符号，执行hexo -s时到编译title这里就会出现错误</p>
 <p>解决办法</p>
 <p>这里我们需要对特殊符号进行转义，用对应的HTML字符实体进行替换</p>
 <p>附录：各种常用特殊字符对应的HTML字符实体</p>
@@ -421,7 +422,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Sky Azure</p>
-              <p class="site-description motion-element" itemprop="description">SkyAzure.top is a blog in order to record my learning and growth</p>
+              <p class="site-description motion-element" itemprop="description">保持饥饿，喜欢瞎折腾，记录生活、技术、成长</p>
           </div>
 
           <nav class="site-state motion-element">
