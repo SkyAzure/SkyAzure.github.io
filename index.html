@@ -328,16 +328,15 @@
             <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>Hexo初始有一篇”Hello World”文章，我准备先删除掉它来开始我的blog生涯。但是一波操作之后，<a href="skyazure.top">刷新界面</a>它还是在那个地方看着，于是学习了一下就有了这篇文章</p>
 <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p>一般文章的删除步骤为：</p>
 <ul>
-<li><p>删除本地文件，</p>
+<li><p>删除本地文件</p>
 </li>
 <li><p>生成</p>
 </li>
 <li><p>部署</p>
 </li>
 </ul>
-<p><code>hexo g</code> </p>
-<p><code>本地博客目录位置/source/_posts/你的文章</code></p>
-<p><code>hexo d</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">本地博客目录位置/<span class="built_in">source</span>/_posts/你的文章</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
 <p>但是我试过一次发现本地删掉了，<code>hexo g</code>报错，博客上还是存在这篇文章的。网上查阅后发现原因是_post文件夹不能为空，新建一篇就好了</p>
 <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><code>hexo n &quot;博客名字&quot;</code></p>
 <p><strong>保证_post文件夹不为空就好了</strong></p>
