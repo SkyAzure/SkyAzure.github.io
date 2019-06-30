@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None； sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。 相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python str和list排序并删除重复数据">
+<meta property="og:url" content="http://yoursite.com/2019/06/30/python-str和list排序并删除重复数据/index.html">
+<meta property="og:site_name" content="Azure - Just do it">
+<meta property="og:description" content="一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None； sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。 相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-30T08:10:08.386Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python str和list排序并删除重复数据">
+<meta name="twitter:description" content="一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None； sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。 相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/30/python-str和list排序并删除重复数据/">
+
+
+
+
+
+  <title>python str和list排序并删除重复数据 | Azure - Just do it</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Azure - Just do it</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Maker & Developer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/python-str和list排序并删除重复数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky Azure">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Azure - Just do it">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python str和list排序并删除重复数据</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T14:31:26+08:00">
+                2019-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、排序函数sort-和sort"><a href="#一、排序函数sort-和sort" class="headerlink" title="一、排序函数sort()和sort()"></a>一、排序函数sort()和sort()</h1><p>sort() 是Python列表的一个内置的排序方法，<code>list.sort()</code> 方法排序时直接修改原列表，返回None；</p>
+<p>sort() 是Python内置的一个排序函数，它会从一个<strong>迭代器</strong>返回一个排好序的新列表。</p>
+<p>相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用于列表，而<code>sorted()</code> 函数接受一切迭代器，返回新列表。</p>
+<p>这两个方法有以下 2 个共同的参数：</p>
+<ul>
+<li>key 是带一个参数的<strong>函数</strong>，返回一个值用来排序，默认为 None。这个函数只调用一次，所以fast。</li>
+<li>reverse 表示排序结果是否反转<br>看例子</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>)        <span class="comment"># a 是元组，故不能用sort() 排序</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.sort()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line"> File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">'tuple'</span> object has no attribute <span class="string">'sort'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(a)              <span class="comment"># sorted() 可以为元组排序，返回一个新有序列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=[<span class="string">'1'</span>,<span class="number">1</span>,<span class="string">'a'</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="string">'n'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(a)</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'1'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                      <span class="comment"># sorted() 不改变原列表</span></span><br><span class="line">[<span class="string">'1'</span>, <span class="number">1</span>, <span class="string">'a'</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'n'</span>]     </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a.sort()</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                      <span class="comment"># a.sort()直接修改原列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'1'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>因此如果实际应用过程中需要保留原有列表，使用 sorted() 函数较为适合，否则可以选 择 sort() 函数，因为 sort() 函数不需要复制原有列表，消耗的内存较少，效率也较高。</p>
+<p>sorted() 函数功能非常强大，它可以方便地针对不同的数据结构进行排序，从而满足不同需求。例子如下：</p>
+<ul>
+<li>对字典进行排序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(&#123;<span class="number">1</span>: <span class="string">'D'</span>, <span class="number">2</span>: <span class="string">'B'</span>, <span class="number">3</span>: <span class="string">'B'</span>, <span class="number">4</span>: <span class="string">'E'</span>, <span class="number">5</span>: <span class="string">'A'</span>&#125;)    </span><br><span class="line"><span class="comment"># 根据字典键排序[1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(&#123;<span class="number">1</span>: <span class="string">'D'</span>, <span class="number">2</span>: <span class="string">'B'</span>, <span class="number">3</span>: <span class="string">'B'</span>, <span class="number">4</span>: <span class="string">'E'</span>, <span class="number">5</span>: <span class="string">'A'</span>&#125;.values())   </span><br><span class="line"><span class="comment"># 根据字典值排序['A', 'B', 'B', 'D', 'E']</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对多维列表排序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>student_tuples = [(<span class="string">'john'</span>, <span class="string">'A'</span>, <span class="number">15</span>),(<span class="string">'jane'</span>, <span class="string">'B'</span>, <span class="number">12</span>),(<span class="string">'dave'</span>, <span class="string">'B'</span>, <span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(student_tuples, key = <span class="keyword">lambda</span> student: student[<span class="number">0</span>]) <span class="comment"># 对姓名排序</span></span><br><span class="line">[(<span class="string">'dave'</span>, <span class="string">'B'</span>, <span class="number">10</span>), (<span class="string">'jane'</span>, <span class="string">'B'</span>, <span class="number">12</span>), (<span class="string">'john'</span>, <span class="string">'A'</span>, <span class="number">15</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(student_tuples, key = <span class="keyword">lambda</span> student: student[<span class="number">2</span>])  <span class="comment"># 年龄排序</span></span><br><span class="line">[(<span class="string">'dave'</span>, <span class="string">'B'</span>, <span class="number">10</span>), (<span class="string">'jane'</span>, <span class="string">'B'</span>, <span class="number">12</span>), (<span class="string">'john'</span>, <span class="string">'A'</span>, <span class="number">15</span>)]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>调用operator模块中的 itemgetter() 可以实现根据多个参数排序</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(student_tuples, key = itemgetter(<span class="number">2</span>))  <span class="comment"># 根据年龄排序</span></span><br><span class="line">[(<span class="string">'dave'</span>, <span class="string">'B'</span>, <span class="number">10</span>), (<span class="string">'jane'</span>, <span class="string">'B'</span>, <span class="number">12</span>), (<span class="string">'john'</span>, <span class="string">'A'</span>, <span class="number">15</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(student_tuples, key = itemgetter(<span class="number">1</span>, <span class="number">2</span>))  <span class="comment"># 根据成绩和年龄排序</span></span><br><span class="line">[(<span class="string">'john'</span>, <span class="string">'A'</span>, <span class="number">15</span>), (<span class="string">'dave'</span>, <span class="string">'B'</span>, <span class="number">10</span>), (<span class="string">'jane'</span>, <span class="string">'B'</span>, <span class="number">12</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(student_tuples, key = itemgetter(<span class="number">1</span>, <span class="number">2</span>), reverse=<span class="literal">True</span>) <span class="comment"># 反转排序结果</span></span><br><span class="line">[(<span class="string">'jane'</span>, <span class="string">'B'</span>, <span class="number">12</span>), (<span class="string">'dave'</span>, <span class="string">'B'</span>, <span class="number">10</span>), (<span class="string">'john'</span>, <span class="string">'A'</span>, <span class="number">15</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>ps: itemgetter 返回一个函数，实现取元素的功能。比如<br>      f = itemgetter(2)，调用 f(r) 返回 r[2];<br>      f = itemgetter(2, 5, 3)，调用 f(r) 返回元组 (r[2], r[5], r[3]).</p>
+<h1 id="二、python集合-set-操作"><a href="#二、python集合-set-操作" class="headerlink" title="二、python集合(set)操作"></a>二、python集合(set)操作</h1><p>python的set和其他语言类似, 是一个无序不重复元素集, 基本功能包括关系测试和消除重复元素. 集合对象还支持union(联合), intersection(交), difference(差)和sysmmetric difference(对称差集)等数学运算.</p>
+<ul>
+<li>下面来点简单的小例子说明</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = set(<span class="string">'spam'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = set([<span class="string">'h'</span>,<span class="string">'a'</span>,<span class="string">'m'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x, y</span><br><span class="line">(set([<span class="string">'a'</span>, <span class="string">'p'</span>, <span class="string">'s'</span>, <span class="string">'m'</span>]), set([<span class="string">'a'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>]))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>再来些小应用。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x &amp; y <span class="comment"># 交集</span></span><br><span class="line">set([<span class="string">'a'</span>, <span class="string">'m'</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x | y <span class="comment"># 并集</span></span><br><span class="line">set([<span class="string">'a'</span>, <span class="string">'p'</span>, <span class="string">'s'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x - y <span class="comment"># 差集</span></span><br><span class="line">set([<span class="string">'p'</span>, <span class="string">'s'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>记得以前个网友提问怎么去除海量列表里重复元素，用hash来解决也行，只不过感觉在性能上不是很高，用set解决还是很不错的，示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">11</span>,<span class="number">22</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = set(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">set([<span class="number">33</span>, <span class="number">11</span>, <span class="number">44</span>, <span class="number">22</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = [i <span class="keyword">for</span> i <span class="keyword">in</span> b]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">[<span class="number">33</span>, <span class="number">11</span>, <span class="number">44</span>, <span class="number">22</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>集合</strong>用于包含一组无序的对象。要创建集合，可使用set()函数并像下面这样提供一系列的项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = set([<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">10</span>])      <span class="comment">#创建一个数值集合</span></span><br><span class="line"></span><br><span class="line">t = set(<span class="string">"Hello"</span>)         <span class="comment">#创建一个唯一字符的集合</span></span><br></pre></td></tr></table></figure>
+
+<p>与列表和元组不同，集合是无序的，也无法通过数字进行索引。此外，集合中的元素不能重复。例如，如果检查前面代码中t集合的值，结果会是：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line">set([<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>注意只出现了一个’l’。</p>
+<p>集合支持一系列标准操作，包括并集、交集、差集和对称差集，例如：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = t | s          <span class="comment"># t 和 s的并集</span></span><br><span class="line">b = t &amp; s          <span class="comment"># t 和 s的交集</span></span><br><span class="line">c = t – s          <span class="comment"># 求差集（项在t中，但不在s中）</span></span><br><span class="line">d = t ^ s          <span class="comment"># 对称差集（项在t或s中，但不会同时出现在二者中）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="基本操作："><a href="#基本操作：" class="headerlink" title="基本操作："></a>基本操作：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">t.add(<span class="string">'x'</span>)            <span class="comment"># 添加一项</span></span><br><span class="line">s.update([<span class="number">10</span>,<span class="number">37</span>,<span class="number">42</span>])  <span class="comment"># 在s中添加多项</span></span><br><span class="line"></span><br><span class="line">t.remove(<span class="string">'H'</span>)</span><br><span class="line"><span class="comment">#使用remove()可以删除一项</span></span><br><span class="line"></span><br><span class="line">len(s)</span><br><span class="line"><span class="comment">#set 的长度</span></span><br><span class="line"></span><br><span class="line">x <span class="keyword">in</span> s</span><br><span class="line"><span class="comment">#测试 x 是否是 s 的成员</span></span><br><span class="line"></span><br><span class="line">x <span class="keyword">not</span> <span class="keyword">in</span> s</span><br><span class="line"><span class="comment">#测试 x 是否不是 s 的成员</span></span><br><span class="line"></span><br><span class="line">s.issubset(t)</span><br><span class="line">s &lt;= t</span><br><span class="line"><span class="comment">#测试是否 s 中的每一个元素都在 t 中</span></span><br><span class="line"></span><br><span class="line">s.issuperset(t)</span><br><span class="line">s &gt;= t</span><br><span class="line"><span class="comment">#测试是否 t 中的每一个元素都在 s 中</span></span><br><span class="line"></span><br><span class="line">s.union(t)</span><br><span class="line">s | t</span><br><span class="line"><span class="comment">#返回一个新的 set 包含 s 和 t 中的每一个元素</span></span><br><span class="line"></span><br><span class="line">s.intersection(t)</span><br><span class="line">s &amp; t</span><br><span class="line"><span class="comment">#返回一个新的 set 包含 s 和 t 中的公共元素</span></span><br><span class="line"></span><br><span class="line">s.difference(t)</span><br><span class="line">s - t</span><br><span class="line"><span class="comment">#返回一个新的 set 包含 s 中有但是 t 中没有的元素</span></span><br><span class="line"></span><br><span class="line">s.symmetric_difference(t)</span><br><span class="line">s ^ t</span><br><span class="line"><span class="comment">#返回一个新的 set 包含 s 和 t 中不重复的元素</span></span><br><span class="line"></span><br><span class="line">s.copy()</span><br><span class="line"><span class="comment">#返回 set “s”的一个浅复制</span></span><br><span class="line"></span><br><span class="line">hash(s)</span><br><span class="line"><span class="comment">#返回 s 的 hash 值</span></span><br><span class="line"></span><br><span class="line">s.update(t)</span><br><span class="line">s |= t</span><br><span class="line"><span class="comment">#返回增加了 set “t”中元素后的 set “s”</span></span><br><span class="line"></span><br><span class="line">s.intersection_update(t)</span><br><span class="line">s &amp;= t</span><br><span class="line"><span class="comment">#返回只保留含有 set “t”中元素的 set “s”</span></span><br><span class="line"></span><br><span class="line">s.difference_update(t)</span><br><span class="line">s -= t</span><br><span class="line"><span class="comment">#返回删除了 set “t”中含有的元素后的 set “s”</span></span><br><span class="line"></span><br><span class="line">s.symmetric_difference_update(t)</span><br><span class="line">s ^= t</span><br><span class="line"><span class="comment">#返回含有 set “t”或者 set “s”中有而不是两者都有的元素的 set “s”</span></span><br><span class="line"></span><br><span class="line">s.remove(x)</span><br><span class="line"><span class="comment">#从 set “s”中删除元素 x, 如果不存在则引发 KeyError</span></span><br><span class="line"></span><br><span class="line">s.discard(x)</span><br><span class="line"><span class="comment">#如果在 set “s”中存在元素 x, 则删除</span></span><br><span class="line"></span><br><span class="line">s.pop()</span><br><span class="line"><span class="comment">#删除并且返回 set “s”中的一个不确定的元素, 如果为空则引发 KeyError</span></span><br><span class="line"></span><br><span class="line">s.clear()</span><br><span class="line"><span class="comment">#删除 set “s”中的所有元素</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="三、str和list排序-删除重复数据"><a href="#三、str和list排序-删除重复数据" class="headerlink" title="三、str和list排序 删除重复数据"></a>三、str和list排序 删除重复数据</h1><ul>
+<li>List排序并删除重复值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a =[<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b =sorted(set(a)) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(b)</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>List排序不删除重复值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> (a)</span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>String排序不删除重复值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=<span class="string">"abchabcgesdfaad"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=list(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s=<span class="string">""</span>.join(b)</span><br><span class="line">&gt;&gt;&gt;<span class="keyword">print</span> (s)</span><br><span class="line">aaaabbccddefghs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>String排序删除重复值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=<span class="string">"abchabcgesdfaad"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=list(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c=sorted(set(b))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'s'</span>]</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/30/python获取当前目录，上级目录，上上级目录/" rel="next" title="python获取当前目录，上级目录，上上级目录">
+                <i class="fa fa-chevron-left"></i> python获取当前目录，上级目录，上上级目录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Sky Azure</p>
+              <p class="site-description motion-element" itemprop="description">保持饥饿，喜欢瞎折腾，记录生活、技术、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、排序函数sort-和sort"><span class="nav-number">1.</span> <span class="nav-text">一、排序函数sort()和sort()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、python集合-set-操作"><span class="nav-number">2.</span> <span class="nav-text">二、python集合(set)操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作："><span class="nav-number">2.0.1.</span> <span class="nav-text">基本操作：</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#三、str和list排序-删除重复数据"><span class="nav-number">3.</span> <span class="nav-text">三、str和list排序 删除重复数据</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky Azure</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
