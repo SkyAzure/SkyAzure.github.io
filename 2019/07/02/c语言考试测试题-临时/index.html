@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Azure - Just do it">
 <meta property="og:description" content="c语言能力测试练习题 编写程序，输入x,求f(x)函数的值 f(x)={x-2       ,  9&amp;lt;=x&amp;lt;10} ​        {x2+10  ,  0&amp;lt;=x&amp;lt;9} ​        {4x2-5   , x&amp;gt;15}  编写程序，求解修路问题，60公里公路，60人修建，甲工程队一人一次修4公里，乙工程队一人一次修3公里，丙工程队两人一次修1公里，要求1次搬完。问">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-02T10:46:35.975Z">
+<meta property="og:updated_time" content="2019-07-02T12:29:12.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c语言考试测试题-临时">
 <meta name="twitter:description" content="c语言能力测试练习题 编写程序，输入x,求f(x)函数的值 f(x)={x-2       ,  9&amp;lt;=x&amp;lt;10} ​        {x2+10  ,  0&amp;lt;=x&amp;lt;9} ​        {4x2-5   , x&amp;gt;15}  编写程序，求解修路问题，60公里公路，60人修建，甲工程队一人一次修4公里，乙工程队一人一次修3公里，丙工程队两人一次修1公里，要求1次搬完。问">
@@ -367,6 +367,42 @@
 </ul>
 </li>
 </ol>
+<h3 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h3><ol>
+<li>已知数字字符’0’的ASCII值为65。以下程序运行后的输出结果是(     )</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a = <span class="string">'A'</span>;</span><br><span class="line">	a = a + <span class="number">35</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%c,%d"</span>,a,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A:  100,100        B:  d,100         C:  A, 100          D: d,d</p>
+<ol start="2">
+<li>执行以下程序，分别从键盘上输入0和5，输出结果分别是(    )</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">  <span class="keyword">switch</span>(b)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:print(<span class="string">"00"</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:print(<span class="string">"11"</span>);</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:print(<span class="string">"22"</span>);<span class="keyword">break</span>;</span><br><span class="line">    defalut:print(<span class="string">"33"</span>); </span><br><span class="line">  &#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%c,%d"</span>,a,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A:  00  33      B:  00  11  33     C:  00 11 22 33  D: 00  11 </p>
+<ol start="3">
+<li>已经定义int a = 4,b = 4,则条件表达式a&lt;b?a*b:a+b的值是(    )。</li>
+</ol>
+<p>A:  0        B:  无结果       C:  16         D: 8</p>
+<ol start="4">
+<li>以下程序输入整数a,b，当a&gt;时将其反序。补全代码</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">	(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	(<span class="number">2</span>)</span><br><span class="line">	(<span class="number">3</span>)</span><br><span class="line">	(<span class="number">4</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>以下程序的运行结果为</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> s = <span class="number">2</span>, i =<span class="number">6</span> ;</span><br><span class="line">	<span class="keyword">while</span>(i&gt;=<span class="number">2</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    s=s*i;</span><br><span class="line">    i--;i--;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d"</span>,s--)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>以下程序结果为</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,j;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;<span class="number">6</span>;i++)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"*"</span>)</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">5</span>;j&gt;=<span class="number">2</span>;j--)</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"#"</span>)</span><br><span class="line">  		<span class="built_in">printf</span>(<span class="string">"*"</span>)</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>以下程序的运行结果为(   )</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">abc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> b=<span class="number">0</span>;</span><br><span class="line">  a = a+<span class="number">1</span>;</span><br><span class="line">  b = b+a;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d,%d"</span>,a,b)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; abc();abc();abc();&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -537,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c语言能力测试练习题"><span class="nav-number">1.</span> <span class="nav-text">c语言能力测试练习题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c语言能力测试练习题"><span class="nav-number">1.</span> <span class="nav-text">c语言能力测试练习题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择题"><span class="nav-number">1.0.1.</span> <span class="nav-text">选择题</span></a></li></ol></li></ol></div>
             
 
           </div>
