@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Azure - Just do it">
 <meta property="og:description" content="一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None； sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。 相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-30T08:10:08.386Z">
+<meta property="og:updated_time" content="2019-09-29T03:01:02.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python str和list排序并删除重复数据">
 <meta name="twitter:description" content="一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None； sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。 相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用">
@@ -358,7 +358,8 @@
 <p>这两个方法有以下 2 个共同的参数：</p>
 <ul>
 <li>key 是带一个参数的<strong>函数</strong>，返回一个值用来排序，默认为 None。这个函数只调用一次，所以fast。</li>
-<li>reverse 表示排序结果是否反转<br>看例子</li>
+<li>reverse 表示排序结果是否反转<a id="more"></a>
+看例子</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>)        <span class="comment"># a 是元组，故不能用sort() 排序</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.sort()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line"> File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">'tuple'</span> object has no attribute <span class="string">'sort'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(a)              <span class="comment"># sorted() 可以为元组排序，返回一个新有序列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=[<span class="string">'1'</span>,<span class="number">1</span>,<span class="string">'a'</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="string">'n'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(a)</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'1'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                      <span class="comment"># sorted() 不改变原列表</span></span><br><span class="line">[<span class="string">'1'</span>, <span class="number">1</span>, <span class="string">'a'</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'n'</span>]     </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a.sort()</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                      <span class="comment"># a.sort()直接修改原列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'1'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>]</span><br></pre></td></tr></table></figure>
 
@@ -466,8 +467,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/02/c语言考试测试题-临时/" rel="prev" title="c语言考试测试题-临时">
-                c语言考试测试题-临时 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/02/c语言考试测试题-临时/" rel="prev" title="c语言考试测试题-临时(教学用)">
+                c语言考试测试题-临时(教学用) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
