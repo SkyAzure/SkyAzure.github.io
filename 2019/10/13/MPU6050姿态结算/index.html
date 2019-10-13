@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Azure - Just do it">
 <meta property="og:description" content="MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-13T10:34:20.796Z">
+<meta property="og:updated_time" content="2019-10-13T13:29:54.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MPU6050姿态结算">
 <meta name="twitter:description" content="MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着">
@@ -396,6 +396,9 @@
 </li>
 </ol>
 <p>三种融合算法都能够输出姿态角（Pitch 和 Roll ），一次四元数法可以输出 P、R、Y 三个倾角，计算量比较大。一阶互补和卡尔曼滤波每次只能输出一个轴的姿态角。</p>
+<h3 id="陀螺仪漂移的解决方法"><a href="#陀螺仪漂移的解决方法" class="headerlink" title="陀螺仪漂移的解决方法"></a>陀螺仪漂移的解决方法</h3><p>横滚角和俯仰角的偏差可以通过卡尔曼滤波或者一阶互补滤波即可消除漂移量.</p>
+<p>但是<strong>航向角存在的偏差很难由自身来校准,</strong>这是由于:<br>Z轴在静止状态下没有漂移，运动情况下有累积误差。因为Z轴角度是通过对角速度积分计算出来的，没有观测量滤波，所以漂移是不可避免的。X、Y轴的角度是根据重力加速度分量计算，X，Y轴是有重力场滤波，所以不会有漂移。Z轴只能用短时间内的相对测量量。 就是相邻两次的角度差来计算转过的角度。</p>
+<p>可以采用带地磁的9轴陀螺仪来降低漂移量,但是仍然无法完全解决这个问题.而且地磁计对周围磁场的变化敏感,多磁场和多电机的工作环境都会导致地磁计不准.</p>
 
       
     </div>
@@ -566,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MPU6050"><span class="nav-number">1.</span> <span class="nav-text">MPU6050</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要姿态融合的原因"><span class="nav-number">1.1.1.</span> <span class="nav-text">需要姿态融合的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#姿态融合"><span class="nav-number">1.2.</span> <span class="nav-text">姿态融合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MPU6050"><span class="nav-number">1.</span> <span class="nav-text">MPU6050</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要姿态融合的原因"><span class="nav-number">1.1.1.</span> <span class="nav-text">需要姿态融合的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#姿态融合"><span class="nav-number">1.2.</span> <span class="nav-text">姿态融合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#陀螺仪漂移的解决方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">陀螺仪漂移的解决方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
