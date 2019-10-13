@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Azure - Just do it">
 <meta property="og:description" content="解决sizeof求结构体大小的问题一、C/C++中不同数据类型所占用的内存大小   数据类型 32位 64位    char 1 1   int 4 大多数4(少数8)   short 2 2   long 4 8   float 4 4   double 8 8   *指针 4 8   （单位都为字节）  结构体(struct)：比较复杂，对齐问题需要考虑清楚。 联合(union)：取所有成员中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-12T08:59:59.889Z">
+<meta property="og:updated_time" content="2019-10-13T10:33:50.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C&#x2F;C++ sizeof函数总结">
 <meta name="twitter:description" content="解决sizeof求结构体大小的问题一、C/C++中不同数据类型所占用的内存大小   数据类型 32位 64位    char 1 1   int 4 大多数4(少数8)   short 2 2   long 4 8   float 4 4   double 8 8   *指针 4 8   （单位都为字节）  结构体(struct)：比较复杂，对齐问题需要考虑清楚。 联合(union)：取所有成员中">
@@ -399,6 +399,8 @@
 <p>结构体(struct)：比较复杂，对齐问题需要考虑清楚。</p>
 <p>联合(union)：取所有成员中最长的作为联合的长度。</p>
 <p>枚举(enum)：根据数据类型。</p>
+<a id="more"></a>
+
 <h2 id="二、sizeof计算单层结构体大小"><a href="#二、sizeof计算单层结构体大小" class="headerlink" title="二、sizeof计算单层结构体大小"></a>二、sizeof计算单层结构体大小</h2><p>运算符sizeof可以计算出给定类型的大小，<strong>对于32位系统来说</strong>，</p>
 <p><code>sizeof(char) = 1; sizeof(int) = 4。</code></p>
 <p>基本数据类型的大小很好计算，我们来看一下如何计算构造数据类型的大小。</p>
@@ -506,6 +508,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/10/13/MPU6050姿态结算/" rel="prev" title="MPU6050姿态结算">
+                MPU6050姿态结算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -581,7 +587,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -592,7 +598,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -603,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
