@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="Azure - Just do it">
 <meta property="og:description" content="Linux知识随笔1.Linux内核五大模块 进程调度模块  内存管理模块  文件系统模块  进程间通信模块  网络接口模块">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-11T09:38:38.718Z">
+<meta property="og:image" content="http://yoursite.com/Users/sky/Desktop/OSI七层模型详解.gif">
+<meta property="og:updated_time" content="2019-10-15T11:58:24.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux知识随笔">
 <meta name="twitter:description" content="Linux知识随笔1.Linux内核五大模块 进程调度模块  内存管理模块  文件系统模块  进程间通信模块  网络接口模块">
+<meta name="twitter:image" content="http://yoursite.com/Users/sky/Desktop/OSI七层模型详解.gif">
 
 
 
@@ -388,12 +390,87 @@
 </blockquote>
 </li>
 </ol>
+<p>死锁产生的原因：<br>（1）竞争资源<br>（2）进程推进顺序不当</p>
 <h2 id="3-TCP-IP协议详解"><a href="#3-TCP-IP协议详解" class="headerlink" title="3.TCP/IP协议详解"></a>3.TCP/IP协议详解</h2><blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/33889997" target="_blank" rel="noopener">参考文章</a></p>
 </blockquote>
 <h2 id="4-最受欢迎的Linux发行版-现第2-Manjaro折腾全记录（超长超详细）"><a href="#4-最受欢迎的Linux发行版-现第2-Manjaro折腾全记录（超长超详细）" class="headerlink" title="4.最受欢迎的Linux发行版(现第2), Manjaro折腾全记录（超长超详细）"></a>4.最受欢迎的Linux发行版(现第2), Manjaro折腾全记录（超长超详细）</h2><blockquote>
 <p><a href="https://cloud.tencent.com/developer/article/1390999" target="_blank" rel="noopener">参考文章</a></p>
 </blockquote>
+<h2 id="5-对于一个分布式计算系统来说3个指标不能同时完成"><a href="#5-对于一个分布式计算系统来说3个指标不能同时完成" class="headerlink" title="5. 对于一个分布式计算系统来说3个指标不能同时完成"></a>5. 对于一个分布式计算系统来说3个指标不能同时完成</h2><ul>
+<li><p>一致性</p>
+</li>
+<li><p>可用性</p>
+</li>
+<li><p>分区容错性</p>
+</li>
+</ul>
+<h2 id="6-OSI参考模型中各层作用"><a href="#6-OSI参考模型中各层作用" class="headerlink" title="6.OSI参考模型中各层作用"></a>6.OSI参考模型中各层作用</h2><img src="/Users/sky/Desktop/OSI七层模型详解.gif" alt="OSI七层模型详解" style="zoom:50%;">
+
+<p>物理层：通过媒介传输比特,确定机械及电气规范（比特Bit）<br>数据链路层：将比特组装成帧和点到点的传递（帧Frame）<br>网络层：负责数据包从源到宿的传递和网际互连（包PackeT）<br>传输层：提供端到端的可靠报文传递和错误恢复（段Segment）<br>会话层：建立、管理和终止会话（会话协议数据单元SPDU）<br>表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）<br>应用层：允许访问OSI环境的手段（应用协议数据单元APDU）</p>
+<p>网络层：</p>
+<ul>
+<li>IP协议</li>
+<li>ICMP协议</li>
+<li>ARP协议</li>
+<li>RARP协议。 </li>
+</ul>
+<p>传输层：</p>
+<ul>
+<li><p>UDP协议</p>
+</li>
+<li><p>TCP协议。</p>
+<p>应用层：</p>
+</li>
+<li><p>FTP（文件传送协议）</p>
+</li>
+<li><p>Telenet（远程登录协议）</p>
+</li>
+<li><p>DNS（域名解析协议）</p>
+</li>
+<li><p>SMTP（邮件传送协议）</p>
+</li>
+<li><p>POP3协议（邮局协议）</p>
+</li>
+<li><p>HTTP协议</p>
+</li>
+<li><p>SNMP协议</p>
+</li>
+<li><p>TFTP</p>
+</li>
+</ul>
+<h2 id="7-OSI七层模型和TCP-IP四层模型"><a href="#7-OSI七层模型和TCP-IP四层模型" class="headerlink" title="7.OSI七层模型和TCP/IP四层模型"></a>7.OSI七层模型和TCP/IP四层模型</h2><h3 id="OSI七层模型各层协议："><a href="#OSI七层模型各层协议：" class="headerlink" title="OSI七层模型各层协议："></a>OSI七层模型各层协议：</h3><ol>
+<li><p>物理层：RJ45、CLOCK、IEEE802.3</p>
+</li>
+<li><p>数据链路层：PPP、FR、HDLC、VLAN、MAC</p>
+</li>
+<li><p>网络层：IP、IPX、OSPF、RIP、IGRP、ICMP、ARP、RARP</p>
+</li>
+<li><p>传输层：TCP、UDP、SPX</p>
+</li>
+<li><p>会话层：NFS、SQL、NETBIOS、RPC</p>
+</li>
+<li><p>表示层：JPEG、MPEG、ASII</p>
+</li>
+<li><p>应用层：Telnet、HTTP、FTP、WWW、NFS、SMTP</p>
+</li>
+</ol>
+<h3 id="TCP-IP四层模型："><a href="#TCP-IP四层模型：" class="headerlink" title="TCP/IP四层模型："></a>TCP/IP四层模型：</h3><h4 id="一、TCP-IP四层模型名称："><a href="#一、TCP-IP四层模型名称：" class="headerlink" title="一、TCP/IP四层模型名称："></a>一、TCP/IP四层模型名称：</h4><p>网络接口层（Network Access）【又分为物理层（Physical）和数据链路层（Datalink）】→网络互联层（Internet）→传输层（Transport）→应用层（Application）</p>
+<h4 id="二、TCP-IP四层模型各层的功能："><a href="#二、TCP-IP四层模型各层的功能：" class="headerlink" title="二、TCP/IP四层模型各层的功能："></a>二、TCP/IP四层模型各层的功能：</h4><ol>
+<li><p>网络接口层：负责实际数据的传输</p>
+</li>
+<li><p>网络互联层：负责网络间的寻址数据传输</p>
+</li>
+<li><p>传输层：负责提供可靠的传输服务</p>
+</li>
+<li><p>应用层：负责实现一切与应用程序相关的功能</p>
+</li>
+</ol>
+<h4 id="三、TCP-IP四层模型各层的协议："><a href="#三、TCP-IP四层模型各层的协议：" class="headerlink" title="三、TCP/IP四层模型各层的协议："></a>三、TCP/IP四层模型各层的协议：</h4><p>1、网络接口层：HDLC（高级链路控制协议）、PPP（点对点协议）、SLIP（串行线路接口协议）</p>
+<p>2、网络互联层：IP（网际协议）、ICMP（网际控制消息协议）、ARP（地址解析协议）、RARP（反向地址解析协议）</p>
+<p>3、传输层：TCP（控制传输协议）、UDP（用户数据报协议）</p>
+<p>4、应用层：FTP（文件传输协议）、HTTP（超文本传输协议）、DNS（域名服务器协议）、SMTP（简单邮件传输协议）、NFS（网络文件系统协议）</p>
+<h4 id="四、OSI七层模型和TCP-IP四层模型的区别："><a href="#四、OSI七层模型和TCP-IP四层模型的区别：" class="headerlink" title="四、OSI七层模型和TCP/IP四层模型的区别："></a>四、OSI七层模型和TCP/IP四层模型的区别：</h4><p>OSI七层模型和TCP/IP四层模型最大的区别在于：OSI七层模型是一个理论上的网络通信模型，而TCP/IP四层模型则是实际运行的网络协议。</p>
 
       
     </div>
@@ -568,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux知识随笔"><span class="nav-number">1.</span> <span class="nav-text">Linux知识随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Linux内核五大模块"><span class="nav-number">1.1.</span> <span class="nav-text">1.Linux内核五大模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-死锁"><span class="nav-number">1.2.</span> <span class="nav-text">2.死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要点提示"><span class="nav-number">1.2.1.</span> <span class="nav-text">要点提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-TCP-IP协议详解"><span class="nav-number">1.3.</span> <span class="nav-text">3.TCP/IP协议详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-最受欢迎的Linux发行版-现第2-Manjaro折腾全记录（超长超详细）"><span class="nav-number">1.4.</span> <span class="nav-text">4.最受欢迎的Linux发行版(现第2), Manjaro折腾全记录（超长超详细）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux知识随笔"><span class="nav-number">1.</span> <span class="nav-text">Linux知识随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Linux内核五大模块"><span class="nav-number">1.1.</span> <span class="nav-text">1.Linux内核五大模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-死锁"><span class="nav-number">1.2.</span> <span class="nav-text">2.死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要点提示"><span class="nav-number">1.2.1.</span> <span class="nav-text">要点提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-TCP-IP协议详解"><span class="nav-number">1.3.</span> <span class="nav-text">3.TCP/IP协议详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-最受欢迎的Linux发行版-现第2-Manjaro折腾全记录（超长超详细）"><span class="nav-number">1.4.</span> <span class="nav-text">4.最受欢迎的Linux发行版(现第2), Manjaro折腾全记录（超长超详细）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-对于一个分布式计算系统来说3个指标不能同时完成"><span class="nav-number">1.5.</span> <span class="nav-text">5. 对于一个分布式计算系统来说3个指标不能同时完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-OSI参考模型中各层作用"><span class="nav-number">1.6.</span> <span class="nav-text">6.OSI参考模型中各层作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-OSI七层模型和TCP-IP四层模型"><span class="nav-number">1.7.</span> <span class="nav-text">7.OSI七层模型和TCP/IP四层模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI七层模型各层协议："><span class="nav-number">1.7.1.</span> <span class="nav-text">OSI七层模型各层协议：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP四层模型："><span class="nav-number">1.7.2.</span> <span class="nav-text">TCP/IP四层模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、TCP-IP四层模型名称："><span class="nav-number">1.7.2.1.</span> <span class="nav-text">一、TCP/IP四层模型名称：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、TCP-IP四层模型各层的功能："><span class="nav-number">1.7.2.2.</span> <span class="nav-text">二、TCP/IP四层模型各层的功能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、TCP-IP四层模型各层的协议："><span class="nav-number">1.7.2.3.</span> <span class="nav-text">三、TCP/IP四层模型各层的协议：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、OSI七层模型和TCP-IP四层模型的区别："><span class="nav-number">1.7.2.4.</span> <span class="nav-text">四、OSI七层模型和TCP/IP四层模型的区别：</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
