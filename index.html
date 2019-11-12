@@ -867,36 +867,16 @@
 
       
         
-          
-            <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="1-完全二叉树与满二叉树的区别"><a href="#1-完全二叉树与满二叉树的区别" class="headerlink" title="1.完全二叉树与满二叉树的区别"></a>1.完全二叉树与满二叉树的区别</h2><p><strong>满二叉树</strong>是<strong>完全二叉树</strong>的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。</p>
+          <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="1-完全二叉树与满二叉树的区别"><a href="#1-完全二叉树与满二叉树的区别" class="headerlink" title="1.完全二叉树与满二叉树的区别"></a>1.完全二叉树与满二叉树的区别</h2><p><strong>满二叉树</strong>是<strong>完全二叉树</strong>的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。</p>
 <h2 id="2-已知二叉树的前序遍历和中序遍历求后续遍历"><a href="#2-已知二叉树的前序遍历和中序遍历求后续遍历" class="headerlink" title="2.已知二叉树的前序遍历和中序遍历求后续遍历"></a>2.已知二叉树的前序遍历和中序遍历求后续遍历</h2><p>现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列?</p>
 <p>答：前序遍历结果序列为<strong>abdefgc</strong>，中序遍历结果序列为<strong>debgfac</strong><br>以此为条件，根据前序知道a是根，根据中知道debgf为左子树，c为右子树。<br>根据前知道b为左子树中的根，根据中知道de为b的左，gf为右，根据前和中判断d为根，e为右，f为根，g为左，<br>树成型，得出后序结果<strong>edgfbca</strong></p>
-<h2 id="3-已知啊a-b-c，求系统进制"><a href="#3-已知啊a-b-c，求系统进制" class="headerlink" title="3.已知啊a * b = c，求系统进制"></a>3.已知啊a * b = c，求系统进制</h2><p>如果某系统15*4=112成立，则系统采用的是几进制？</p>
-<p>将原式转为X进制：<br>1 5 * 4 = 1 1 2<br>（X+5）* 4 = X^2+X+2<br>解方程即可x=6</p>
-<h2 id="4-栈"><a href="#4-栈" class="headerlink" title="4.栈"></a>4.栈</h2><ol>
-<li><p>设栈S和队列Q的初始状态均为空，元素啊，a,b,c,d,e,f,g依次进入栈S。若每个元素出栈后立即进入推列Q，且7个元素出队的顺序是b,d,,c,f,e,a,g，则栈S的容量至少是？</p>
-<p>栈是先进后出，队列是先进先出，所以元素出队列的顺序就是出栈的顺序。<br>出栈的顺序为b,d,c,f,e,a,g，这意味着</p>
-<ol>
-<li><p>a,b进入，b出；</p>
-</li>
-<li><p>c,d进入，此时栈中有a,d,c，出来d,c；</p>
-</li>
-<li><p>e,f进入， 此时栈中有a,e,f，出来f,e,a；</p>
-</li>
-<li><p>g进入，此时栈中有g，出来g；</p>
-<p><strong>由此看出整个过程中栈中存在的元素最多有3个，所以栈S的容量至少是3</strong></p>
-</li>
-</ol>
-</li>
-<li><p>一个栈的入栈序列是a,b,c,d,e,f,则栈的不可能的输出序列是（）</p>
-<p>A:fedcba     <strong>B:defbca</strong>     C:defcba     D:abcdef</p>
-<p>A可以 全进栈 然后依次出栈<br>B不可以<br>C先进adcd 然后d出 再进e e出 再进f f出 剩下的依次cba出<br>D一个进 一个出</p>
-</li>
-</ol>
-<h2 id="5-网络延迟"><a href="#5-网络延迟" class="headerlink" title="5. 网络延迟"></a>5. 网络延迟</h2><p>网络延迟是指在传输介质中传输所用的时间，即从报文开始进入网络到它开始离开网络之间的时间。</p>
-<h2 id="6-完全二叉树的存储"><a href="#6-完全二叉树的存储" class="headerlink" title="6.完全二叉树的存储"></a>6.完全二叉树的存储</h2><p>完全二叉树由于其结构上的特点，通常采用顺序存储方式存储(数组)。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/11/数据结构与算法知识随笔/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1995,6 +1975,23 @@
 
 
 
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("22/06/2019 00:31:09");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
         
 
 

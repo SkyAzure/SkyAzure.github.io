@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Azure - Just do it">
 <meta property="og:description" content="数据结构与算法1.完全二叉树与满二叉树的区别满二叉树是完全二叉树的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。 2.已知二叉树的前序遍历和中序遍历求后续遍历现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列? 答：前序遍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-15T11:32:13.261Z">
+<meta property="og:updated_time" content="2019-11-12T07:41:45.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法知识随笔">
 <meta name="twitter:description" content="数据结构与算法1.完全二叉树与满二叉树的区别满二叉树是完全二叉树的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。 2.已知二叉树的前序遍历和中序遍历求后续遍历现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列? 答：前序遍">
@@ -355,6 +355,8 @@
         <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="1-完全二叉树与满二叉树的区别"><a href="#1-完全二叉树与满二叉树的区别" class="headerlink" title="1.完全二叉树与满二叉树的区别"></a>1.完全二叉树与满二叉树的区别</h2><p><strong>满二叉树</strong>是<strong>完全二叉树</strong>的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。</p>
 <h2 id="2-已知二叉树的前序遍历和中序遍历求后续遍历"><a href="#2-已知二叉树的前序遍历和中序遍历求后续遍历" class="headerlink" title="2.已知二叉树的前序遍历和中序遍历求后续遍历"></a>2.已知二叉树的前序遍历和中序遍历求后续遍历</h2><p>现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列?</p>
 <p>答：前序遍历结果序列为<strong>abdefgc</strong>，中序遍历结果序列为<strong>debgfac</strong><br>以此为条件，根据前序知道a是根，根据中知道debgf为左子树，c为右子树。<br>根据前知道b为左子树中的根，根据中知道de为b的左，gf为右，根据前和中判断d为根，e为右，f为根，g为左，<br>树成型，得出后序结果<strong>edgfbca</strong></p>
+<a id="more"></a>
+
 <h2 id="3-已知啊a-b-c，求系统进制"><a href="#3-已知啊a-b-c，求系统进制" class="headerlink" title="3.已知啊a * b = c，求系统进制"></a>3.已知啊a * b = c，求系统进制</h2><p>如果某系统15*4=112成立，则系统采用的是几进制？</p>
 <p>将原式转为X进制：<br>1 5 * 4 = 1 1 2<br>（X+5）* 4 = X^2+X+2<br>解方程即可x=6</p>
 <h2 id="4-栈"><a href="#4-栈" class="headerlink" title="4.栈"></a>4.栈</h2><ol>
@@ -596,6 +598,23 @@
 
 
 
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("22/06/2019 00:31:09");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
         
 
 

@@ -88,7 +88,7 @@
 <meta property="og:description" content="Linux知识随笔1.Linux内核五大模块 进程调度模块  内存管理模块  文件系统模块  进程间通信模块  网络接口模块">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/Users/sky/Desktop/OSI七层模型详解.gif">
-<meta property="og:updated_time" content="2019-10-15T11:58:24.117Z">
+<meta property="og:updated_time" content="2019-11-12T07:42:10.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux知识随笔">
 <meta name="twitter:description" content="Linux知识随笔1.Linux内核五大模块 进程调度模块  内存管理模块  文件系统模块  进程间通信模块  网络接口模块">
@@ -417,27 +417,19 @@
 </ul>
 <p>传输层：</p>
 <ul>
-<li><p>UDP协议</p>
-</li>
-<li><p>TCP协议。</p>
+<li>UDP协议</li>
+<li>TCP协议。</li>
+</ul>
 <p>应用层：</p>
-</li>
-<li><p>FTP（文件传送协议）</p>
-</li>
-<li><p>Telenet（远程登录协议）</p>
-</li>
-<li><p>DNS（域名解析协议）</p>
-</li>
-<li><p>SMTP（邮件传送协议）</p>
-</li>
-<li><p>POP3协议（邮局协议）</p>
-</li>
-<li><p>HTTP协议</p>
-</li>
-<li><p>SNMP协议</p>
-</li>
-<li><p>TFTP</p>
-</li>
+<ul>
+<li>FTP（文件传送协议）</li>
+<li>Telenet（远程登录协议）</li>
+<li>DNS（域名解析协议）</li>
+<li>SMTP（邮件传送协议）</li>
+<li>POP3协议（邮局协议）</li>
+<li>HTTP协议</li>
+<li>SNMP协议</li>
+<li>TFTP</li>
 </ul>
 <h2 id="7-OSI七层模型和TCP-IP四层模型"><a href="#7-OSI七层模型和TCP-IP四层模型" class="headerlink" title="7.OSI七层模型和TCP/IP四层模型"></a>7.OSI七层模型和TCP/IP四层模型</h2><h3 id="OSI七层模型各层协议："><a href="#OSI七层模型各层协议：" class="headerlink" title="OSI七层模型各层协议："></a>OSI七层模型各层协议：</h3><ol>
 <li><p>物理层：RJ45、CLOCK、IEEE802.3</p>
@@ -688,6 +680,23 @@
 
 
 
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("22/06/2019 00:31:09");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
         
 
 
