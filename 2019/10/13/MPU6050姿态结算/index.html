@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Azure - Just do it" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着">
+<meta name="keywords" content="IMU传感器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MPU6050姿态结算">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/MPU6050姿态结算/index.html">
+<meta property="og:site_name" content="Azure - Just do it">
+<meta property="og:description" content="MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-08T13:18:06.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MPU6050姿态结算">
+<meta name="twitter:description" content="MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着">
+
+<link rel="canonical" href="http://yoursite.com/2019/10/13/MPU6050姿态结算/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>MPU6050姿态结算 | Azure - Just do it</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Azure - Just do it</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Maker & Developer</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/MPU6050姿态结算/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sky Azure">
+      <meta itemprop="description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Azure - Just do it">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MPU6050姿态结算
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-13 11:33:28" itemprop="dateCreated datePublished" datetime="2019-10-13T11:33:28+08:00">2019-10-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-08 21:18:06" itemprop="dateModified" datetime="2020-01-08T21:18:06+08:00">2020-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/嵌入式系统/" itemprop="url" rel="index">
+                    <span itemprop="name">嵌入式系统</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="MPU6050"><a href="#MPU6050" class="headerlink" title="MPU6050"></a>MPU6050</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
+<ol>
+<li><p><a href="https://www.jianshu.com/p/69dd18638b8e" target="_blank" rel="noopener">加速度计原理与姿态解算</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/3c03b7fb7b38" target="_blank" rel="noopener">陀螺仪原理与姿态解算</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/5ff8de66bcaf" target="_blank" rel="noopener">融合加速度计和陀螺仪的数据</a></p>
+<a id="more"></a>
+
+</li>
+</ol>
+<h3 id="需要姿态融合的原因"><a href="#需要姿态融合的原因" class="headerlink" title="需要姿态融合的原因"></a>需要姿态融合的原因</h3><p>为什么要有同时具备加速度计和陀螺仪。<br>看了上面的介绍，我们发现单单通过加速度计或者陀螺仪就能解算出物体姿态，为什么IMU要同时具备两种功能相似的仪器呢？</p>
+<p>答案很简单：<strong>加速度计</strong>的数据不是100%准确的。有几个原因，还记加速度计测量的是惯性力，这个力可以由重力引起（理想情况只受重力影响），当也可能由设备的加速度（运动）引起。因此，就算加速度计处于一个相对比较平稳的状态，它对一般的震动和机械噪声很敏感。这就是为什么大部分的IMU系统都需要陀螺仪来使加速度计的输出更平滑。但是怎么办到这点呢？陀螺仪不受噪声影响吗？</p>
+<p><strong>陀螺仪</strong>也会有噪声，但由于它检测的是旋转，因此对线性机械运动没那么敏感，不过陀螺仪有另外一种问题，比如漂移（当选择停止的时候电压不会回到零速率电压）并且陀螺仪是通过对旋转角度的累加进行姿态解算，所以长时间工作会有极大的误差。然而，通过计算加速度计和陀螺仪的平均值我们能得到一个相对更准确的当前设备的倾角值，这比单独使用加速度计更好。</p>
+<p>通过上面的分析我们可以发现，<strong>加速度计短时间内精度较差，而长时间稳定性好，陀螺仪短时间内精度高，但会累计误差，只要将两者的数据进行互补，就能解算出正确的姿态。</strong></p>
+<h2 id="姿态融合"><a href="#姿态融合" class="headerlink" title="姿态融合"></a><a href="https://www.cnblogs.com/dchipnau/p/5310088.html" target="_blank" rel="noopener">姿态融合</a></h2><p>MPU6050 是一款姿态传感器，使用它就是为了得到待测物体（如四轴、平衡小车） x、y、z 轴的倾角（俯仰角 Pitch、滚转角 Roll、偏航角 Yaw） 。我们通过 I2C 读取到 MPU6050 的六个数据（三轴加速度 AD 值、三轴角速度 AD 值）经过姿态融合后就可以得到 Pitch、Roll、Yaw 角。<br>本帖主要介绍三种姿态融合算法：</p>
+<ul>
+<li><p>四元数法 </p>
+</li>
+<li><p>一阶互补算法</p>
+</li>
+<li><p>卡尔曼滤波算法。</p>
+</li>
+</ul>
+<ol>
+<li><p>四元数法</p>
+<p>关于四元数的一些概念和计算就不写上来了，我也不懂。我能告诉你的是：通过下面的算法，可以把六个数据转化成四元数（q0、q1、q2、q3），然后四元数转化成欧拉角（P、R、Y 角）。</p>
+<p>​    虽然 MPU6050 自带的 DMP库可以直接输出四元数，减轻 STM32 的运算负担， 这里在此没有使用，因为我是用 STM32 的硬件 I2C 读取 MPU6050 数据的（<a href="http://bbs.elecfans.com/forum.php?mod=viewthread&tid=485014&page=1#pid3625735" target="_blank" rel="noopener">http://bbs.elecfans.com/forum.ph … 4&amp;page=1#pid3625735</a>）</p>
+<p>DMP库需要对 I2C 函数进行修改，如 DMP 库中的 I2C 写：i2c_write(st.hw-&gt;addr, st.reg-&gt;pwr_mgmt_1, 1, &amp;(data[0]))；有4个输入变量，而 STM32 硬件 I2C 的 I2C 写为：void MPU6050_I2C_ByteWrite(u8 slaveAddr, u8 pBuffer, u8 writeAddr)，只有 3 个输入量（这之间的差异好像是由于 MPU6050 的 DMP 库是针对 MSP430 <a href="http://bbs.elecfans.com/zhuti_mcu_1.html" target="_blank" rel="noopener">单片机</a>写的），所以必须进行修改，但是改固件库是一件很痛苦的事，你们应该都懂。当然，如果你用模拟 I2C 的话，是容易实现的，网上的 DMP 移植几乎都是基于模拟 I2C 的。</p>
+<p><strong>要注意的的是，四元数算法输出的是三个量 Pitch、Roll 和 Yaw，运算量很大。而像平衡小车这样的例子只需要一个角（Pitch 或 Roll ）就可以满足工作要求，个人觉得做平衡小车最好不用四元数法。</strong></p>
+</li>
+<li><p>一阶互补算法</p>
+<p>MPU6050 可以输出三轴的加速度和角速度。通过加速度和角速度都可以得到 Pitch 和 Roll 角（<strong><em>加速度不能得到 Yaw 角</em></strong>），就是说有两组 Pitch、Roll 角，到底应该选哪组呢？别急，先分析一下。<strong>MPU6050 的加速度计和陀螺仪各有优缺点</strong>，三轴的加速度值没有累积误差，且通过算 tan() 可以得到倾角，但是它包含的噪声太多（因为待测物运动时会产生加速度，电机运行时振动会产生加速度等），不能直接使用；陀螺仪对外界振动影响小，精度高，通过对角速度积分可以得到倾角，但是会产生累积误差。所以，不能单独使用 MPU6050 的加速度计或陀螺仪来得到倾角，需要互补。一阶互补算法的思想就是给加速度和陀螺仪不同的权值，把它们结合到一起，进行修正。得到 Pitch 角的程序如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一阶互补滤波</span></span><br><span class="line"><span class="keyword">float</span> K1 =<span class="number">0.1</span>; <span class="comment">// 对加速度计取值的权重</span></span><br><span class="line"><span class="keyword">float</span> dt=<span class="number">0.001</span>;<span class="comment">//注意：dt的取值为滤波器采样时间</span></span><br><span class="line"><span class="keyword">float</span> angle_P,angle_R;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//angle_ax=atan(ax/az)*57.3;     //加速度得到的角度</span></span><br><span class="line"><span class="comment">//gy=(float)gyo[1]/7510.0;       //陀螺仪得到的角速度</span></span><br><span class="line">Pitch = yijiehubu_P(angle_ax,gy);</span><br><span class="line">Roll = yijiehubu_R(angle_ax,gy);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">yijiehubu_P</span><span class="params">(<span class="keyword">float</span> angle_m, <span class="keyword">float</span> gyro_m)</span><span class="comment">//采集后计算的角度和角加速度</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     angle_P = K1 * angle_m + (<span class="number">1</span>-K1) * (angle_P + gyro_m * dt);</span><br><span class="line">         <span class="keyword">return</span> angle_P;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">yijiehubu_R</span><span class="params">(<span class="keyword">float</span> angle_m, <span class="keyword">float</span> gyro_m)</span><span class="comment">//采集后计算的角度和角加速度</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     angle_R = K1 * angle_m + (<span class="number">1</span>-K1) * (angle_R + gyro_m * dt);</span><br><span class="line">         <span class="keyword">return</span> angle_R;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>互补算法只能得到一个倾角，这在平衡车项目中够用了，而在四轴飞行器设计中还需要 Roll 和 Yaw，就需要两个 互补算法。<strong>单靠 MPU6050 无法准确得到 Yaw 角，需要和地磁传感器结合使用。</strong></p>
+</li>
+<li><p>卡尔曼滤波</p>
+<p>其实卡尔曼滤波和一阶互补有些相似，输入也是一样的。在此给出具体程序，和一阶互补算法一样，每次卡尔曼滤波只能得到一个方向的角度。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Kalman_Filter.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//卡尔曼滤波参数与函数</span></span><br><span class="line"><span class="keyword">float</span> dt=<span class="number">0.001</span>;<span class="comment">//注意：dt的取值为kalman滤波器采样时间</span></span><br><span class="line"><span class="keyword">float</span> angle, angle_dot;<span class="comment">//角度和角速度</span></span><br><span class="line"><span class="keyword">float</span> P[<span class="number">2</span>][<span class="number">2</span>] = &#123;&#123; <span class="number">1</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                 &#123; <span class="number">0</span>, <span class="number">1</span> &#125;&#125;;</span><br><span class="line"><span class="keyword">float</span> Pdot[<span class="number">4</span>] =&#123; <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">float</span> Q_angle=<span class="number">0.001</span>, Q_gyro=<span class="number">0.005</span>; <span class="comment">//角度数据置信度,角速度数据置信度</span></span><br><span class="line"><span class="keyword">float</span> R_angle=<span class="number">0.5</span> ,C_0 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">float</span> q_bias, angle_err, PCt_0, PCt_1, E, K_0, K_1, t_0, t_1;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//卡尔曼滤波</span></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Kalman_Filter</span><span class="params">(<span class="keyword">float</span> angle_m, <span class="keyword">float</span> gyro_m)</span><span class="comment">//angleAx 和 gyroGy </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        angle+=(gyro_m-q_bias) * dt;</span><br><span class="line">        angle_err = angle_m - angle;</span><br><span class="line">        Pdot[<span class="number">0</span>]=Q_angle - P[<span class="number">0</span>][<span class="number">1</span>] - P[<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">        Pdot[<span class="number">1</span>]=- P[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">        Pdot[<span class="number">2</span>]=- P[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">        Pdot[<span class="number">3</span>]=Q_gyro;</span><br><span class="line">        P[<span class="number">0</span>][<span class="number">0</span>] += Pdot[<span class="number">0</span>] * dt;</span><br><span class="line">        P[<span class="number">0</span>][<span class="number">1</span>] += Pdot[<span class="number">1</span>] * dt;</span><br><span class="line">        P[<span class="number">1</span>][<span class="number">0</span>] += Pdot[<span class="number">2</span>] * dt;</span><br><span class="line">        P[<span class="number">1</span>][<span class="number">1</span>] += Pdot[<span class="number">3</span>] * dt;</span><br><span class="line">        PCt_0 = C_0 * P[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">        PCt_1 = C_0 * P[<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">        E = R_angle + C_0 * PCt_0;</span><br><span class="line">        K_0 = PCt_0 / E;</span><br><span class="line">        K_1 = PCt_1 / E;</span><br><span class="line">        t_0 = PCt_0;</span><br><span class="line">        t_1 = C_0 * P[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">        P[<span class="number">0</span>][<span class="number">0</span>] -= K_0 * t_0;</span><br><span class="line">        P[<span class="number">0</span>][<span class="number">1</span>] -= K_0 * t_1;</span><br><span class="line">        P[<span class="number">1</span>][<span class="number">0</span>] -= K_1 * t_0;</span><br><span class="line">        P[<span class="number">1</span>][<span class="number">1</span>] -= K_1 * t_1;</span><br><span class="line">        angle += K_0 * angle_err; <span class="comment">//最优角度</span></span><br><span class="line">        q_bias += K_1 * angle_err;</span><br><span class="line">        angle_dot = gyro_m-q_bias;<span class="comment">//最优角速度</span></span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> angle；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>三种融合算法都能够输出姿态角（Pitch 和 Roll ），一次四元数法可以输出 P、R、Y 三个倾角，计算量比较大。一阶互补和卡尔曼滤波每次只能输出一个轴的姿态角。</p>
+<h3 id="陀螺仪漂移的解决方法"><a href="#陀螺仪漂移的解决方法" class="headerlink" title="陀螺仪漂移的解决方法"></a>陀螺仪漂移的解决方法</h3><p>横滚角和俯仰角的偏差可以通过卡尔曼滤波或者一阶互补滤波即可消除漂移量.</p>
+<p>但是<strong>航向角存在的偏差很难由自身来校准,</strong>这是由于:<br>Z轴在静止状态下没有漂移，运动情况下有累积误差。因为Z轴角度是通过对角速度积分计算出来的，没有观测量滤波，所以漂移是不可避免的。X、Y轴的角度是根据重力加速度分量计算，X，Y轴是有重力场滤波，所以不会有漂移。Z轴只能用短时间内的相对测量量。 就是相邻两次的角度差来计算转过的角度。</p>
+<p>可以采用带地磁的9轴陀螺仪来降低漂移量,但是仍然无法完全解决这个问题.而且地磁计对周围磁场的变化敏感,多磁场和多电机的工作环境都会导致地磁计不准.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/IMU传感器/" rel="tag"># IMU传感器</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/10/12/C-C-sizeof函数总结/" rel="next" title="C/C++ sizeof函数总结">
+                  <i class="fa fa-chevron-left"></i> C/C++ sizeof函数总结
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/10/19/工作技能-经验/" rel="prev" title="工作技能/经验">
+                  工作技能/经验 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MPU6050"><span class="nav-number">1.</span> <span class="nav-text">MPU6050</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要姿态融合的原因"><span class="nav-number">1.1.1.</span> <span class="nav-text">需要姿态融合的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#姿态融合"><span class="nav-number">1.2.</span> <span class="nav-text">姿态融合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#陀螺仪漂移的解决方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">陀螺仪漂移的解决方法</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sky Azure</p>
+  <div class="site-description" itemprop="description">保持饥饿，喜欢瞎折腾，记录生活、技术、成长</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky Azure</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

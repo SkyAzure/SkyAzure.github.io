@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Azure - Just do it" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="数据结构与算法1.完全二叉树与满二叉树的区别满二叉树是完全二叉树的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。 2.已知二叉树的前序遍历和中序遍历求后续遍历现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列? 答：前序遍">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法知识随笔">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/数据结构与算法知识随笔/index.html">
+<meta property="og:site_name" content="Azure - Just do it">
+<meta property="og:description" content="数据结构与算法1.完全二叉树与满二叉树的区别满二叉树是完全二叉树的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。 2.已知二叉树的前序遍历和中序遍历求后续遍历现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列? 答：前序遍">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-08T13:18:06.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与算法知识随笔">
+<meta name="twitter:description" content="数据结构与算法1.完全二叉树与满二叉树的区别满二叉树是完全二叉树的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。 2.已知二叉树的前序遍历和中序遍历求后续遍历现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列? 答：前序遍">
+
+<link rel="canonical" href="http://yoursite.com/2019/10/11/数据结构与算法知识随笔/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据结构与算法知识随笔 | Azure - Just do it</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Azure - Just do it</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Maker & Developer</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/数据结构与算法知识随笔/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sky Azure">
+      <meta itemprop="description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Azure - Just do it">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构与算法知识随笔
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-11 13:06:33" itemprop="dateCreated datePublished" datetime="2019-10-11T13:06:33+08:00">2019-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-08 21:18:06" itemprop="dateModified" datetime="2020-01-08T21:18:06+08:00">2020-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="1-完全二叉树与满二叉树的区别"><a href="#1-完全二叉树与满二叉树的区别" class="headerlink" title="1.完全二叉树与满二叉树的区别"></a>1.完全二叉树与满二叉树的区别</h2><p><strong>满二叉树</strong>是<strong>完全二叉树</strong>的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。</p>
+<h2 id="2-已知二叉树的前序遍历和中序遍历求后续遍历"><a href="#2-已知二叉树的前序遍历和中序遍历求后续遍历" class="headerlink" title="2.已知二叉树的前序遍历和中序遍历求后续遍历"></a>2.已知二叉树的前序遍历和中序遍历求后续遍历</h2><p>现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列?</p>
+<p>答：前序遍历结果序列为<strong>abdefgc</strong>，中序遍历结果序列为<strong>debgfac</strong><br>以此为条件，根据前序知道a是根，根据中知道debgf为左子树，c为右子树。<br>根据前知道b为左子树中的根，根据中知道de为b的左，gf为右，根据前和中判断d为根，e为右，f为根，g为左，<br>树成型，得出后序结果<strong>edgfbca</strong></p>
+<a id="more"></a>
+
+<h2 id="3-已知啊a-b-c，求系统进制"><a href="#3-已知啊a-b-c，求系统进制" class="headerlink" title="3.已知啊a * b = c，求系统进制"></a>3.已知啊a * b = c，求系统进制</h2><p>如果某系统15*4=112成立，则系统采用的是几进制？</p>
+<p>将原式转为X进制：<br>1 5 * 4 = 1 1 2<br>（X+5）* 4 = X^2+X+2<br>解方程即可x=6</p>
+<h2 id="4-栈"><a href="#4-栈" class="headerlink" title="4.栈"></a>4.栈</h2><ol>
+<li><p>设栈S和队列Q的初始状态均为空，元素啊，a,b,c,d,e,f,g依次进入栈S。若每个元素出栈后立即进入推列Q，且7个元素出队的顺序是b,d,,c,f,e,a,g，则栈S的容量至少是？</p>
+<p>栈是先进后出，队列是先进先出，所以元素出队列的顺序就是出栈的顺序。<br>出栈的顺序为b,d,c,f,e,a,g，这意味着</p>
+<ol>
+<li><p>a,b进入，b出；</p>
+</li>
+<li><p>c,d进入，此时栈中有a,d,c，出来d,c；</p>
+</li>
+<li><p>e,f进入， 此时栈中有a,e,f，出来f,e,a；</p>
+</li>
+<li><p>g进入，此时栈中有g，出来g；</p>
+<p><strong>由此看出整个过程中栈中存在的元素最多有3个，所以栈S的容量至少是3</strong></p>
+</li>
+</ol>
+</li>
+<li><p>一个栈的入栈序列是a,b,c,d,e,f,则栈的不可能的输出序列是（）</p>
+<p>A:fedcba     <strong>B:defbca</strong>     C:defcba     D:abcdef</p>
+<p>A可以 全进栈 然后依次出栈<br>B不可以<br>C先进adcd 然后d出 再进e e出 再进f f出 剩下的依次cba出<br>D一个进 一个出</p>
+</li>
+</ol>
+<h2 id="5-网络延迟"><a href="#5-网络延迟" class="headerlink" title="5. 网络延迟"></a>5. 网络延迟</h2><p>网络延迟是指在传输介质中传输所用的时间，即从报文开始进入网络到它开始离开网络之间的时间。</p>
+<h2 id="6-完全二叉树的存储"><a href="#6-完全二叉树的存储" class="headerlink" title="6.完全二叉树的存储"></a>6.完全二叉树的存储</h2><p>完全二叉树由于其结构上的特点，通常采用顺序存储方式存储(数组)。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/10/11/技术知识随笔/" rel="next" title="技术知识随笔">
+                  <i class="fa fa-chevron-left"></i> 技术知识随笔
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/10/12/C-C-sizeof函数总结/" rel="prev" title="C/C++ sizeof函数总结">
+                  C/C++ sizeof函数总结 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构与算法"><span class="nav-number">1.</span> <span class="nav-text">数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-完全二叉树与满二叉树的区别"><span class="nav-number">1.1.</span> <span class="nav-text">1.完全二叉树与满二叉树的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-已知二叉树的前序遍历和中序遍历求后续遍历"><span class="nav-number">1.2.</span> <span class="nav-text">2.已知二叉树的前序遍历和中序遍历求后续遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-已知啊a-b-c，求系统进制"><span class="nav-number">1.3.</span> <span class="nav-text">3.已知啊a * b = c，求系统进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-栈"><span class="nav-number">1.4.</span> <span class="nav-text">4.栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-网络延迟"><span class="nav-number">1.5.</span> <span class="nav-text">5. 网络延迟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-完全二叉树的存储"><span class="nav-number">1.6.</span> <span class="nav-text">6.完全二叉树的存储</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sky Azure</p>
+  <div class="site-description" itemprop="description">保持饥饿，喜欢瞎折腾，记录生活、技术、成长</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky Azure</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
