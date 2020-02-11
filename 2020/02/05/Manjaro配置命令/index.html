@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Azure - Just do it" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Manjaro配置命令##　换源并更新系统 1234567891011sudo pacman -Syysudo pacman-mirrors -i -c China -m ranksudo pacman -Syyusudo pacman -Sy vim       # 安装vimsudo vim /etc/pacman.conf # 设定软件源分支# 增加[archlinuxcn]SigLevel">
+<meta name="keywords" content="Manjaro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manjaro配置命令">
+<meta property="og:url" content="http://yoursite.com/2020/02/05/Manjaro配置命令/index.html">
+<meta property="og:site_name" content="Azure - Just do it">
+<meta property="og:description" content="Manjaro配置命令##　换源并更新系统 1234567891011sudo pacman -Syysudo pacman-mirrors -i -c China -m ranksudo pacman -Syyusudo pacman -Sy vim       # 安装vimsudo vim /etc/pacman.conf # 设定软件源分支# 增加[archlinuxcn]SigLevel">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-11T09:22:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Manjaro配置命令">
+<meta name="twitter:description" content="Manjaro配置命令##　换源并更新系统 1234567891011sudo pacman -Syysudo pacman-mirrors -i -c China -m ranksudo pacman -Syyusudo pacman -Sy vim       # 安装vimsudo vim /etc/pacman.conf # 设定软件源分支# 增加[archlinuxcn]SigLevel">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/05/Manjaro配置命令/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Manjaro配置命令 | Azure - Just do it</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Azure - Just do it</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Maker & Developer</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/Manjaro配置命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sky Azure">
+      <meta itemprop="description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Azure - Just do it">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Manjaro配置命令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-05 09:33:28" itemprop="dateCreated datePublished" datetime="2020-02-05T09:33:28+08:00">2020-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-11 17:22:54" itemprop="dateModified" datetime="2020-02-11T17:22:54+08:00">2020-02-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Manjaro配置命令"><a href="#Manjaro配置命令" class="headerlink" title="Manjaro配置命令"></a>Manjaro配置命令</h1><p>##　换源并更新系统</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br><span class="line">sudo pacman -Syyu</span><br><span class="line">sudo pacman -Sy vim       # 安装vim</span><br><span class="line">sudo vim /etc/pacman.conf # 设定软件源分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server =https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p>pacman -Sy  将本地的包数据库与远程的仓库进行了同步<br>pacman -Su  同步后的更新(<strong>与-Syu的差别是-Su只升级系统，-Syu除了升级系统还同步数据库</strong>）
+pacman -Syu 对整个系统进行更新<br>pacman -S 包名 安装包<br>pacman -Sy 包名 同步数据库后安装包<br>pacman -Sv 包名 在显示一些操作信息后执行安装<br>pacman -U 安装本地包,其扩展名为 pkg.tar.gz<br>pacman -U <a href="http://www.example.com/repo/example.pkg.tar.xz" target="_blank" rel="noopener">http://www.example.com/repo/example.pkg.tar.xz</a> 安装一个远程包（不在 pacman 配置的源里面）</p>
+<h2 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h2><p>pacman -R 包名 该命令将只删除包，保留其全部已经安装的依赖关系<br>pacman -Rs 包名 在删除包的同时，删除其所有没有被其他已安装软件包使用的依赖关系<br>pacman -Rsc 包名 在删除包的同时，删除所有依赖这个软件包的程序<br>pacman -Rd 包名 在删除包时不检查依赖</p>
+<h2 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h2><p>pacman -Ss 关键字：在仓库中搜索含关键字的包<br>pacman -Qs 关键字： 搜索已安装的包<br>pacman -Qi 包名：查看有关包的详尽信息<br>pacman -Ql 包名：列出该包的文件</p>
+<p>pacman -Sw 包名：只下载包，不安装<br>pacman -Sc：清理未安装的包文件，包文件位于 /var/cache/pacman/pkg/ 目录<br>pacman -Scc：清理所有的缓存文件</p>
+<h2 id="双系统统一时间"><a href="#双系统统一时间" class="headerlink" title="双系统统一时间"></a>双系统统一时间</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc true </span><br><span class="line"><span class="meta">#</span><span class="bash"> 统一linux和Windows时间方案，调整linux为本地时间</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装中文语言包</span></span><br><span class="line">sudo pacman -Sy fcitx-im　# 默认全部安装　</span><br><span class="line">sudo pacman -Sy fcitx-configtool</span><br><span class="line">sudo pacman -Sy fcitx-sogoupinyin</span><br><span class="line">vim ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">source ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash">报错：sogou输入法异常！请删除～/.config/SougoPY并重启</span></span><br><span class="line"><span class="meta">#</span><span class="bash">尝试删除SouPY,SouPY.users,fcitx文件夹，依旧报错</span></span><br><span class="line">sogou-qimpanel # 报错</span><br><span class="line">sudo pacman -Sy fcitx-qt4  # 问题解决</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装chrome和Typora"><a href="#安装chrome和Typora" class="headerlink" title="安装chrome和Typora"></a>安装chrome和Typora</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy google-chorme</span><br><span class="line">sudo pacman -Ss Typora   # 查找Typora包</span><br><span class="line">sudo pacman -Sy Typora</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装配置electron-ssr"><a href="#安装配置electron-ssr" class="headerlink" title="安装配置electron-ssr"></a>安装配置electron-ssr</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Ss electron-ssr</span><br><span class="line">sudo pacman -Sy electron-ssr</span><br><span class="line">sudo pacman -Ss proxychains # 全局模式无法使用请安装</span><br><span class="line">sudo pacman -Sy proxychains</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改系统设置－网络－代理－使用系统代理/使用手动配置的代理服务器</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> HTTP代理：127.0.0.1:12333</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> SOCKS代理：127.0.0.1:1080</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="终端美化"><a href="#终端美化" class="headerlink" title="终端美化"></a>终端美化</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo panman -Sy zsh # 默认已安装</span><br><span class="line">sudo vim /etc/passwd</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">修改user中/bin/bash为/bin/zsh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # 安装oh-my-zsh</span><br><span class="line"></span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">export ZSH="/home/azure/.oh-my-zsh"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">wget --no-check-certificate -O $ZSH_CUSTOM/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme # 下载Pi主题</span><br><span class="line"></span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">ZSH_THEME="pi"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启终端即可</span></span><br></pre></td></tr></table></figure>
+
+<p>##　AUR助手</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy yay</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置SSH-Key到Github"><a href="#配置SSH-Key到Github" class="headerlink" title="配置SSH Key到Github"></a>配置SSH Key到Github</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在github中添加～/.ssh/id_rsa.pub</span></span><br><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span><span class="bash"> Hi <span class="string">'user'</span> You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy nodejs</span><br><span class="line">sudo pacman -Sy npm</span><br><span class="line">node -v # v13.7.0</span><br><span class="line">npm -v # 6.13.6</span><br><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -R $(pacman -Qdtq) # 清理系统中无用包</span><br><span class="line">sudo pacman -Scc #　清除已下载安装包</span><br><span class="line">du -t 100M /var # 查看日志垃圾</span><br><span class="line">journalctl --disk-usage # 查看日志垃圾</span><br><span class="line">sudo journalctl --vacuum-size=50M # 删除指定大小日志文件</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Manjaro/" rel="tag"># Manjaro</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/01/20/资格复审/" rel="next" title="资格复审">
+                  <i class="fa fa-chevron-left"></i> 资格复审
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Manjaro配置命令"><span class="nav-number">1.</span> <span class="nav-text">Manjaro配置命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装包"><span class="nav-number">1.1.</span> <span class="nav-text">安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除包"><span class="nav-number">1.2.</span> <span class="nav-text">删除包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索包"><span class="nav-number">1.3.</span> <span class="nav-text">搜索包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双系统统一时间"><span class="nav-number">1.4.</span> <span class="nav-text">双系统统一时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装搜狗输入法"><span class="nav-number">1.5.</span> <span class="nav-text">安装搜狗输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装chrome和Typora"><span class="nav-number">1.6.</span> <span class="nav-text">安装chrome和Typora</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置electron-ssr"><span class="nav-number">1.7.</span> <span class="nav-text">安装配置electron-ssr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终端美化"><span class="nav-number">1.8.</span> <span class="nav-text">终端美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SSH-Key到Github"><span class="nav-number">1.9.</span> <span class="nav-text">配置SSH Key到Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.10.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清理"><span class="nav-number">1.11.</span> <span class="nav-text">清理</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sky Azure</p>
+  <div class="site-description" itemprop="description">保持饥饿，喜欢瞎折腾，记录生活、技术、成长</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky Azure</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

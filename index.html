@@ -176,6 +176,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/Manjaro配置命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sky Azure">
+      <meta itemprop="description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Azure - Just do it">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/05/Manjaro配置命令/" class="post-title-link" itemprop="url">Manjaro配置命令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-05 09:33:28" itemprop="dateCreated datePublished" datetime="2020-02-05T09:33:28+08:00">2020-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-11 17:22:54" itemprop="dateModified" datetime="2020-02-11T17:22:54+08:00">2020-02-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Manjaro配置命令"><a href="#Manjaro配置命令" class="headerlink" title="Manjaro配置命令"></a>Manjaro配置命令</h1><p>##　换源并更新系统</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br><span class="line">sudo pacman -Syyu</span><br><span class="line">sudo pacman -Sy vim       # 安装vim</span><br><span class="line">sudo vim /etc/pacman.conf # 设定软件源分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server =https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p>pacman -Sy  将本地的包数据库与远程的仓库进行了同步<br>pacman -Su  同步后的更新(<strong>与-Syu的差别是-Su只升级系统，-Syu除了升级系统还同步数据库</strong>）
+pacman -Syu 对整个系统进行更新<br>pacman -S 包名 安装包<br>pacman -Sy 包名 同步数据库后安装包<br>pacman -Sv 包名 在显示一些操作信息后执行安装<br>pacman -U 安装本地包,其扩展名为 pkg.tar.gz<br>pacman -U <a href="http://www.example.com/repo/example.pkg.tar.xz" target="_blank" rel="noopener">http://www.example.com/repo/example.pkg.tar.xz</a> 安装一个远程包（不在 pacman 配置的源里面）</p>
+<h2 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h2><p>pacman -R 包名 该命令将只删除包，保留其全部已经安装的依赖关系<br>pacman -Rs 包名 在删除包的同时，删除其所有没有被其他已安装软件包使用的依赖关系<br>pacman -Rsc 包名 在删除包的同时，删除所有依赖这个软件包的程序<br>pacman -Rd 包名 在删除包时不检查依赖</p>
+<h2 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h2><p>pacman -Ss 关键字：在仓库中搜索含关键字的包<br>pacman -Qs 关键字： 搜索已安装的包<br>pacman -Qi 包名：查看有关包的详尽信息<br>pacman -Ql 包名：列出该包的文件</p>
+<p>pacman -Sw 包名：只下载包，不安装<br>pacman -Sc：清理未安装的包文件，包文件位于 /var/cache/pacman/pkg/ 目录<br>pacman -Scc：清理所有的缓存文件</p>
+<h2 id="双系统统一时间"><a href="#双系统统一时间" class="headerlink" title="双系统统一时间"></a>双系统统一时间</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc true </span><br><span class="line"><span class="meta">#</span><span class="bash"> 统一linux和Windows时间方案，调整linux为本地时间</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装中文语言包</span></span><br><span class="line">sudo pacman -Sy fcitx-im　# 默认全部安装　</span><br><span class="line">sudo pacman -Sy fcitx-configtool</span><br><span class="line">sudo pacman -Sy fcitx-sogoupinyin</span><br><span class="line">vim ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">source ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash">报错：sogou输入法异常！请删除～/.config/SougoPY并重启</span></span><br><span class="line"><span class="meta">#</span><span class="bash">尝试删除SouPY,SouPY.users,fcitx文件夹，依旧报错</span></span><br><span class="line">sogou-qimpanel # 报错</span><br><span class="line">sudo pacman -Sy fcitx-qt4  # 问题解决</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装chrome和Typora"><a href="#安装chrome和Typora" class="headerlink" title="安装chrome和Typora"></a>安装chrome和Typora</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy google-chorme</span><br><span class="line">sudo pacman -Ss Typora   # 查找Typora包</span><br><span class="line">sudo pacman -Sy Typora</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装配置electron-ssr"><a href="#安装配置electron-ssr" class="headerlink" title="安装配置electron-ssr"></a>安装配置electron-ssr</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Ss electron-ssr</span><br><span class="line">sudo pacman -Sy electron-ssr</span><br><span class="line">sudo pacman -Ss proxychains # 全局模式无法使用请安装</span><br><span class="line">sudo pacman -Sy proxychains</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改系统设置－网络－代理－使用系统代理/使用手动配置的代理服务器</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> HTTP代理：127.0.0.1:12333</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> SOCKS代理：127.0.0.1:1080</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="终端美化"><a href="#终端美化" class="headerlink" title="终端美化"></a>终端美化</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo panman -Sy zsh # 默认已安装</span><br><span class="line">sudo vim /etc/passwd</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">修改user中/bin/bash为/bin/zsh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # 安装oh-my-zsh</span><br><span class="line"></span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">export ZSH="/home/azure/.oh-my-zsh"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">wget --no-check-certificate -O $ZSH_CUSTOM/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme # 下载Pi主题</span><br><span class="line"></span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">ZSH_THEME="pi"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启终端即可</span></span><br></pre></td></tr></table></figure>
+
+<p>##　AUR助手</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy yay</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置SSH-Key到Github"><a href="#配置SSH-Key到Github" class="headerlink" title="配置SSH Key到Github"></a>配置SSH Key到Github</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在github中添加～/.ssh/id_rsa.pub</span></span><br><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span><span class="bash"> Hi <span class="string">'user'</span> You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy nodejs</span><br><span class="line">sudo pacman -Sy npm</span><br><span class="line">node -v # v13.7.0</span><br><span class="line">npm -v # 6.13.6</span><br><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -R $(pacman -Qdtq) # 清理系统中无用包</span><br><span class="line">sudo pacman -Scc #　清除已下载安装包</span><br><span class="line">du -t 100M /var # 查看日志垃圾</span><br><span class="line">journalctl --disk-usage # 查看日志垃圾</span><br><span class="line">sudo journalctl --vacuum-size=50M # 删除指定大小日志文件</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/20/资格复审/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -199,10 +301,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-20 21:27:05 / 修改时间：22:28:09" itemprop="dateCreated datePublished" datetime="2020-01-20T21:27:05+08:00">2020-01-20</time>
+              <time title="创建时间：2020-01-20 21:27:05" itemprop="dateCreated datePublished" datetime="2020-01-20T21:27:05+08:00">2020-01-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-11 17:17:59" itemprop="dateModified" datetime="2020-02-11T17:17:59+08:00">2020-02-11</time>
+              </span>
 
           
 
@@ -1024,94 +1132,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/Python知识随笔/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Sky Azure">
-      <meta itemprop="description" content="保持饥饿，喜欢瞎折腾，记录生活、技术、成长">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Azure - Just do it">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/11/Python知识随笔/" class="post-title-link" itemprop="url">Python知识随笔</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-11 10:44:12" itemprop="dateCreated datePublished" datetime="2019-10-11T10:44:12+08:00">2019-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-08 21:18:06" itemprop="dateModified" datetime="2020-01-08T21:18:06+08:00">2020-01-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="python知识随笔"><a href="#python知识随笔" class="headerlink" title="python知识随笔"></a>python知识随笔</h1><h2 id="正则表达式的贪婪与非贪婪匹配"><a href="#正则表达式的贪婪与非贪婪匹配" class="headerlink" title="正则表达式的贪婪与非贪婪匹配"></a>正则表达式的贪婪与非贪婪匹配</h2><p><code>String str=&quot;abcaxc&quot;;</code></p>
-<p><code>Patter p=&quot;ab*c&quot;;</code></p>
-<ul>
-<li><p>贪婪匹配：正则表达式一般趋向于最大长度匹配，也就是所谓的贪婪匹配。如上面使用模式p匹配字符串str，结果就是匹配到：abcaxc(ab*c)。</p>
-</li>
-<li><p>非贪婪匹配：就是匹配到结果就好，就少的匹配字符。如上面使用模式p匹配字符串str，结果就是匹配到：abc(ab*c)。</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1155,7 +1180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1166,7 +1191,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
