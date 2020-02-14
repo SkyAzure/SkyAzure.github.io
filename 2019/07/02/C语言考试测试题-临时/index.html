@@ -68,7 +68,16 @@
             
             
             id="home">
-            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+            <i class='fas fa-book-open fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/"
+            
+            
+            id="categories">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
           </a>
         </li>
       
@@ -77,7 +86,7 @@
             
             
             id="projects">
-            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+            <i class='fas fa-code fa-fw'></i>&nbsp;项目
           </a>
         </li>
       
@@ -88,18 +97,7 @@
             
             
             id="friends">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
-            
-            
-            id="about">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+            <i class='fas fa-users fa-fw'></i>&nbsp;朋友
           </a>
         </li>
       
@@ -130,40 +128,40 @@
                   
                   
                   id="home">
-									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/categories/"
+								<a class="nav flat-box" href="/archives/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogcategories">
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
 									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/tags/"
+								<a class="nav flat-box" href="/tags/"
                   
                     rel="nofollow"
                   
                   
-                  id="blogtags">
+                  id="tags">
 									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/blog/archives/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="blogarchives">
-									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
 								</a>
 							</li>
       			
@@ -209,18 +207,18 @@
                 
                 
                 id="home">
-								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+								<i class='fas fa-home fa-fw'></i>&nbsp;主页
 							</a>
             </li>
           
             <li>
-							<a class="nav flat-box" href="/blog/archives/"
+							<a class="nav flat-box" href="/archives/"
                 
                   rel="nofollow"
                 
                 
-                id="blogarchives">
-								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;归档
 							</a>
             </li>
           
@@ -229,7 +227,7 @@
                 
                 
                 id="projects">
-								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+								<i class='fas fa-code fa-fw'></i>&nbsp;项目
 							</a>
             </li>
           
@@ -240,18 +238,7 @@
                 
                 
                 id="friends">
-								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/"
-                
-                  rel="nofollow"
-                
-                
-                id="https:xaoxuu.comwikimaterial-x">
-								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+								<i class='fas fa-users fa-fw'></i>&nbsp;朋友
 							</a>
             </li>
           
@@ -262,7 +249,7 @@
                 
                 
                 id="about">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
 							</a>
             </li>
           
@@ -584,6 +571,14 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
       
     
       
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aS27jQAwFwNz/0gkwWyfRe6RaDgalleGPuosLNU3y4yO+Pv9dP71+vV4/fb1bfp/XdW++8PDw8EZbzze6XzgBz8LxzR3w8PDwjvFmh8Hv+LsC99OvksDh4eHhvZeXg5MA/f4aDw8P7//jtRtNChlJGo2Hh4f3d3hJ4tuWXNtUe18+xsPDw3uGt2+APf/60f4eHh4eXnwkzNr5Sdo9u3+9Tzw8PLwDvFmBIPnmfgKqHSCIai14eHh4x3j7pn6yxaR0m+zzIuHGw8PDe4Q3az61iXV+hGzex8PDwzvBax/fs2/eVVnNDzM8PDy8c7z8T/5m+VmJNjlsiskIPDw8vDVv0/TKN9G2ytpjJjoS8PDw8G7itWWC9sBo212zVP7ifTw8PLxbee1G8wXa1loSgnxoAA8PD+8ZXnvlj+8kgd6E7KIYgYeHh3crbzZA0CbHLSY/YKKhKzw8PLwDvBxWpLPx6NWsDVbg8fDw8A7w2uGAtpXVDrC2oSzaYHh4eHgHePsixSY53hR2L9JrPDw8vAO8ZJnkm5tjJi8K538A8PDw8O7l7QcFnmyM5YNZeHh4eO/ibVr7xSYW5eNVfQUPDw9vxEvS01XxdJSsz0rAFwHFw8PDu4mXL5Mnynnxok2p62EFPDw8vAO82RbbtHizSl4+viGxxsPDwwt4+SN4k0Ynx0wepmKsAQ8PD+8Ar23hJ4vNDpVZyIrf4uHh4d3E+yyvWVF1Fr7ZBBkeHh7ead4mI80b/PkAQQ5OQoyHh4d3jteOW22aWJsCx2xveHh4eOd4s+bWJhEfVk3aOi0eHh7en+fNDpsc2Sb0eHh4eO/lta39WeM/D2JU2sDDw8M7xmuLEZsGWPLob8MxHCDAw8PDG/E2f/WTR/YmfHk6PoTh4eHhdbwvgmbvZL6Uid4AAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
           href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/07/02/C语言考试测试题-临时/&title=c语言考试测试题-临时(教学用) | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/avatar.jpg&summary=c语言能力测试基础练习题
@@ -709,137 +704,6 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
           
           
-            
-              <section class='widget author'>
-  <div class='content material'>
-    
-      <div class='avatar'>
-        <img class='avatar' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/avatar.gif'/>
-      </div>
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Azure's BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:me@xaoxuu.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/xaoxuu"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget plain'>
-  
-<header class='material'>
-  <div><i class="fas fa-file fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文本部件</div>
-  
-</header>
-
-  <div class='content material'>
-    <p>这是一段支持markdown的文本<br><img src="https://img.vim-cn.com/4e/3c87a2fd28fd0b9c2f27ce3f83f1e9275d0488.png" alt=""></p>
-
-  </div>
-</section>
-
-            
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
         
           
           
@@ -882,6 +746,89 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
           
           
+            
+              <section class='widget author'>
+  <div class='content material'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/avatar.gif'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+          <p>⌛ Azure ⌛</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Just Do it</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@skyazure.top"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/SkyAzure"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=312892477"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
         
           
           
@@ -909,15 +856,15 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
           
             <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
           
-          近期文章
+          所有文章
         </a></li>
       
-        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/"
+        <li><a class="flat-box" title="/archives/" href="/archives/"
           
             rel="nofollow"
           
           
-          id="blogarchives">
+          id="archives">
           
             <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
           
@@ -929,9 +876,9 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
           
           id="projects">
           
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+            <i class="fas fa-code fa-fw" aria-hidden="true"></i>
           
-          开源项目
+          项目展示
         </a></li>
       
         <li><a class="flat-box" title="/friends/" href="/friends/"
@@ -944,18 +891,6 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
             <i class="fas fa-link fa-fw" aria-hidden="true"></i>
           
           我的友链
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
-          
-            rel="nofollow"
-          
-          
-          id="https:xaoxuu.comwikimaterial-x">
-          
-            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-          
-          主题文档
         </a></li>
       
         <li><a class="flat-box" title="/about/" href="/about/"
@@ -1002,9 +937,6 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
           
           
-        
-          
-          
             
               
   <section class='widget category'>
@@ -1017,8 +949,8 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
       rel="nofollow"
     
     
-    href="/blog/categories/"
-    title="blog/categories/">
+    href="/categories/"
+    title="categories/">
     <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
   
 </header>
@@ -1090,166 +1022,20 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
           
             
               
-  <section class='widget tagcloud'>
+  <section class='widget related_posts'>
     
 <header class='material'>
-  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
-  
-    <a class="rightBtn"
-    
-      rel="nofollow"
-    
-    
-    href="/blog/tags/"
-    title="blog/tags/">
-    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
   
 </header>
 
-    <div class='content material'>
-      <a href="/tags/Data-Structures/" style="font-size: 14px; color: #999">Data Structures</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/IMU传感器/" style="font-size: 14px; color: #999">IMU传感器</a> <a href="/tags/Manjaro/" style="font-size: 14px; color: #999">Manjaro</a> <a href="/tags/Markdown编辑器/" style="font-size: 19px; color: #777">Markdown编辑器</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/c语言/" style="font-size: 14px; color: #999">c语言</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/python/" style="font-size: 19px; color: #777">python</a> <a href="/tags/skill/" style="font-size: 19px; color: #777">skill</a> <a href="/tags/职位/" style="font-size: 14px; color: #999">职位</a> <a href="/tags/踩坑/" style="font-size: 19px; color: #777">踩坑</a> <a href="/tags/随笔/" style="font-size: 24px; color: #555">随笔</a>
+    <div class="content material">
+      
     </div>
   </section>
 
 
             
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-            
-              <section class='widget list'>
-  
-<header class='material'>
-  <div><i class="fas fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;强烈推荐</div>
-  
-</header>
-
-  <div class='content material'>
-    <ul class="entry">
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/hexo.sh/" href="https://xaoxuu.com/wiki/hexo.sh/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;Hexo脚本（Mac）
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://xaoxuu.com/wiki/vim-cn.sh/" href="https://xaoxuu.com/wiki/vim-cn.sh/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;图床脚本（Mac）
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://yasuotu.com" href="https://yasuotu.com"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;图片在线压缩
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://realfavicongenerator.net" href="https://realfavicongenerator.net"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;生成Favicon
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="https://mxclub.github.io/resume/" href="https://mxclub.github.io/resume/"
-          
-          
-          >
-          <div class='name'>
-            
-              <i class=" fa-fw" aria-hidden="true"></i>
-            
-            &nbsp;&nbsp;简历主题
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
-
-            
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
           
         
           
@@ -1275,7 +1061,7 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
       
         
-          <a href="mailto:me@xaoxuu.com"
+          <a href="mailto:me@skyazure.top"
             class="social fas fa-envelope flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
@@ -1283,7 +1069,7 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
       
         
-          <a href="https://github.com/xaoxuu"
+          <a href="https://github.com/SkyAzure"
             class="social fab fa-github flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
@@ -1291,7 +1077,7 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
       
         
-          <a href="https://music.163.com/#/user/home?id=63035382"
+          <a href="https://music.163.com/#/user/home?id=312892477"
             class="social fas fa-headphones-alt flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
