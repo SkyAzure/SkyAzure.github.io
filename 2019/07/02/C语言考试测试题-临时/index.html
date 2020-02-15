@@ -54,7 +54,7 @@
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
+      <input type="text" class="input u-search-input" placeholder="Just Search it!" />
       <i class="icon fas fa-search fa-fw"></i>
     </form>
   </div>
@@ -106,7 +106,21 @@
 </div>
 
       
+    <br>
+        <!-- 打字特效 -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <div style="text-align: center;font-weight: bold;color: #1BC3FB;">
+      <span id="hitokoto"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+    <!--    Hitokoto 一言 -->
+    <p id="hitokoto"></p>
+			<!-- <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script> -->
+      <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     </cover>
+
     <header class="l_header material">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="material"></div>
@@ -473,7 +487,7 @@
       </div>
       
         <br>
-        <center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>
+        <center>这是文章页脚，可以设置打赏图片：<br></center>
       
       
         <br>
@@ -757,9 +771,8 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
     
       <div class='text'>
         
+          <h2>⌛ Azure ⌛</h2>
         
-          <p>⌛ Azure ⌛</p>
-
         
         
           <p><span id="jinrishici-sentence">Just Do it</span></p>
@@ -779,14 +792,6 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
           
         
           
-            <a href="mailto:me@skyazure.top"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
             <a href="https://github.com/SkyAzure"
               class="social fab fa-github flat-btn"
               target="_blank"
@@ -795,8 +800,8 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
           
         
           
-            <a href="https://music.163.com/#/user/home?id=312892477"
-              class="social fas fa-headphones-alt flat-btn"
+            <a href="mailto:me@skyazure.top"
+              class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
@@ -1061,14 +1066,6 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
       
         
-          <a href="mailto:me@skyazure.top"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
           <a href="https://github.com/SkyAzure"
             class="social fab fa-github flat-btn"
             target="_blank"
@@ -1077,8 +1074,8 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
         
       
         
-          <a href="https://music.163.com/#/user/home?id=312892477"
-            class="social fas fa-headphones-alt flat-btn"
+          <a href="mailto:me@skyazure.top"
+            class="social fas fa-envelope flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -1191,6 +1188,10 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
 
   <script src="https://cdn.jsdelivr.net/gh/SkyAzure/SkyAzure.github.io/js/search.js"></script>
 
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/SkyAzure/SkyAzure.github.io/js/commentTyping.js"></script>
+  
 
 
 
@@ -1306,5 +1307,10 @@ f(x)={x-2       ,  9&lt;=x&lt;10}
 
 
   <script>setLoadingBarProgress(100);</script>
+  
+  <!--单击显示文字-->
+  <script type="text/javascript" src="/js/ClickShowText.js"></script>
+  <script type="text/javascript" src="/js/scattered.js"></script>
+  
 </body>
 </html>

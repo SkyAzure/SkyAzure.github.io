@@ -54,7 +54,7 @@
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
+      <input type="text" class="input u-search-input" placeholder="Just Search it!" />
       <i class="icon fas fa-search fa-fw"></i>
     </form>
   </div>
@@ -106,7 +106,21 @@
 </div>
 
       
+    <br>
+        <!-- 打字特效 -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <div style="text-align: center;font-weight: bold;color: #1BC3FB;">
+      <span id="hitokoto"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+    <!--    Hitokoto 一言 -->
+    <p id="hitokoto"></p>
+			<!-- <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script> -->
+      <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     </cover>
+
     <header class="l_header material">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="material"></div>
@@ -275,6 +289,139 @@
           
         
           
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/10/13/MPU6050姿态结算/">
+      MPU6050姿态结算
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://skyazure.top" rel="nofollow">
+        
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/avatar.jpg">
+        
+        <p>Sky Azure</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-13</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/嵌入式系统/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>嵌入式系统</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>2.3k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>8分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+  <div class="new-meta-item top-post">
+    <a class='notlink'>
+      <i class="fas fa-angle-double-up" aria-hidden="true" style="color:#FF0000;"></i>
+      <p style="color: #FF0000">置顶</p>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h1 id="MPU6050"><a href="#MPU6050" class="headerlink" title="MPU6050"></a>MPU6050</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
+<ol>
+<li><p><a href="https://www.jianshu.com/p/69dd18638b8e" target="_blank" rel="noopener">加速度计原理与姿态解算</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/3c03b7fb7b38" target="_blank" rel="noopener">陀螺仪原理与姿态解算</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/5ff8de66bcaf" target="_blank" rel="noopener">融合加速度计和陀螺仪的数据</a></p>
+      
+        <div class="button readmore">
+          <a href="/2019/10/13/MPU6050姿态结算/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/IMU传感器/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> IMU传感器</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+            </div>
+          
         
           
         
@@ -427,132 +574,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/10/13/MPU6050姿态结算/">
-      MPU6050姿态结算
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="http://skyazure.top" rel="nofollow">
-        
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/avatar.jpg">
-        
-        <p>Sky Azure</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-10-13</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/嵌入式系统/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>嵌入式系统</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>2.3k字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>8分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h1 id="MPU6050"><a href="#MPU6050" class="headerlink" title="MPU6050"></a>MPU6050</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
-<ol>
-<li><p><a href="https://www.jianshu.com/p/69dd18638b8e" target="_blank" rel="noopener">加速度计原理与姿态解算</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/3c03b7fb7b38" target="_blank" rel="noopener">陀螺仪原理与姿态解算</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/5ff8de66bcaf" target="_blank" rel="noopener">融合加速度计和陀螺仪的数据</a></p>
-      
-        <div class="button readmore">
-          <a href="/2019/10/13/MPU6050姿态结算/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/IMU传感器/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> IMU传感器</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
         
       
         
@@ -1254,9 +1275,8 @@
     
       <div class='text'>
         
+          <h2>⌛ Azure ⌛</h2>
         
-          <p>⌛ Azure ⌛</p>
-
         
         
           <p><span id="jinrishici-sentence">Just Do it</span></p>
@@ -1276,14 +1296,6 @@
           
         
           
-            <a href="mailto:me@skyazure.top"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
             <a href="https://github.com/SkyAzure"
               class="social fab fa-github flat-btn"
               target="_blank"
@@ -1292,8 +1304,8 @@
           
         
           
-            <a href="https://music.163.com/#/user/home?id=312892477"
-              class="social fas fa-headphones-alt flat-btn"
+            <a href="mailto:me@skyazure.top"
+              class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
@@ -1635,14 +1647,6 @@
         
       
         
-          <a href="mailto:me@skyazure.top"
-            class="social fas fa-envelope flat-btn"
-            target="_blank"
-            rel="external nofollow noopener noreferrer">
-          </a>
-        
-      
-        
           <a href="https://github.com/SkyAzure"
             class="social fab fa-github flat-btn"
             target="_blank"
@@ -1651,8 +1655,8 @@
         
       
         
-          <a href="https://music.163.com/#/user/home?id=312892477"
-            class="social fas fa-headphones-alt flat-btn"
+          <a href="mailto:me@skyazure.top"
+            class="social fas fa-envelope flat-btn"
             target="_blank"
             rel="external nofollow noopener noreferrer">
           </a>
@@ -1774,6 +1778,10 @@
   <script src="https://cdn.jsdelivr.net/gh/SkyAzure/SkyAzure.github.io/js/search.js"></script>
 
 
+  
+    <script src="https://cdn.jsdelivr.net/gh/SkyAzure/SkyAzure.github.io/js/commentTyping.js"></script>
+  
+
 
 
 
@@ -1888,5 +1896,10 @@
 
 
   <script>setLoadingBarProgress(100);</script>
+  
+  <!--单击显示文字-->
+  <script type="text/javascript" src="/js/ClickShowText.js"></script>
+  <script type="text/javascript" src="/js/scattered.js"></script>
+  
 </body>
 </html>
