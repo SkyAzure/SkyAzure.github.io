@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Category: C语言 | Azure&#39;s BLOG</title>
+  <title>Category: c语言 | Azure&#39;s BLOG</title>
   
   
   <meta name="description" content="“所有的事情，所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧。这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。” —— Steve Jobs">
@@ -31,7 +31,7 @@
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting@1.1.0/Blog-config/css/style.css">
   
 
   <script>
@@ -309,8 +309,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/10/12/C-C-sizeof函数总结/">
-      C/C++ sizeof函数总结
+    <a href="/2019/07/02/C语言考试测试题-临时/">
+      c语言考试测试题-临时(教学用)
     </a>
   </h2>
 
@@ -340,7 +340,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-10-12</p>
+    <p>2019-07-02</p>
   </a>
 </div>
 
@@ -350,9 +350,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/C语言/' rel="nofollow">
+    <a href='/categories/c语言/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>C语言</p>
+      <p>c语言</p>
     </a>
   </div>
 
@@ -366,14 +366,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>1.9k字</p>
+        <p>765字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>7分</p>
+        <p>3分</p>
       </a>
     </div>
   
@@ -395,63 +395,42 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="解决sizeof求结构体大小的问题"><a href="#解决sizeof求结构体大小的问题" class="headerlink" title="解决sizeof求结构体大小的问题"></a>解决sizeof求结构体大小的问题</h1><h2 id="一、C-C-中不同数据类型所占用的内存大小"><a href="#一、C-C-中不同数据类型所占用的内存大小" class="headerlink" title="一、C/C++中不同数据类型所占用的内存大小"></a>一、C/C++中不同数据类型所占用的内存大小</h2><table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>32位</th>
-<th>64位</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>char</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>int</td>
-<td>4</td>
-<td>大多数4(少数8)</td>
-</tr>
-<tr>
-<td>short</td>
-<td>2</td>
-<td>2</td>
-</tr>
-<tr>
-<td><em>long</em></td>
-<td>4</td>
-<td>8</td>
-</tr>
-<tr>
-<td>float</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr>
-<td>double</td>
-<td>8</td>
-<td>8</td>
-</tr>
-<tr>
-<td><em>*指针</em></td>
-<td>4</td>
-<td>8</td>
-</tr>
-</tbody></table>
-<p>（单位都为字节） </p>
-<p>结构体(struct)：比较复杂，对齐问题需要考虑清楚。</p>
-<p>联合(union)：取所有成员中最长的作为联合的长度。</p>
-<p>枚举(enum)：根据数据类型。</p>
+      <h1 id="c语言能力测试基础练习题"><a href="#c语言能力测试基础练习题" class="headerlink" title="c语言能力测试基础练习题"></a>c语言能力测试基础练习题</h1><ol>
+<li><p>编写程序，输入x,求f(x)函数的值</p>
+<p>f(x)={x-2       ,  9&lt;=x&lt;10}</p>
+<p>​        {x<sup>2</sup>+10  ,  0&lt;=x&lt;9}</p>
+<p>​        {4x<sup>2</sup>-5   , x&gt;15}</p>
+</li>
+<li><p>编写程序，求解修路问题，<strong>60公里</strong>公路，<strong>60人</strong>修建，<strong>甲</strong>工程队一人一次修<strong>4</strong>公里，<strong>乙</strong>工程队一人一次修<strong>3</strong>公里，<strong>丙</strong>工程队<strong>两人</strong>一次修1公里，要求<strong>1</strong>次搬完。问各需甲、乙和丙工程队各多少人。</p>
+</li>
+<li><p>编写程序，完成以下任务：</p>
+<ul>
+<li><p>定义一个能存放<strong>50</strong>本书价格的一位数组。</p>
+</li>
+<li><p>向数组中输入或者赋给<strong>[0,200]</strong>之间的随机整数。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>输出所有数组的所有元素。</p>
+<ul>
+<li><p>统计<strong>50</strong>本书总价格，和<em>价格大于100</em>的书籍中<strong>奇数</strong>和<strong>偶数</strong>的个数，并分别计算奇数和偶数的<strong>平均值</strong>。</p>
       
         <div class="button readmore">
-          <a href="/2019/10/12/C-C-sizeof函数总结/" class="flat-box">
+          <a href="/2019/07/02/C语言考试测试题-临时/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
         </div>
       
     </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/c语言/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> c语言</a>
+        
+      </div>
     
   </section>
 </article>
@@ -884,7 +863,8 @@
     </div>
   
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+
+<!--   <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
@@ -897,7 +877,73 @@
       次
     
     。
-  </div>
+  </div> -->
+    Copyright <i class="far fa-copyright"></i> 2019-2020
+    <a href="https://www.skyazure.top/" target="_blank"> Azure&#39;s BLOG </a>丨
+    <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/icp.png">
+    <a href="http://www.beian.miit.gov.cn/" target="_blank">津ICP备.......号-4</a> 丨
+    <!-- 网站运行时间 -->
+    <span id="timeDate">正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("06/20/2019 12:00:00");//建站时间2019-06-20
+      now.setTime(now.getTime()+250); 
+      middle = (now - grt ) / 1000 / 60 ;
+      days = middle / 60 / 24; dnum = Math.floor(days); 
+      hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script>丨
+    <a href="https://tongji.baidu.com/web/welcome/ico?s=df0bc7c6bdbd80356ba4db429724ccad" target="_blank">站长统计</a><br><br>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+    </div>
+    <div class="github-badge">
+        <a style="color: #fff" rel="license" href="https://xaoxuu.com/wiki/material-x/" target="_blank" title="站点使用 Material X 主题">
+      <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Material X</span></a>
+    </div>    
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.aliyun.com/" target="_blank" title="阿里云提供域名相关服务">
+      <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">Aliyun</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff"  href="/" target="_blank" title="访客数">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff"  href="/" target="_blank" title="浏览量">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff"  href="/" target="_blank" title="总字数">
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+      <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+
 </footer>
 <script>setLoadingBarProgress(80);</script>
 
@@ -1112,13 +1158,6 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/ClickShowText.js"></script>
   <!-- 单击粒子散落 -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/scattered.js"></script>
-  <!-- 浏览器搞笑标题 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/FunnyTitle.js"></script>
-  <!-- 访问加速脚本 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/instant3.0.0.js"></script>  
-  
-</body>
-</html>.js"></script>
   <!-- 浏览器搞笑标题 -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/FunnyTitle.js"></script>
   <!-- 访问加速脚本 -->
