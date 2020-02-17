@@ -11,6 +11,8 @@
   
 
   
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -291,6 +294,8 @@
   <section class='meta'>
     
     
+      <a title='浙大数据结构笔记' href='/2019/11/14/浙大数据结构笔记/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/code.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -312,9 +317,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -338,9 +343,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/笔记/' rel="nofollow">
+    <a href='/categories/数据结构/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>笔记</p>
+      <p>数据结构</p>
     </a>
   </div>
 
@@ -372,7 +377,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>577字</p>
+        <p>567字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -401,19 +406,22 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody"> 
-        <h1 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h1><h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><h3 id="1-1-什么是数据结构"><a href="#1-1-什么是数据结构" class="headerlink" title="1.1 什么是数据结构"></a>1.1 什么是数据结构</h3><h4 id="1-1-1-其他定义"><a href="#1-1-1-其他定义" class="headerlink" title="1.1.1 其他定义"></a>1.1.1 其他定义</h4><ul>
+        <blockquote>
+<center><font color="#1Bc3FB">Data Structures</font><center>
+</center></center></blockquote>
+<a id="more"></a>
+
+<h1 id="●-基本概念"><a href="#●-基本概念" class="headerlink" title="● 基本概念"></a>● 基本概念</h1><h2 id="1-什么是数据结构"><a href="#1-什么是数据结构" class="headerlink" title="1  什么是数据结构"></a>1  什么是数据结构</h2><h3 id="1-1-其他定义"><a href="#1-1-其他定义" class="headerlink" title="1.1 其他定义"></a>1.1 其他定义</h3><ul>
 <li>数据结构是数据对象，以及存在于该对象的实例和组成实例的数据元素之间的各种联系。这些联系可以通过定义相关的函数来给出。 ——Sartaj Sahni 《数据结构、算法与应用》</li>
 <li>数据结构是 ADT（Abstract Data Type，数据抽象类型）的物理实现。 ——Clifford A.Shaffer 《数据结构与算法分析》</li>
 <li>数据结构（data structure）是计算机中存储、组织数据的方式。通常情况下，精心选择的数据结构可以带来最优效率的算法。 ——中文维基百科</li>
 </ul>
-<a id="more"></a>
-
-<h4 id="1-1-2-解决问题方法的效率"><a href="#1-1-2-解决问题方法的效率" class="headerlink" title="1.1.2 解决问题方法的效率"></a>1.1.2 解决问题方法的效率</h4><ul>
+<h3 id="1-2-解决问题方法的效率"><a href="#1-2-解决问题方法的效率" class="headerlink" title="1.2 解决问题方法的效率"></a>1.2 解决问题方法的效率</h3><ul>
 <li>跟数组的组织方式有关</li>
 <li>跟空间的利用效率有关</li>
 <li>跟算法的巧妙程度有关</li>
 </ul>
-<h4 id="1-1-3-最终定义"><a href="#1-1-3-最终定义" class="headerlink" title="1.1.3 最终定义"></a>1.1.3 最终定义</h4><ul>
+<h3 id="1-3-最终定义"><a href="#1-3-最终定义" class="headerlink" title="1.3 最终定义"></a>1.3 最终定义</h3><ul>
 <li>数据对象在计算机中的组织方式<ul>
 <li>逻辑结构</li>
 <li>物理存储结构</li>
@@ -422,7 +430,7 @@
 <li>数据对象必定与一系列加在其上的操作相关联</li>
 <li>完成这些操作所用的方法就是算法</li>
 </ul>
-<h4 id="1-1-4-抽象数据类型（Abstract-Data-Type）"><a href="#1-1-4-抽象数据类型（Abstract-Data-Type）" class="headerlink" title="1.1.4 抽象数据类型（Abstract Data Type）"></a>1.1.4 抽象数据类型（Abstract Data Type）</h4><ul>
+<h3 id="1-4-抽象数据类型（Abstract-Data-Type）"><a href="#1-4-抽象数据类型（Abstract-Data-Type）" class="headerlink" title="1.4 抽象数据类型（Abstract Data Type）"></a>1.4 抽象数据类型（Abstract Data Type）</h3><ul>
 <li><p>数据类型</p>
 <ul>
 <li>数据对象集</li>
@@ -439,7 +447,7 @@
 <li><p>只描述数据对象集和相关操作集“是什么”，并不涉及“如何做到”的问题</p>
 </li>
 </ul>
-<h3 id="1-2-什么是算法"><a href="#1-2-什么是算法" class="headerlink" title="1.2 什么是算法"></a>1.2 什么是算法</h3><h4 id="1-2-1-定义"><a href="#1-2-1-定义" class="headerlink" title="1.2.1 定义"></a>1.2.1 定义</h4><ul>
+<h2 id="2-什么是算法"><a href="#2-什么是算法" class="headerlink" title="2 什么是算法"></a>2 什么是算法</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><ul>
 <li>一个有限指令集</li>
 <li>≥ 0 的输入</li>
 <li>0 的输出</li>
@@ -451,7 +459,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="1-2-2-描述算法的手段"><a href="#1-2-2-描述算法的手段" class="headerlink" title="1.2.2 描述算法的手段"></a>1.2.2 描述算法的手段</h4><ul>
+<h3 id="2-2-描述算法的手段"><a href="#2-2-描述算法的手段" class="headerlink" title="2.2 描述算法的手段"></a>2.2 描述算法的手段</h3><ul>
 <li><p>空间复杂度 S(n)</p>
 <p>根据算法写成的程序在执行时占用存储空间的长度</p>
 </li>
@@ -459,7 +467,7 @@
 <p>根据算法写成的程序在执行时耗费的时间的长度</p>
 </li>
 </ul>
-<h4 id="1-2-3-评价"><a href="#1-2-3-评价" class="headerlink" title="1.2.3 评价"></a>1.2.3 评价</h4><ul>
+<h3 id="2-3-评价"><a href="#2-3-评价" class="headerlink" title="2.3 评价"></a>2.3 评价</h3><ul>
 <li>在分析一般算法的效率时，常常关注</li>
 </ul>
 
@@ -550,10 +558,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-08T21:18:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T00:06:22+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月8日</p>
+    <p>更新于 2020年2月18日</p>
   </a>
 </div>
 
@@ -575,10 +583,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://onlyorange.top/2019/11/14/浙大数据结构笔记/&title=浙大数据结构笔记 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=Data Structures一、基本概念1.1 什么是数据结构1.1.1 其他定义
-数据结构是数据对象，以及存在于该对象的实例和组成实例的数据元素之间的各种联系。这些联系可以通过定义相关的函数来给出。 ——Sartaj Sahni 《数据结构、算法与应用》
-数据结构是 ADT（Abstract Data Type，数据抽象类型）的物理实现。 ——Clifford A.Shaffer 《数据结构与算法分析》
-数据结构（data structure）是计算机中存储、组织数据的方式。通常情况下，精心选择的数据结构可以带来最优效率的算法。 ——中文维基百科
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://skyazure.top/2019/11/14/浙大数据结构笔记/&title=浙大数据结构笔记 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+Data Structures
 "
           
           >
@@ -591,10 +597,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://onlyorange.top/2019/11/14/浙大数据结构笔记/&title=浙大数据结构笔记 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=Data Structures一、基本概念1.1 什么是数据结构1.1.1 其他定义
-数据结构是数据对象，以及存在于该对象的实例和组成实例的数据元素之间的各种联系。这些联系可以通过定义相关的函数来给出。 ——Sartaj Sahni 《数据结构、算法与应用》
-数据结构是 ADT（Abstract Data Type，数据抽象类型）的物理实现。 ——Clifford A.Shaffer 《数据结构与算法分析》
-数据结构（data structure）是计算机中存储、组织数据的方式。通常情况下，精心选择的数据结构可以带来最优效率的算法。 ——中文维基百科
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://skyazure.top/2019/11/14/浙大数据结构笔记/&title=浙大数据结构笔记 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+Data Structures
 "
           
           >
@@ -605,7 +609,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACn0lEQVR42u3aQVbDMAwFQO5/6XIAmvZLskIWkxUPWuPxItb70s9P/Lwunr9/7X23+snDDx4eHt6hrSeAz7/JV/h8QPlBvFkBDw8Pb42XLJeQkjVzZL6Hy9/j4eHhPYa3XV7nbDw8PLzn8/Iiu3qdfF4fDw8P72m8XoQaxQEx5jNsPWvBw8PDi3l5F+k5P6/09/Dw8PDGXfXJCzf/fDW6LewWDw8Pb4GXb+VU2Z2PFFQHCy5Xw8PDwzvKO9Wwr8YKvYihPPiFh4eHt8arbqUa1/aQyZF9OW48PDy8G3nzln/1Ukle/XljDA8PD2+bVy5VB2MBvWijesR4eHh427xe8dqLFfKy+MDoFR4eHt4CLy+mk3/WCzVOzYvh4eHh3c+blNG9oGFyQF+mIfKN4uHh4RV5SaE8b4b1BrN6g1+XowN4eHh4R3nVYrocpw6i2/xbb9bBw8PDu4XXuxgSRm+woDwucGoreHh4eEEMkbfBqq/pSTutGvVeBrh4eHh4R3l5dFuNaOev+Pw43nweDw8Pb43XG6WqbiI/vrwh92VveHh4eAu8vDztBRC9Ujsn5SU7Hh4e3ile8irPI4D5iEAeeeDh4eH9Fy8nTYYJ8pZYL/L4sgIeHh7ejbzqSzmPMyaDWeWLBw8PD2+Nlxe7k6iiegR5zFG+VfDw8PCO8nJwr8E/H0QoRCd4eHh4a7xJyTtfLU8Syuvg4eHhHeW9ik/+75PBqeqMQ7n0x8PDw1vg5U/1Grjz5951goeHhzfh9aLSauCbtNnydlrhssHDw8Nb481DikmBW76p8nXw8PDwHsOrBha9xn9vKBYPDw/vmbzk83nDrDqgkI/S4uHh4e3xktf3XpFdPcrCd/Hw8PAWeL0l5mFrNSw+FVjg4eHhDXi/K9c1ypnHmoQAAAAASUVORK5CYII='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3aQXLDMAgF0Nz/0u02ndbuB0SazjytMrFj6WlhCOLxiMfH0/j+zfP3z1evnnA/7md8bAw8PDy8wdKTye7vvHr+/ef55l6uBA8PD2+Nly8rX3oeSO4X3VsPHh4e3vvw7tPoHjjPh/Hw8PD+L6/6hCoJDw8P7/15eTq7kQTnCfdirQUPDw+vU3F9TEqxr/y8cr6Hh4eHNz5VT5oDqlNWX/qj1eLh4eEt8PIXbjV1TtLf3uzlO/Hw8PCO8nqv/knw6BUa8gDz5SoeHh7eAq96TDVJo6uBpFpbKGTxeHh4eANer5DaaymoNlf1irmXIQEPDw/vEK9XZs1f6DmpF6LK4QoPDw9vzJuXCZIXejU1Twoc93d+qbXg4eHhLfDyv/d5eOiVdxNSnpTj4eHhbfCqRYQc02uiqr76o3YEPDw8vJfwquWDHDZvBSi3beHh4eEd5X0UR5Jenz3c6qXd0T8GPDw8vBYvT22rbU+TO/OwVIh7eHh4eEd5SbpcbTKoXs23uNp8gIeHh3eWly8iT3arjHyWcrkEDw8P7+W8PJGdLOtUAfeyMwIPDw9vgZc0ReVho5oc94JKshF4eHh4G7z8qKkXQnrhoVeu/WW1eHh4eId4vaaoycSTlL1cwsDDw8Nb4E2OrPKJqy1Wvfavy3vw8PDw1ngJ5j4YnEq+820qtFvh4eHhLfCq40BpddBSUNhiPDw8vJfwqsdak4JvldSsT+Ph4eEd4p0KBgk7T757z/zhV3h4eHgLvHzkx06TAJMn5Xh4eHh/y6smuNVyarWQkafvUfsCHh4e3hqvV4Stps6H41VyOIeHh4f3NryNw63qM6Nf4eHh4b0BL0lnewn0gdO8eUqNh4eHF/MmzVXzA6rJVv5yFQ8PD2+BV/17P2mfShoO8mBzAIaHh4dX430CIZor8DL6iFYAAAAASUVORK5CYII='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -615,10 +619,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://onlyorange.top/2019/11/14/浙大数据结构笔记/&title=浙大数据结构笔记 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=Data Structures一、基本概念1.1 什么是数据结构1.1.1 其他定义
-数据结构是数据对象，以及存在于该对象的实例和组成实例的数据元素之间的各种联系。这些联系可以通过定义相关的函数来给出。 ——Sartaj Sahni 《数据结构、算法与应用》
-数据结构是 ADT（Abstract Data Type，数据抽象类型）的物理实现。 ——Clifford A.Shaffer 《数据结构与算法分析》
-数据结构（data structure）是计算机中存储、组织数据的方式。通常情况下，精心选择的数据结构可以带来最优效率的算法。 ——中文维基百科
+          href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/11/14/浙大数据结构笔记/&title=浙大数据结构笔记 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+Data Structures
 "
           
           >
@@ -647,12 +649,17 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/2020/01/20/资格复审/" rel="prev" title="资格复审">
+                              <a href="/2020/02/05/Manjaro配置命令/" rel="prev" title="Manjaro配置命令">
                                 
-                                    资格复审
+                                    Manjaro配置命令
                                 
                               </a>
                           </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/Manjaro/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Manjaro</a>
+                              </h6>
                           
                       </span>
                   </section>
@@ -671,7 +678,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/hexo/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> hexo</a>
+                                  <a class="tag" href="/tags/美化/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 美化</a>
                               </h6>
                           
                       </span>
@@ -732,12 +739,15 @@
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Data-Structures"><span class="toc-text">Data Structures</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、基本概念"><span class="toc-text">一、基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-什么是数据结构"><span class="toc-text">1.1 什么是数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-其他定义"><span class="toc-text">1.1.1 其他定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-解决问题方法的效率"><span class="toc-text">1.1.2 解决问题方法的效率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3-最终定义"><span class="toc-text">1.1.3 最终定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4-抽象数据类型（Abstract-Data-Type）"><span class="toc-text">1.1.4 抽象数据类型（Abstract Data Type）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-什么是算法"><span class="toc-text">1.2 什么是算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-定义"><span class="toc-text">1.2.1 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-描述算法的手段"><span class="toc-text">1.2.2 描述算法的手段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-评价"><span class="toc-text">1.2.3 评价</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#●-基本概念"><span class="toc-text">● 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是数据结构"><span class="toc-text">1  什么是数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-其他定义"><span class="toc-text">1.1 其他定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-解决问题方法的效率"><span class="toc-text">1.2 解决问题方法的效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-最终定义"><span class="toc-text">1.3 最终定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-抽象数据类型（Abstract-Data-Type）"><span class="toc-text">1.4 抽象数据类型（Abstract Data Type）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-什么是算法"><span class="toc-text">2 什么是算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-定义"><span class="toc-text">2.1 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-描述算法的手段"><span class="toc-text">2.2 描述算法的手段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-评价"><span class="toc-text">2.3 评价</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
 
             
+          
+        
+          
           
         
           
@@ -812,6 +822,9 @@
 </section>
 
             
+          
+        
+          
           
         
           
@@ -928,7 +941,13 @@
           
           
         
+          
+          
+        
       
+        
+          
+          
         
           
           
@@ -962,31 +981,27 @@
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1024,6 +1039,9 @@
         
           
           
+        
+          
+          
             
               
   <section class='widget related_posts'>
@@ -1034,7 +1052,7 @@
 </header>
 
     <div class="content material">
-      
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\11\数据结构与算法知识整理\" title="数据结构与算法知识点" rel="bookmark">数据结构与算法知识点</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1114,10 +1132,10 @@
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -1153,7 +1171,7 @@
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1222,17 +1240,17 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

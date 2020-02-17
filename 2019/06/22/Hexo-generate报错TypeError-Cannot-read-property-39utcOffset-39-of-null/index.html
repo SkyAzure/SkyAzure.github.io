@@ -11,6 +11,8 @@
   
 
   
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -291,6 +294,8 @@
   <section class='meta'>
     
     
+      <a title='Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null' href='/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/hexo.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -312,9 +317,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -338,9 +343,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/hexo/' rel="nofollow">
+    <a href='/categories/Blog/Hexo/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>hexo</p>
+      <p>Blog&nbsp;/&nbsp;Hexo</p>
     </a>
   </div>
 
@@ -372,7 +377,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>220字</p>
+        <p>221字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -401,14 +406,20 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody"> 
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近刚刚开始使用Hexo，新建了一篇文章，运行<code>hexo g</code>时报错</p>
+        <blockquote>
+<center><font color="#1Bc3FB">Debug !</font><center>
+</center></center></blockquote>
 <a id="more"></a>
 
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近刚刚开始使用Hexo，新建了一篇文章，运行<code>hexo g</code>时报错</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: Cannot <span class="built_in">read</span> property <span class="string">'utcOffset'</span> of null</span><br></pre></td></tr></table></figure>
 
 <h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>研究一番后发现是因为最初设置_config.yml中的时区时，我把<code>timezone: Asia/Shanghai</code>修改为<code>timezone: Asia/Beijing</code></p>
 <h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>在_config.yml中设置<code>timezone: Asia/Shanghai</code></p>
-<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>常用的程序语言支持的时区属于中国的有六个 …</p>
+<blockquote>
+<p>拓展</p>
+</blockquote>
+<p>常用的程序语言支持的时区属于中国的有六个 …</p>
 <ul>
 <li>Asia/Chongqing</li>
 <li>Asia/Shanghai</li>
@@ -514,10 +525,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-08T21:18:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T00:07:27+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月8日</p>
+    <p>更新于 2020年2月18日</p>
   </a>
 </div>
 
@@ -526,7 +537,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/踩坑/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>踩坑</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Debug/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Debug</p></a></div>
 
 
         
@@ -539,7 +550,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://onlyorange.top/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/&title=Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=问题最近刚刚开始使用Hexo，新建了一篇文章，运行hexo g时报错"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://skyazure.top/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/&title=Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+Debug !
+"
           
           >
           
@@ -551,7 +564,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://onlyorange.top/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/&title=Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=问题最近刚刚开始使用Hexo，新建了一篇文章，运行hexo g时报错"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://skyazure.top/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/&title=Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+Debug !
+"
           
           >
           
@@ -561,7 +576,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAEBUlEQVR42u3bO1LDQBAFQO5/aZM4oUDivZk1OGhHLtusdlvBaD58fMSvx8Ur+fb7b5L1r37z/f3V+lfrHHjhwIEDB47RUTdL50e6J5jtML9hP1wXBw4cOHAc4sgD2/2Fk8tH2wrWT6DzM+LAgQMHjv/lmKVqm4QwWTNP+XDgwIEDxztwtMW79khtuXB2O3HgwIEDx99wnGostW2hpMy3SRdfWCvFgQMHDhxdpBsWCt/z/UvmO3DgwIEDRzkokBcBZ+F5Px536lzPlXHgwIEDx6H5gfxg+bjArB01a1DlAxBRiRAHDhw4cBzlmI0vzFK+dp3k81nbDAcOHDhwnOLIjzcbX5iFzzYZa8cgLm8/Dhw4cOA4xNGmScmAQpuGtQMQxSHzIQkcOHDgwLHmSDaUBOBZyjcLz8neZgkeDhw4cODYcyTBbHPUTcLWtovy31xi4cCBAweONUceaPMC3GykIGksbVgPP3fgwIEDB47bnCXZ1mywYDbKsAn27c0bTkngwIEDB451uW029JAH1PvkbfObvPWFAwcOHDj2HHlhri38JZfMj5eH59mDAg4cOHDgOMWxGVM4xTc7XhKw8wA8zEdx4MCBA8ctR/4+SZBmIXxTUtx8W2S0OHDgwIEjiGKzUYOi0LZodLWJ2b6RhgMHDhw4Nhz5JfeDdG14Ht7b0fpfnjtw4MCBA8ea4z7RalOpPCXL15+lfHVSigMHDhw4DrVK9iW/TeHvfoVN4W82GIEDBw4cODYc+SaSNtKp4t3meKskEAcOHDhwHOKYjSPkKVye+CX7+aPkDQcOHDhwzOfcDvyrTJuwtZ+0xcc8UfwlkcOBAwcOHIc4NkXDfXhO/nb2m6JWigMHDhw4FhyzkJZsoh1TSFbbFyWjBwscOHDgwLHgeMSvDU0bDmeJ3Gz8orhXOHDgwIHjliPSCsLkbBChbXHNEs68WYUDBw4cOE5xtEE3bxqdOkA7+pbvbTVngQMHDhw41s2hfbNq1rjKk8DZ1Z/f4sCBAweONUd77LzNkw+u1eEwflAYjmXgwIEDB44FRzsusN/QrL2UBOZNERMHDhw4cJzlmNXKcrL7YyeBML8N7S2pnzhw4MCBA0c5Kje7wAyobSxthjCKdhcOHDhw4FhwPMpX0nDKaZLUri0stikcDhw4cOA4y7EJTvnAQZ50tdybpHHW6MKBAwcOHAlHHlzzYLxvC832Mwu0OHDgwIHjFRx5Sa4Nn5tC3iyda8Nw9AUOHDhw4HgZRwvXpn9t4S9fs+jC4cCBAweOf+JoB9TyImA7QteO1l1+jgMHDhw4DnHkobHd1qn0r20yJQnegbYTDhw4cOBYDDQk4wJt0M0bTnljKRmzWJUsceDAgQPHz99+At9dUyXZPoVQAAAAAElFTkSuQmCC'>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD50lEQVR42u3ay2rrUBAEQP//TzuQveTumaMQQ3llEl09Shc683i94s/79zP77dUx7U+S394ff+yDAwcOHDiCG736XF0sf+Crc14dk5z//uHv7//DFXHgwIEDxyGO5PJtfCYQs+/JkbP7x4EDBw4cf8nRBlheUOUxuSnwcODAgQPHd3Fs2ounGoI4cODAgeP/cLQxOQPKifOHb5ubx3qlOHDgwIEjzcQi/L7l+4P7HThw4MCBI46ofbMvCd1ZMM8WKT48Fw4cOHDgOBMR9QpC8vP8nPdM+zFVveiAAwcOHDjWHMlgJm8Uzpp6mzZl8gLq0g4HDhw4cDzAMVtfm910HrRFMVauR+DAgQMHjj3HbF1g0xxs1xfyAi9HuTweBw4cOHCsOWajndkoaLZkMBtZ5WXnKm5x4MCBA0fcH9s042bl2SzgN4H9mr0THDhw4MCxiLQ8LNuFhpby1PHDcMWBAwcOHCVHO+bZHJPH6tnisK5oceDAgQPHgqMte+4fe1OwzRqUszv88Apx4MCBA8eCI18+a5uG7RAoKfPa8qxdrcOBAwcOHBuOVq59jPbmZs3B2UvFgQMHDhxPcCRxmAdn2xzMR0H7I3NuHDhw4MCx4Uge/tQAKV9cm7UO2/NH/VEcOHDgwDHiyIuifHGtHQ6dKg5XT4cDBw4cONYcs2Wy/S22D9Pe1WZIhgMHDhw4znLMWn5tczBfU2gbhbPXhgMHDhw4nuCYNdc2TcC2hTcrFDevEAcOHDhwzDjaJbNZKrXrCHnQzoZVxfAJBw4cOHAc4tisHWxiNX890ZpCPELDgQMHDhx7jvtWWtIu3IRr0shLxlGz9t9l8YYDBw4cOBYcbeGUx3O7TLD53r7aqD+KAwcOHDjWHJu1hrx5164pPLcG8aGixYEDBw4cI4721vPL52GcR/iB1bfk/wUOHDhw4Fhz5G242ZEHbnQxyir+gMCBAwcOHEc5koJtVuztR0r7Y6I/FHDgwIEDx2Mcs4FTcvnZwkFb+OWNSxw4cODA8QRHHoTtAkRytpx4Fu3FYgQOHDhw4DjEMYu6NszahbnNuCt/na9TyY8DBw4cOEbjpfby7ZrdsPRaD6Vw4MCBA8cpjnf5yQukNjLz87evs2gm4sCBAweONccslvZrEHnxdgrx1PodDhw4cOBoC6TNulsblrNrtYtxddDiwIEDB45DHPthzxM5nzxGe91o7IQDBw4cOP6Qo10maMN4E/l5MNfjORw4cODA8QDHLAjvj9y0//bjpVUJhwMHDhw4bjnaeNs88KY5mJRk7b8qtjxw4MCBA0eaR3WTbhaf7flnJeImtnHgwIEDx4LjB5UzgNu1jrDMAAAAAElFTkSuQmCC'>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -571,7 +586,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://onlyorange.top/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/&title=Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=问题最近刚刚开始使用Hexo，新建了一篇文章，运行hexo g时报错"
+          href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/06/22/Hexo-generate报错TypeError-Cannot-read-property-39utcOffset-39-of-null/&title=Hexo generate报错TypeError: Cannot read property &#39utcOffset&#39 of null | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+Debug !
+"
           
           >
           
@@ -608,7 +625,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/踩坑/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 踩坑</a> <a class="tag" href="/tags/Markdown编辑器/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Markdown编辑器</a>
+                                  <a class="tag" href="/tags/Markdown/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Markdown</a> <a class="tag" href="/tags/Typore/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Typore</a>
                               </h6>
                           
                       </span>
@@ -619,16 +636,16 @@
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/06/20/hexo-删除-34Hello-Word-34初始文章/" rel="prev" title="hexo删除&amp;#34Hello Word&amp;#34初始文章">
+                              <a href="/2019/06/20/hexo删除Hello Word/" rel="prev" title="hexo删除&amp;#34Hello Word&amp;#34">
                                   
-                                      hexo删除&amp;#34Hello Word&amp;#34初始文章
+                                      hexo删除&amp;#34Hello Word&amp;#34
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/blog/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> blog</a> <a class="tag" href="/tags/skill/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> skill</a>
+                                  <a class="tag" href="/tags/Debug/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Debug</a>
                               </h6>
                           
                       </span>
@@ -689,12 +706,15 @@
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原因"><span class="toc-text">原因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决"><span class="toc-text">解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展"><span class="toc-text">拓展</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原因"><span class="toc-text">原因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决"><span class="toc-text">解决</span></a></li></ol>
     </div>
   </section>
 
 
             
+          
+        
+          
           
         
           
@@ -769,6 +789,9 @@
 </section>
 
             
+          
+        
+          
           
         
           
@@ -885,7 +908,13 @@
           
           
         
+          
+          
+        
       
+        
+          
+          
         
           
           
@@ -919,31 +948,27 @@
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -981,6 +1006,9 @@
         
           
           
+        
+          
+          
             
               
   <section class='widget related_posts'>
@@ -991,7 +1019,7 @@
 </header>
 
     <div class="content material">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\22\Typora编辑器使用中的问题\" title="hexo不解析Markdown标题&#40&#35&#41" rel="bookmark">hexo不解析Markdown标题&#40&#35&#41</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\20\hexo-删除-34Hello-Word-34初始文章\" title="hexo删除&#34Hello Word&#34初始文章" rel="bookmark">hexo删除&#34Hello Word&#34初始文章</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\20\hexo删除Hello Word\" title="hexo删除&#34Hello Word&#34" rel="bookmark">hexo删除&#34Hello Word&#34</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\11\13\hexo博客美化\" title="hexo博客美化" rel="bookmark">hexo博客美化</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1071,10 +1099,10 @@
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -1110,7 +1138,7 @@
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1179,17 +1207,17 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

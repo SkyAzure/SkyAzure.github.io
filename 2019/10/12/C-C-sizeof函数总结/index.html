@@ -11,6 +11,8 @@
   
 
   
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -291,6 +294,8 @@
   <section class='meta'>
     
     
+      <a title='C/C++ sizeof函数总结' href='/2019/10/12/C-C-sizeof函数总结/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/c.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -312,9 +317,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -401,7 +406,12 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody"> 
-        <h1 id="解决sizeof求结构体大小的问题"><a href="#解决sizeof求结构体大小的问题" class="headerlink" title="解决sizeof求结构体大小的问题"></a>解决sizeof求结构体大小的问题</h1><h2 id="一、C-C-中不同数据类型所占用的内存大小"><a href="#一、C-C-中不同数据类型所占用的内存大小" class="headerlink" title="一、C/C++中不同数据类型所占用的内存大小"></a>一、C/C++中不同数据类型所占用的内存大小</h2><table>
+        <blockquote>
+<center><font color="#1BC3FB" size="4">解决sizeof求结构体大小的问题</font></center>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="一、C-C-中不同数据类型所占用的内存大小"><a href="#一、C-C-中不同数据类型所占用的内存大小" class="headerlink" title="一、C/C++中不同数据类型所占用的内存大小"></a>一、C/C++中不同数据类型所占用的内存大小</h1><table>
 <thead>
 <tr>
 <th>数据类型</th>
@@ -449,9 +459,7 @@
 <p>结构体(struct)：比较复杂，对齐问题需要考虑清楚。</p>
 <p>联合(union)：取所有成员中最长的作为联合的长度。</p>
 <p>枚举(enum)：根据数据类型。</p>
-<a id="more"></a>
-
-<h2 id="二、sizeof计算单层结构体大小"><a href="#二、sizeof计算单层结构体大小" class="headerlink" title="二、sizeof计算单层结构体大小"></a>二、sizeof计算单层结构体大小</h2><p>运算符sizeof可以计算出给定类型的大小，<strong>对于32位系统来说</strong>，</p>
+<h1 id="二、sizeof计算单层结构体大小"><a href="#二、sizeof计算单层结构体大小" class="headerlink" title="二、sizeof计算单层结构体大小"></a>二、sizeof计算单层结构体大小</h1><p>运算符sizeof可以计算出给定类型的大小，<strong>对于32位系统来说</strong>，</p>
 <p><code>sizeof(char) = 1; sizeof(int) = 4。</code></p>
 <p>基本数据类型的大小很好计算，我们来看一下如何计算构造数据类型的大小。</p>
 <p>C语言中的构造数据类型有三种</p>
@@ -464,9 +472,9 @@
 </li>
 </ul>
 <ol>
-<li><p><strong>数组</strong>是相同类型的元素的集合，只要会计算单个元素的大小，<strong>整个数组所占空间等于基础元素大小乘上元素的个数</strong>。</p>
+<li><p><font color="#1BC3FB">数组</font>是相同类型的元素的集合，只要会计算单个元素的大小，<strong>整个数组所占空间等于基础元素大小乘上元素的个数</strong>。</p>
 </li>
-<li><p><strong>结构体</strong>中的成员可以是不同的数据类型，成员按照定义时的顺序依次存储在连续的内存空间。和数组不一样的是，结构体的大小不是所有成员大小简单的相加，<strong>需要考虑到系统在存储结构体变量时的地址对齐问题</strong>。看下面这样的一个结构体：</p>
+<li><p><font color="#1BC3FB">结构体</font>中的成员可以是不同的数据类型，成员按照定义时的顺序依次存储在连续的内存空间。和数组不一样的是，结构体的大小不是所有成员大小简单的相加，<strong>需要考虑到系统在存储结构体变量时的地址对齐问题</strong>。看下面这样的一个结构体：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stu1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">char</span> c;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>用sizeof求该结构体的大小，发现值为<strong>12</strong>。int占4个字节，char占1个字节，结果应该是9个字节才对啊，为什么呢？</p>
@@ -488,7 +496,7 @@
 
 <p>虽然结构体stu3和stu4中成员都一样，但sizeof(struct stu3)的值为12而sizeof(struct stu4)的值为8</p>
 </li>
-<li><p><strong>共用体</strong>中的成员公用同一段内存，所以整个联合体的sizeof是所有成员中占用内存最大的成员的sizeof，联合体要考虑<em>内存对齐</em>，整<strong>体空间长度要是公用体中长度最大的数据类型的整数倍</strong></p>
+<li><p><font color="#1BC3FB">共用体</font>中的成员公用同一段内存，所以整个联合体的sizeof是所有成员中占用内存最大的成员的sizeof，联合体要考虑<em>内存对齐</em>，整<strong>体空间长度要是公用体中长度最大的数据类型的整数倍</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> st&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">9</span>];</span><br><span class="line">  <span class="keyword">int</span> b[<span class="number">2</span>];</span><br><span class="line">&#125;s</span><br></pre></td></tr></table></figure>
 
 <p>结果分析：</p>
@@ -510,19 +518,22 @@
 <li><p>被展开的结构体的规则同单结构体sizeof计算规则。</p>
 </li>
 </ul>
-<p><strong>看下面的例子：</strong></p>
+<p>原则1：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stu5</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">      <span class="keyword">short</span> i;  </span><br><span class="line">      <span class="class"><span class="keyword">struct</span>   </span></span><br><span class="line"><span class="class">      &#123;</span>  </span><br><span class="line">           <span class="keyword">char</span> c;  </span><br><span class="line">           <span class="keyword">int</span> j;  </span><br><span class="line">      &#125; ss;   </span><br><span class="line">      <span class="keyword">int</span> k;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>结构体stu5的成员ss.c的偏移量应该是4，而不是2。整个结构体大小应该是16，即4+（4+4）+4，第二个4是 <code>char c</code> 的扩展(由后面int j导致)。</p>
-<p><strong>下面的代码测试原则2：</strong></p>
+<p>结构体stu5的成员<code>ss.c</code>的偏移量应该是4，而不是2。整个结构体大小应该是16，即4+（4+4）+4，第二个4是 <code>char c</code> 的扩展(由后面<code>int j</code>导致)。</p>
+<p>原则2：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stu5</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">      <span class="keyword">char</span> i;  </span><br><span class="line">      <span class="class"><span class="keyword">struct</span>   </span></span><br><span class="line"><span class="class">      &#123;</span>  </span><br><span class="line">           <span class="keyword">char</span> c;  </span><br><span class="line">           <span class="keyword">int</span> j;  </span><br><span class="line">      &#125; ss;   </span><br><span class="line">      <span class="keyword">char</span> a;  </span><br><span class="line">      <span class="keyword">char</span> b;  </span><br><span class="line">      <span class="keyword">char</span> d;  </span><br><span class="line">      <span class="keyword">char</span> e;  </span><br><span class="line">      <span class="keyword">char</span> f;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​    结构体ss单独计算占用空间为8，而stu5的sizeof则是20（<strong>由17扩展至20，而不是扩展到24）</strong>，不是8的整数倍，这说明在计算sizeof(stu5)时，将嵌套的结构体ss展开了，这样stu5中最大的成员为ss.j，占用4个字节，20为4的整数倍。如果将ss当做一个整体，结果应该是24了。</p>
+<p>结构体<code>ss</code>单独计算占用空间为8，而<code>stu5</code>的sizeof则是20（<strong>由17扩展至20，而不是扩展到24）</strong>，不是8的整数倍，这说明在计算<code>sizeof(stu5)</code>时，将嵌套的结构体<code>ss</code>展开了，这样stu5中最大的成员为<code>ss.j</code>，占用4个字节，20为4的整数倍。如果将<code>ss</code>当做一个整体，结果应该是24了。</p>
 <p><strong>另一个常见的例子：</strong></p>
 <p>结构体中包含数组，其sizeof应当和处理嵌套结构体一样，将其展开</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ss</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">    <span class="keyword">float</span> f;  </span><br><span class="line">    <span class="keyword">char</span> p;  </span><br><span class="line">    <span class="keyword">int</span> adf[<span class="number">3</span>];  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="补充-另外一个涉及数据类型以及内存存储的问题"><a href="#补充-另外一个涉及数据类型以及内存存储的问题" class="headerlink" title="补充 另外一个涉及数据类型以及内存存储的问题"></a>补充 另外一个涉及数据类型以及内存存储的问题</h3><p>内存中的数据并非保存在任意地址。处理器通常按照和其字大小相同的块读取内存数据；那么考虑到效率因素，<strong>编译器会按照块大小的整数倍对内存中的实体进行地址对齐</strong>。因此在 32 位的处理器上，一个 4 字节整型数据肯定<strong>存放在内存地址能被4整除的地方</strong>。 
+<blockquote>
+<p>补充另外一个涉及数据类型以及内存存储的问题</p>
+</blockquote>
+<p>内存中的数据并非保存在任意地址。处理器通常按照和其字大小相同的块读取内存数据；那么考虑到效率因素，<strong>编译器会按照块大小的整数倍对内存中的实体进行地址对齐</strong>。因此在 32 位的处理器上，一个 4 字节整型数据肯定<strong>存放在内存地址能被4整除的地方</strong>。 
 下面，假设系统中整型数据和指针大小均为 4 字节。<br>现在有一个指向整型的指针。如上所述，整型数据可以存放在内存地址 0×1000 或者 0×1004 或者 0×1008，但是决不会存放在 0×1001 或者0×1002 或者 0×1003 或者其他不能被4整除的任何地址。所有是4整数倍的二进制数都是以 00 结尾。实际上，这意味着对于所有指向整型的指针，它的最后两位总是 0。</p>
 
       </div>
@@ -612,10 +623,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-08T21:18:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T00:07:06+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月8日</p>
+    <p>更新于 2020年2月18日</p>
   </a>
 </div>
 
@@ -623,6 +634,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/结构体/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>结构体</p></a></div>
+
 
         
       
@@ -634,54 +648,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://onlyorange.top/2019/10/12/C-C-sizeof函数总结/&title=C/C++ sizeof函数总结 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=解决sizeof求结构体大小的问题一、C/C++中不同数据类型所占用的内存大小
-
-
-数据类型
-32位
-64位
-
-
-
-char
-1
-1
-
-
-int
-4
-大多数4(少数8)
-
-
-short
-2
-2
-
-
-long
-4
-8
-
-
-float
-4
-4
-
-
-double
-8
-8
-
-
-*指针
-4
-8
-
-
-（单位都为字节） 
-结构体(struct)：比较复杂，对齐问题需要考虑清楚。
-联合(union)：取所有成员中最长的作为联合的长度。
-枚举(enum)：根据数据类型。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://skyazure.top/2019/10/12/C-C-sizeof函数总结/&title=C/C++ sizeof函数总结 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+解决sizeof求结构体大小的问题
+"
           
           >
           
@@ -693,54 +662,9 @@ double
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://onlyorange.top/2019/10/12/C-C-sizeof函数总结/&title=C/C++ sizeof函数总结 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=解决sizeof求结构体大小的问题一、C/C++中不同数据类型所占用的内存大小
-
-
-数据类型
-32位
-64位
-
-
-
-char
-1
-1
-
-
-int
-4
-大多数4(少数8)
-
-
-short
-2
-2
-
-
-long
-4
-8
-
-
-float
-4
-4
-
-
-double
-8
-8
-
-
-*指针
-4
-8
-
-
-（单位都为字节） 
-结构体(struct)：比较复杂，对齐问题需要考虑清楚。
-联合(union)：取所有成员中最长的作为联合的长度。
-枚举(enum)：根据数据类型。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://skyazure.top/2019/10/12/C-C-sizeof函数总结/&title=C/C++ sizeof函数总结 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+解决sizeof求结构体大小的问题
+"
           
           >
           
@@ -750,7 +674,7 @@ double
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3aQW7jMAwF0N7/0jNAVwN0rHySYprF8yoIHJtPC0oh+fUVX3++r6fP/14/v//5q+Qt5+dfvvDw8PBaoT9dZ1413CToPJ7zPXh4eHjbvLubQb5JnBcuWe4XFjw8PLxf5eUJ+hxu9eCeb054eHh4n8bLt43zljB5Gh4eHt7n8PI//+dAkydPjvKLtRY8PDy8mDdvgL3/81v7e3h4eHjxljC58jdWBwsKMeDh4eEt8PLDcW8gIF+CXkssWho8PDy8q7x8xCpP+vkS5OFW43nc9/Dw8PDGvF6J9pzcC62pOPVX83x5RfHw8PAGvElxIQn61iZRiBMPDw9vgddrgCWAvIjQS/qLowN4eHh4x95Q8oJqKHmRolo+Lhzo8fDw8NZ41aNt9c75fpXf/2IyAg8PD2/Mq5Zfq+DeWb43ZNCcjMDDw8Mr8qpNrGpAk+cnS/YCjIeHh7fA6w0QVI+/zVJCq4j8+Bw8PDy8BV71OJsXC6rjU73vC4dsPDw8vDEvSfR5bSNP+km6r0aCh4eHt82rllyT0HvlhuY+dt5s8PDw8JZ58z//k7JFr/H2Ilo8PDy8BV71xXmBID/TVpeyGg8eHh7eHm+v+ZSDe02yaEPCw8PDu8SbNPKTdJ+XFSZ3Pi4KHh4e3gKv+uOkTJCXg6ujCb3xAjw8PLz38KpjT3lTal7wzcu7eHh4eHu8apKtJv3k+YVj8fx/Ax4eHt4l3sbIVG/5JuNWhZXAw8PDa/HutqOS1le1qVY97j82wPDw8PAu8fKrN4+Qt9DmpYd8S8PDw8Ob8/JRgEk7Kk/rkxLzf/B4eHh4a7zJINSthD7Zu/Dw8PA+n5e3wfKxg7ykWxhBwMPDw/tVXh7ivOR6rZ2Gh4eHt8brhXU+/hZGo+KhgXJ9Gg8PD2+B12uATZamip+MOODh4eFd5f0Fr0LaT9VmUl8AAAAASUVORK5CYII='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrElEQVR42u3a0W7bQAwEwPz/T6evLdLKu+SdkwKjJ0MB5BsGEGmSHx/x9fnb9Xz/+U5yfX3+18+HLzw8PLzF0f/1ZflRng+xOW4eMjw8PLz38NqjtIF4cYjHZ+ahwcPDw/uZvOTr2/q2Lejx8PDw/i9e8tDi68tw4OHh4f0cXtKMSDCzdDJr6R7uteDh4eF1fYC6hfq9n6/M9/Dw8PDWU/W28Xqq1J6lkL+cFg8PD+8Cb9N+na0dbFLCrOGLh4eHd5aXLE5tksQ+MbQn/ONpeHh4eBd4m0Zq3ixIEkNOOtySwMPDwyt5mzSQv+6T5+QFdJF48PDw8C7z2oZCEo42GczawcOdCDw8PLwRr20KtItQefsgH62tVq/w8PDwDvH2aSAPymzE1SYPPDw8vHu8dtT0XODmR98HKMp1eHh4eG/hzZqtm2WCZPErTzYvEgMeHh7eId5mpSkfj+Uv+tWKKh4eHt4beW0ToR2GRcP+OEBJ6Y+Hh4d3g9emhHYuvw9cW4K/mOzh4eHhHeVtBlTJSzwfns3SRnROPDw8vGu8FrZ5oc8ax8k/Aw8PD+89vGhLa93MnQW0HZLh4eHh3eCdWqgavppHZXFyHw8PD+82b1ZAtyHYtDlmYDw8PLwbvLw8bRuybSGef84XF/Dw8PDu8fKf/bOR1T6RbJYM8PDw8O7x2gTQNmTbJmwSxAiJh4eHd42Xl7OnGr77JkXUmMDDw8M7yvssr03Z3Y64ZmkGDw8P7zZvMzParGft1xHy4OLh4eHd4CXJYL9QtR9lzRIVHh4e3j3e8/2cNxtTDUvhYfsFDw8P72fx2qL8bBBfdKnx8PDwvok3G/+3SwCztsiBxICHh4cX85JmRLtElRTZ7aHrv+Lh4eFd4M1+0efrp+2dvAQ/1s7Aw8PDS3m/ADjhNcoCjuy6AAAAAElFTkSuQmCC'>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -760,54 +684,9 @@ double
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://onlyorange.top/2019/10/12/C-C-sizeof函数总结/&title=C/C++ sizeof函数总结 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=解决sizeof求结构体大小的问题一、C/C++中不同数据类型所占用的内存大小
-
-
-数据类型
-32位
-64位
-
-
-
-char
-1
-1
-
-
-int
-4
-大多数4(少数8)
-
-
-short
-2
-2
-
-
-long
-4
-8
-
-
-float
-4
-4
-
-
-double
-8
-8
-
-
-*指针
-4
-8
-
-
-（单位都为字节） 
-结构体(struct)：比较复杂，对齐问题需要考虑清楚。
-联合(union)：取所有成员中最长的作为联合的长度。
-枚举(enum)：根据数据类型。"
+          href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/10/12/C-C-sizeof函数总结/&title=C/C++ sizeof函数总结 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+解决sizeof求结构体大小的问题
+"
           
           >
           
@@ -855,16 +734,16 @@ double
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/10/11/数据结构与算法知识随笔/" rel="prev" title="数据结构与算法知识随笔">
+                              <a href="/2019/10/11/数据结构与算法知识整理/" rel="prev" title="数据结构与算法知识点">
                                   
-                                      数据结构与算法知识随笔
+                                      数据结构与算法知识点
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/随笔/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 随笔</a>
+                                  <a class="tag" href="/tags/算法/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
                               </h6>
                           
                       </span>
@@ -925,12 +804,15 @@ double
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#解决sizeof求结构体大小的问题"><span class="toc-text">解决sizeof求结构体大小的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、C-C-中不同数据类型所占用的内存大小"><span class="toc-text">一、C/C++中不同数据类型所占用的内存大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、sizeof计算单层结构体大小"><span class="toc-text">二、sizeof计算单层结构体大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、sizeof计算嵌套的结构体大小"><span class="toc-text">三、sizeof计算嵌套的结构体大小</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#补充-另外一个涉及数据类型以及内存存储的问题"><span class="toc-text">补充 另外一个涉及数据类型以及内存存储的问题</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、C-C-中不同数据类型所占用的内存大小"><span class="toc-text">一、C/C++中不同数据类型所占用的内存大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、sizeof计算单层结构体大小"><span class="toc-text">二、sizeof计算单层结构体大小</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#三、sizeof计算嵌套的结构体大小"><span class="toc-text">三、sizeof计算嵌套的结构体大小</span></a></li></ol></li></ol>
     </div>
   </section>
 
 
             
+          
+        
+          
           
         
           
@@ -1005,6 +887,9 @@ double
 </section>
 
             
+          
+        
+          
           
         
           
@@ -1121,7 +1006,13 @@ double
           
           
         
+          
+          
+        
       
+        
+          
+          
         
           
           
@@ -1155,31 +1046,27 @@ double
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1217,6 +1104,9 @@ double
         
           
           
+        
+          
+          
             
               
   <section class='widget related_posts'>
@@ -1227,7 +1117,7 @@ double
 </header>
 
     <div class="content material">
-      
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\07\02\C语言考试测试题-临时\" title="c语言考试测试题-临时(教学用)" rel="bookmark">c语言考试测试题-临时(教学用)</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1307,10 +1197,10 @@ double
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -1346,7 +1236,7 @@ double
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1415,17 +1305,17 @@ double
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

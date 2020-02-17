@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Category: c语言 | Azure&#39;s BLOG</title>
+  <title>Category: C语言 | Azure&#39;s BLOG</title>
   
   
   <meta name="description" content="“所有的事情，所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧。这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。” —— Steve Jobs">
   
 
+  
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -305,12 +308,14 @@
   <section class='meta'>
     
     
+      <a title='C/C++ sizeof函数总结' href='/2019/10/12/C-C-sizeof函数总结/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/c.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
   <h2 class="title">
-    <a href="/2019/07/02/C语言考试测试题-临时/">
-      c语言考试测试题-临时(教学用)
+    <a href="/2019/10/12/C-C-sizeof函数总结/">
+      C/C++ sizeof函数总结
     </a>
   </h2>
 
@@ -324,9 +329,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -340,7 +345,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-02</p>
+    <p>2019-10-12</p>
   </a>
 </div>
 
@@ -350,9 +355,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/c语言/' rel="nofollow">
+    <a href='/categories/C语言/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>c语言</p>
+      <p>C语言</p>
     </a>
   </div>
 
@@ -366,14 +371,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>765字</p>
+        <p>1.9k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>3分</p>
+        <p>7分</p>
       </a>
     </div>
   
@@ -395,30 +400,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="c语言能力测试基础练习题"><a href="#c语言能力测试基础练习题" class="headerlink" title="c语言能力测试基础练习题"></a>c语言能力测试基础练习题</h1><ol>
-<li><p>编写程序，输入x,求f(x)函数的值</p>
-<p>f(x)={x-2       ,  9&lt;=x&lt;10}</p>
-<p>​        {x<sup>2</sup>+10  ,  0&lt;=x&lt;9}</p>
-<p>​        {4x<sup>2</sup>-5   , x&gt;15}</p>
-</li>
-<li><p>编写程序，求解修路问题，<strong>60公里</strong>公路，<strong>60人</strong>修建，<strong>甲</strong>工程队一人一次修<strong>4</strong>公里，<strong>乙</strong>工程队一人一次修<strong>3</strong>公里，<strong>丙</strong>工程队<strong>两人</strong>一次修1公里，要求<strong>1</strong>次搬完。问各需甲、乙和丙工程队各多少人。</p>
-</li>
-<li><p>编写程序，完成以下任务：</p>
-<ul>
-<li><p>定义一个能存放<strong>50</strong>本书价格的一位数组。</p>
-</li>
-<li><p>向数组中输入或者赋给<strong>[0,200]</strong>之间的随机整数。</p>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>输出所有数组的所有元素。</p>
-<ul>
-<li><p>统计<strong>50</strong>本书总价格，和<em>价格大于100</em>的书籍中<strong>奇数</strong>和<strong>偶数</strong>的个数，并分别计算奇数和偶数的<strong>平均值</strong>。</p>
+      <blockquote>
+<center><font color="#1BC3FB" size="4">解决sizeof求结构体大小的问题</font></center>
+</blockquote>
       
         <div class="button readmore">
-          <a href="/2019/07/02/C语言考试测试题-临时/" class="flat-box">
+          <a href="/2019/10/12/C-C-sizeof函数总结/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -428,7 +415,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/c语言/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> c语言</a>
+          <a href="/tags/结构体/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 结构体</a>
         
       </div>
     
@@ -515,6 +502,9 @@
 </section>
 
             
+          
+        
+          
           
         
           
@@ -631,7 +621,65 @@
           
           
         
+          
+          
+        
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='material'>
+  <div><i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;访客地图</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://www.revolvermaps.com/"
+    title="https://www.revolvermaps.com/">
+    <i class="fas fa-info-circle fa-fw"></i></a>
+  
+</header>
+
+  <div class='content material'>
+    <div style="position: relative;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/4.js?i=5eyl60h41k1&amp;m=6&amp;h=122&amp;c=ff0000&amp;r=30" async="async"></script></div>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
         
           
           
@@ -665,31 +713,27 @@
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -724,6 +768,9 @@
         
           
           
+        
+          
+          
             
               
   <section class='widget tagcloud'>
@@ -743,7 +790,7 @@
 </header>
 
     <div class='content material'>
-      <a href="/tags/Data-Structures/" style="font-size: 14px; color: #999">Data Structures</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/IMU传感器/" style="font-size: 14px; color: #999">IMU传感器</a> <a href="/tags/Manjaro/" style="font-size: 14px; color: #999">Manjaro</a> <a href="/tags/Markdown编辑器/" style="font-size: 19px; color: #777">Markdown编辑器</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/c语言/" style="font-size: 14px; color: #999">c语言</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/python/" style="font-size: 19px; color: #777">python</a> <a href="/tags/skill/" style="font-size: 19px; color: #777">skill</a> <a href="/tags/职位/" style="font-size: 14px; color: #999">职位</a> <a href="/tags/踩坑/" style="font-size: 19px; color: #777">踩坑</a> <a href="/tags/随笔/" style="font-size: 24px; color: #555">随笔</a>
+      <a href="/tags/Data-Structures/" style="font-size: 14px; color: #999">Data Structures</a> <a href="/tags/Debug/" style="font-size: 19px; color: #777">Debug</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/IMU传感器/" style="font-size: 14px; color: #999">IMU传感器</a> <a href="/tags/Manjaro/" style="font-size: 14px; color: #999">Manjaro</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/Typora/" style="font-size: 14px; color: #999">Typora</a> <a href="/tags/Typore/" style="font-size: 14px; color: #999">Typore</a> <a href="/tags/skill/" style="font-size: 14px; color: #999">skill</a> <a href="/tags/双系统/" style="font-size: 14px; color: #999">双系统</a> <a href="/tags/排序/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/知识点/" style="font-size: 24px; color: #555">知识点</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/结构体/" style="font-size: 14px; color: #999">结构体</a> <a href="/tags/美化/" style="font-size: 14px; color: #999">美化</a>
     </div>
   </section>
 
@@ -758,6 +805,9 @@
           
         
       
+        
+          
+          
         
           
           
@@ -894,10 +944,10 @@
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -933,7 +983,7 @@
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1002,17 +1052,17 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

@@ -11,6 +11,8 @@
   
 
   
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -291,6 +294,8 @@
   <section class='meta'>
     
     
+      <a title='MPU6050姿态结算' href='/2019/10/13/MPU6050姿态结算/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/arm.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -312,9 +317,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -338,9 +343,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/嵌入式系统/' rel="nofollow">
+    <a href='/categories/嵌入式/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>嵌入式系统</p>
+      <p>嵌入式</p>
     </a>
   </div>
 
@@ -401,7 +406,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody"> 
-        <h1 id="MPU6050"><a href="#MPU6050" class="headerlink" title="MPU6050"></a>MPU6050</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
+        <p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
 <ol>
 <li><p><a href="https://www.jianshu.com/p/69dd18638b8e" target="_blank" rel="noopener">加速度计原理与姿态解算</a></p>
 </li>
@@ -412,11 +417,11 @@
 
 </li>
 </ol>
-<h3 id="需要姿态融合的原因"><a href="#需要姿态融合的原因" class="headerlink" title="需要姿态融合的原因"></a>需要姿态融合的原因</h3><p>为什么要有同时具备加速度计和陀螺仪。<br>看了上面的介绍，我们发现单单通过加速度计或者陀螺仪就能解算出物体姿态，为什么IMU要同时具备两种功能相似的仪器呢？</p>
+<h1 id="需要姿态融合的原因"><a href="#需要姿态融合的原因" class="headerlink" title="需要姿态融合的原因"></a>需要姿态融合的原因</h1><p>为什么要有同时具备加速度计和陀螺仪。<br>看了上面的介绍，我们发现单单通过加速度计或者陀螺仪就能解算出物体姿态，为什么IMU要同时具备两种功能相似的仪器呢？</p>
 <p>答案很简单：<strong>加速度计</strong>的数据不是100%准确的。有几个原因，还记加速度计测量的是惯性力，这个力可以由重力引起（理想情况只受重力影响），当也可能由设备的加速度（运动）引起。因此，就算加速度计处于一个相对比较平稳的状态，它对一般的震动和机械噪声很敏感。这就是为什么大部分的IMU系统都需要陀螺仪来使加速度计的输出更平滑。但是怎么办到这点呢？陀螺仪不受噪声影响吗？</p>
 <p><strong>陀螺仪</strong>也会有噪声，但由于它检测的是旋转，因此对线性机械运动没那么敏感，不过陀螺仪有另外一种问题，比如漂移（当选择停止的时候电压不会回到零速率电压）并且陀螺仪是通过对旋转角度的累加进行姿态解算，所以长时间工作会有极大的误差。然而，通过计算加速度计和陀螺仪的平均值我们能得到一个相对更准确的当前设备的倾角值，这比单独使用加速度计更好。</p>
 <p>通过上面的分析我们可以发现，<strong>加速度计短时间内精度较差，而长时间稳定性好，陀螺仪短时间内精度高，但会累计误差，只要将两者的数据进行互补，就能解算出正确的姿态。</strong></p>
-<h2 id="姿态融合"><a href="#姿态融合" class="headerlink" title="姿态融合"></a><a href="https://www.cnblogs.com/dchipnau/p/5310088.html" target="_blank" rel="noopener">姿态融合</a></h2><p>MPU6050 是一款姿态传感器，使用它就是为了得到待测物体（如四轴、平衡小车） x、y、z 轴的倾角（俯仰角 Pitch、滚转角 Roll、偏航角 Yaw） 。我们通过 I2C 读取到 MPU6050 的六个数据（三轴加速度 AD 值、三轴角速度 AD 值）经过姿态融合后就可以得到 Pitch、Roll、Yaw 角。<br>本帖主要介绍三种姿态融合算法：</p>
+<h1 id="姿态融合"><a href="#姿态融合" class="headerlink" title="姿态融合"></a><a href="https://www.cnblogs.com/dchipnau/p/5310088.html" target="_blank" rel="noopener">姿态融合</a></h1><p>MPU6050 是一款姿态传感器，使用它就是为了得到待测物体（如四轴、平衡小车） x、y、z 轴的倾角（俯仰角 Pitch、滚转角 Roll、偏航角 Yaw） 。我们通过 I2C 读取到 MPU6050 的六个数据（三轴加速度 AD 值、三轴角速度 AD 值）经过姿态融合后就可以得到 Pitch、Roll、Yaw 角。<br>本帖主要介绍三种姿态融合算法：</p>
 <ul>
 <li><p>四元数法 </p>
 </li>
@@ -445,7 +450,7 @@
 </li>
 </ol>
 <p>三种融合算法都能够输出姿态角（Pitch 和 Roll ），一次四元数法可以输出 P、R、Y 三个倾角，计算量比较大。一阶互补和卡尔曼滤波每次只能输出一个轴的姿态角。</p>
-<h3 id="陀螺仪漂移的解决方法"><a href="#陀螺仪漂移的解决方法" class="headerlink" title="陀螺仪漂移的解决方法"></a>陀螺仪漂移的解决方法</h3><p>横滚角和俯仰角的偏差可以通过卡尔曼滤波或者一阶互补滤波即可消除漂移量.</p>
+<h2 id="陀螺仪漂移的解决方法"><a href="#陀螺仪漂移的解决方法" class="headerlink" title="陀螺仪漂移的解决方法"></a>陀螺仪漂移的解决方法</h2><p>横滚角和俯仰角的偏差可以通过卡尔曼滤波或者一阶互补滤波即可消除漂移量.</p>
 <p>但是<strong>航向角存在的偏差很难由自身来校准,</strong>这是由于:<br>Z轴在静止状态下没有漂移，运动情况下有累积误差。因为Z轴角度是通过对角速度积分计算出来的，没有观测量滤波，所以漂移是不可避免的。X、Y轴的角度是根据重力加速度分量计算，X，Y轴是有重力场滤波，所以不会有漂移。Z轴只能用短时间内的相对测量量。 就是相邻两次的角度差来计算转过的角度。</p>
 <p>可以采用带地磁的9轴陀螺仪来降低漂移量,但是仍然无法完全解决这个问题.而且地磁计对周围磁场的变化敏感,多磁场和多电机的工作环境都会导致地磁计不准.</p>
 
@@ -536,10 +541,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-15T11:10:27+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T00:07:45+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月15日</p>
+    <p>更新于 2020年2月18日</p>
   </a>
 </div>
 
@@ -561,7 +566,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://onlyorange.top/2019/10/13/MPU6050姿态结算/&title=MPU6050姿态结算 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://skyazure.top/2019/10/13/MPU6050姿态结算/&title=MPU6050姿态结算 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。
 
 加速度计原理与姿态解算
 
@@ -579,7 +584,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://onlyorange.top/2019/10/13/MPU6050姿态结算/&title=MPU6050姿态结算 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://skyazure.top/2019/10/13/MPU6050姿态结算/&title=MPU6050姿态结算 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。
 
 加速度计原理与姿态解算
 
@@ -595,7 +600,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3aQW4CMQwFUO5/aSp1V7Uw33YMVHpZVZAJeamUZGzfbnG7f7fk8+onj0au9hw1PDw8vNbUH7XnfZ4DfvdMRkvGSeaMh4eHt83rbcqP+iQTmhw5+VN4eHh47+Xl23Hy7aOFeH484OHh4f1HXgLoLVbSEw8PD+9zeNWfzK/U1aDD22IteHh4eLXxb9Vt/b1/L+b38PDw8AZZ9Y3QQy+z35stHh4e3gYvf/mvprsmAdl86lGQAg8PD+8or/dwvn1Xw8HJYhX64+Hh4b2EV01fVYuikoKqSRrs4mDAw8PDW+PlB8b8itwLGUdLj4eHh7fG64Ub8vKCydY/OU7w8PDw9niTaeUFB3kp1bEFwsPDw1vjVRNa+aTza3cvbXYxQzw8PLwFXnXQjbDsJGzRmy0eHh7ehJf8QK8goJoSqybkolIGPDw8vAVeNZh79mJdPYR6LwB4eHh4Z3mTdP7kqeST3oX7ougKDw8P7xBvEoy4x623ZPm1/o8+eHh4eAu8Satu6L2tv3f1x8PDw9vjTZJSvYXIAxnVFN1FlBoPDw/vEO/UtPIgb5Jmy5Nzoys1Hh4eXovXCwe8PqDQDJrg4eHhrfGSrTlP/OfFUnlirHpU/DgY8PDw8BZ41Zf8JOWfLFM+fvN4wMPDw1vgVUnVi3X1Gl0N9RbCuHh4eHiHeHlZVX45rk6ousU3/2N4eHh4h3i94Gnv0jwZ4UABAR4eHt4h3r3YeuHdfOuvlg5cHF14eHh4C7y8VdNa8wnNAyJ4eHh4e7xqUirvkwdqq0GK/HDCw8PD2+PNS6Mml+9qcLnwFB4eHt6H8Xqhjd741Z54eHh4n8CbFxPM83VJOg0PDw/vNbxeoGFSGpUfGJMDDA8PD2+D10uAnU1iTa7gB8oI8PDw8FLeFzmpkpdQ9xsSAAAAAElFTkSuQmCC'>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3ayW7CMBQFUP7/p6nUVSuG3GuHVrGPVwhC8Mni8QbfbvG6f6/Hd36uV58+3uHx+lffOnlhYGBclnF/u95v4vH1GODVI0v2hoGBsQ/jrNu9YrxHjoVmDAwMjJmA2z4IDAwMjHMD7vuytk348seEgYGBMZPAtSH1n2txDAyMCzLGbv03rz8438DAwLgI416uTww120L3ya9gYGAszWjL0TwdTArXtkl3EI4xMDCWZrRNsaStlpfEeWEcNd0wMDCWY4yNFZOgnH/aBtO6X4iBgXFxRl5MjrXs22K4PX7xpIjFwMBYjtEOLPN8c+Y4RZt6YmBgrM2YmQOOFbd5661tzGFgYKzNyLfVttvOHQkcUDEwMBZlzB+PSJBtOK4fDQYGxmaMZIttETs4TQ1KXwwMjB0YJwS7YLVtu/YgGgYGxj6MNpi2DbL5Ft7BCAEDA2NRxtihivmCtk0ED34RAwNje8ZYyjhT7uYJIgYGxg6MsVHifKjNwRgYGBht2nfWlXm5G/0BYGBgbMBoeXnB2X6r3dWvdhsGBsaijDx/zBO+fItt2XxwJQYGxqKMseFiu9GZMjh6oBgYGEsz8jXWXJtv+s806TAwMFZi5Ie02sFnC5garGJgYGzAyJO8+eB4Vvl60G7DwMDYkjGzxXbw2RbVGBgYGPlxirExQHvULBphYmBgLMdIwmh+zCtJ8tqtH4AxMDCWZpxQQAYhuG3SfQSDgYFxPcYX+2oPLJ7AogwAAAAASUVORK5CYII='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -605,7 +610,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://onlyorange.top/2019/10/13/MPU6050姿态结算/&title=MPU6050姿态结算 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=MPU6050简介IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。
+          href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/10/13/MPU6050姿态结算/&title=MPU6050姿态结算 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=IMU（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。
 
 加速度计原理与姿态解算
 
@@ -639,9 +644,9 @@
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/2019/10/19/工作技能-经验/" rel="prev" title="工作技能/经验">
+                              <a href="/2019/10/19/工作技能/" rel="prev" title="工作技能">
                                 
-                                    工作技能/经验
+                                    工作技能
                                 
                               </a>
                           </h4>
@@ -665,6 +670,11 @@
                                   
                               </a>
                           </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/结构体/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 结构体</a>
+                              </h6>
                           
                       </span>
                   </section>
@@ -724,12 +734,15 @@
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MPU6050"><span class="toc-text">MPU6050</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#需要姿态融合的原因"><span class="toc-text">需要姿态融合的原因</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#姿态融合"><span class="toc-text">姿态融合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#陀螺仪漂移的解决方法"><span class="toc-text">陀螺仪漂移的解决方法</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#需要姿态融合的原因"><span class="toc-text">需要姿态融合的原因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#姿态融合"><span class="toc-text">姿态融合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#陀螺仪漂移的解决方法"><span class="toc-text">陀螺仪漂移的解决方法</span></a></li></ol></li></ol>
     </div>
   </section>
 
 
             
+          
+        
+          
           
         
           
@@ -804,6 +817,9 @@
 </section>
 
             
+          
+        
+          
           
         
           
@@ -920,7 +936,13 @@
           
           
         
+          
+          
+        
       
+        
+          
+          
         
           
           
@@ -954,31 +976,27 @@
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -998,6 +1016,9 @@
           
         
       
+        
+          
+          
         
           
           
@@ -1106,10 +1127,10 @@
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -1145,7 +1166,7 @@
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1214,17 +1235,17 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

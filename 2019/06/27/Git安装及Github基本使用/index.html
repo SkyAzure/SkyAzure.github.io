@@ -7,9 +7,11 @@
   <title>Git安装及Github基本使用 | Azure&#39;s BLOG</title>
   
   
-  <meta name="description" content="“所有的事情，所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧。这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。” —— Steve Jobs">
+  <meta name="description" content="Mac OS配置Git记录, “所有的事情，所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧。这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。” —— Steve Jobs">
   
 
+  
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -291,6 +294,8 @@
   <section class='meta'>
     
     
+      <a title='Git安装及Github基本使用' href='/2019/06/27/Git安装及Github基本使用/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/git.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -312,9 +317,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -372,7 +377,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>520字</p>
+        <p>500字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -401,16 +406,9 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody"> 
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>安装git</li>
-<li>创建ssh key 、配置git</li>
-<li>提交本地项目到Github<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>在Mac上安装git</p>
+        <h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><p>在Mac上安装git</p>
 <p>首先在终端输入<code>git</code>查看是否已安装过git</p>
-<h3 id="通过homebrew安装git"><a href="#通过homebrew安装git" class="headerlink" title="通过homebrew安装git"></a>通过homebrew安装git</h3><ul>
+<h2 id="通过homebrew安装git"><a href="#通过homebrew安装git" class="headerlink" title="通过homebrew安装git"></a>通过homebrew安装git</h2><ul>
 <li>未安装homebrew，先安装homebrew</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
@@ -420,7 +418,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建ssh-key、配置git"><a href="#创建ssh-key、配置git" class="headerlink" title="创建ssh key、配置git"></a>创建ssh key、配置git</h2><ol>
+<h1 id="创建ssh-key、配置git"><a href="#创建ssh-key、配置git" class="headerlink" title="创建ssh key、配置git"></a>创建ssh key、配置git</h1><ol>
 <li>设置username和email（github每次commit都会记录他们）</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的用户名"</span></span><br><span class="line">git config --global user.email <span class="string">"你的邮箱地址"</span></span><br></pre></td></tr></table></figure>
@@ -440,7 +438,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Last login: Sat Jan  6 14:42:55 on ttys000</span><br><span class="line">你的主机名:~ 你的用户名$ ssh git@github.com </span><br><span class="line">Hi 你刚刚设置的user.name! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
 
 <p>说明已经链接成功。</p>
-<h2 id="提交本地项目到Github"><a href="#提交本地项目到Github" class="headerlink" title="提交本地项目到Github"></a>提交本地项目到Github</h2><ol>
+<h1 id="提交本地项目到Github"><a href="#提交本地项目到Github" class="headerlink" title="提交本地项目到Github"></a>提交本地项目到Github</h1><ol>
 <li><p>在GitHub上新创建一个 repository或者<strong>Start a Project</strong></p>
 </li>
 <li><p>填写项目信息，填写完成后点击<strong>Create repository</strong></p>
@@ -459,7 +457,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="built_in">clone</span>下来的文件夹的地址</span><br><span class="line">//文件添加到仓库（.代表提交所有文件）</span><br><span class="line">git add .</span><br><span class="line">//把文件提交到仓库</span><br><span class="line">git commit -m <span class="string">"First Commit"</span></span><br><span class="line">//上传到github</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 
 <p>查看GitHub上的项目，就已经上传成功啦</p>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ol>
+<p>参考文章:</p>
+<ol>
 <li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></li>
 </ol>
@@ -551,10 +550,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-08T21:18:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T00:07:21+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月8日</p>
+    <p>更新于 2020年2月18日</p>
   </a>
 </div>
 
@@ -576,10 +575,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://onlyorange.top/2019/06/27/Git安装及Github基本使用/&title=Git安装及Github基本使用 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=目录
-安装git
-创建ssh key 、配置git
-提交本地项目到Github"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://skyazure.top/2019/06/27/Git安装及Github基本使用/&title=Git安装及Github基本使用 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary="
           
           >
           
@@ -591,10 +587,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://onlyorange.top/2019/06/27/Git安装及Github基本使用/&title=Git安装及Github基本使用 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=目录
-安装git
-创建ssh key 、配置git
-提交本地项目到Github"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://skyazure.top/2019/06/27/Git安装及Github基本使用/&title=Git安装及Github基本使用 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary="
           
           >
           
@@ -604,7 +597,7 @@
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQU7DQAwF0N7/0iCxQqIJ3/aYFullVZUw8ZtKGcv24xFfH1/Xz89Xf/1+Xf3XzxWu1klWGF14eHh4rdCvrnvA/YOTFXJYssKTSPDw8PDWeJPg8jdzb7XehuLh4eG9A+8qiPvv7+/ppdR4eHh4/4WXpLPVdHkSAx4eHt5reb2wkgdMqL0txsPDw9vmTRpgr/r8R/09PDw8vGJXPT8qemWLvMHWixYPDw9vg1dNl5PUee+d3BzGwsPDw1vjJeNQ+QN6QwCnDqEnBwMeHh7eIV61tb9R/ziWOue/Gx4eHt6AV21TRedM8Ztq463Z7sLDw8Nb4J0tPUxKt/khVDgY8PDw8JZ5yaLVIyRPgpNCRlIiwcPDw9vjVQsN+T35jp46AC5HB/Dw8PAO8XqY+3DzhlmyTvVZvzTA8PDw8A7xksQ3f3D+ip+03KKyLx4eHt4Cr1qW3RiQuj88Jk01PDw8vD1eciRUS7S9UPKXfmGYAA8PD+8oLw8rD6I64NUrGZePBDw8PLxDvOrDTg0cTO5Jtqz8G+Lh4eG1eJM0urcdPWRSGi50yfDw8PAGvPyVnRcjJgWLXln5ycp4eHh4y7xJ46rKyMcI7u8pHAx4eHh4C7zqa7r6TbXxlg9dFcq4eHh4eAu8PLU9lWr3hrqSrcfDw8Pb4EWJaSsVrr76k8Opmojj4eHhbfDyQkMvrHxUq7daebIMDw8Pb43XKwr03skJqTp8gIeHh7fBmxcUJql5NVEulyfw8PDwFni9odJJqp0/Pi8uVwsfeHh4eHNefhjstceqReRCMRcPDw9vjZcnx0lAvS0od+2SwwYPDw/vDXh5IbU6UDVZ/zJOPDw8vJfyesXWaupcHg64P07w8PDw1njVNHejFNtL3x95EHh4eHiHeJPBpmroeVMt2eh5CQMPDw+vyPsEcy7QdcSkUwgAAAAASUVORK5CYII='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3awWpDIRAF0Pz/T7fQbYq5M+OQlB5XIeDzHQM6ufp4xO3rp+Wfn/ue27nX+fkXGh4eHl7r1c8DP39+HqxKzSfx/A4vJgsPDw9vjZcMli/W+QT1JjR5Zzw8PLxP4CX4pLLt9cLDw8P7i7y8VWOFZJPAw8PD+zTe4gBxylot5S9nLXh4eHi186bLB2Dbn998voeHh/ePeZNCuXqsVd1sqpvBL6Pg4eHhLfCSiHajXJ5c1SpfycLDw8Nb4+WP6H3fO0ibHJvh4eHh7fF6oUNzgKAQzwPZZIrx8PDw7vKSK02TeKI3fcmvkRTieHh4eHu86tKfD1wNGvJNopyy4OHh4V3i5ci7MUR1G0gYo98QDw8Pr58PFB6UR7TzLaRXjuPh4eHt8fIFd16C98Lc6kUrPDw8vD1eXrzOo4pe0VwIHc4xLh4eHt5VXm9p3g6Cy/8DJsPg4eHhFVvyoPzP/61g9zzFzVM+PDw8vEu8fNtIlv48zM03pHyzKVDx8PDwWrxe8do76KpuLee+UcyBh4eHt8bLo4fk+GoS1CbLfSH+wMPDw1vg5UdT1WW6GlX0ANFPgoeHh3eVV80t8jyjF+Mmr154Kzw8PLw1Xr64zw+xbm0n0TTh4eHhrfGqx//5FCQVfULtBR94eHh427yoQ+uKVc7Lpy+KhvHw8PAWeNUFPQf37nn1AuUXvfDw8PCu8vJlOilwk+Agf86FhoeHh7fMm2wM1WijGoL0ync8PDy8DV51jb11RaD6/MlhGx4eHt4GLw9bewV6r5SfbAzl3AIPDw+vxasedFU3g3nB3Ywz8PDw8N7Km99lygvu+fUFPDw8vM/hTWKI5MpUL9R4cYEADw8Pb4FXLZp7pXPe99ak4OHh4W3wqgdg50dMrlvl07FyPQsPDw/vdfsGjxnaT5QR7mkAAAAASUVORK5CYII='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -614,10 +607,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://onlyorange.top/2019/06/27/Git安装及Github基本使用/&title=Git安装及Github基本使用 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=目录
-安装git
-创建ssh key 、配置git
-提交本地项目到Github"
+          href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/06/27/Git安装及Github基本使用/&title=Git安装及Github基本使用 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary="
           
           >
           
@@ -654,7 +644,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/Markdown编辑器/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Markdown编辑器</a>
+                                  <a class="tag" href="/tags/Typora/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Typora</a>
                               </h6>
                           
                       </span>
@@ -674,7 +664,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/踩坑/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 踩坑</a> <a class="tag" href="/tags/Markdown编辑器/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Markdown编辑器</a>
+                                  <a class="tag" href="/tags/Markdown/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Markdown</a> <a class="tag" href="/tags/Typore/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Typore</a>
                               </h6>
                           
                       </span>
@@ -735,12 +725,15 @@
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装git"><span class="toc-text">安装git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过homebrew安装git"><span class="toc-text">通过homebrew安装git</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建ssh-key、配置git"><span class="toc-text">创建ssh key、配置git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交本地项目到Github"><span class="toc-text">提交本地项目到Github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装git"><span class="toc-text">安装git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通过homebrew安装git"><span class="toc-text">通过homebrew安装git</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建ssh-key、配置git"><span class="toc-text">创建ssh key、配置git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#提交本地项目到Github"><span class="toc-text">提交本地项目到Github</span></a></li></ol>
     </div>
   </section>
 
 
             
+          
+        
+          
           
         
           
@@ -815,6 +808,9 @@
 </section>
 
             
+          
+        
+          
           
         
           
@@ -931,7 +927,13 @@
           
           
         
+          
+          
+        
       
+        
+          
+          
         
           
           
@@ -965,31 +967,27 @@
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1009,6 +1007,9 @@
           
         
       
+        
+          
+          
         
           
           
@@ -1117,10 +1118,10 @@
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -1156,7 +1157,7 @@
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1225,17 +1226,17 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

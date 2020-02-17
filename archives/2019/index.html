@@ -11,6 +11,8 @@
   
 
   
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -295,139 +298,6 @@
           
         
           
-            <div class='post-wrapper'>
-              <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/10/13/MPU6050姿态结算/">
-      MPU6050姿态结算
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    
-      <a href="http://onlyorange.top" rel="nofollow">
-        
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
-        
-        <p>Sky Azure</p>
-      </a>
-    
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-10-13</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/嵌入式系统/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>嵌入式系统</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-    <div class="new-meta-item wordcount">
-      <a class='notlink'>
-        <i class="fas fa-keyboard" aria-hidden="true"></i>
-        <p>字数统计:</p>
-        <p>2.3k字</p>
-      </a>
-    </div>
-    <div class="new-meta-item readtime">
-      <a class='notlink'>
-        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-        <p>阅读时长≈</p>
-        <p>8分</p>
-      </a>
-    </div>
-  
-
-          
-        
-          
-            
-  <div class="new-meta-item top-post">
-    <a class='notlink'>
-      <i class="fas fa-angle-double-up" aria-hidden="true" style="color:#FF0000;"></i>
-      <p style="color: #FF0000">置顶</p>
-    </a>
-  </div>
-
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h1 id="MPU6050"><a href="#MPU6050" class="headerlink" title="MPU6050"></a>MPU6050</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
-<ol>
-<li><p><a href="https://www.jianshu.com/p/69dd18638b8e" target="_blank" rel="noopener">加速度计原理与姿态解算</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/3c03b7fb7b38" target="_blank" rel="noopener">陀螺仪原理与姿态解算</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/5ff8de66bcaf" target="_blank" rel="noopener">融合加速度计和陀螺仪的数据</a></p>
-      
-        <div class="button readmore">
-          <a href="/2019/10/13/MPU6050姿态结算/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/IMU传感器/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> IMU传感器</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-            </div>
-          
         
           
         
@@ -454,6 +324,8 @@
   <section class='meta'>
     
     
+      <a title='浙大数据结构笔记' href='/2019/11/14/浙大数据结构笔记/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/code.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -473,9 +345,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -499,9 +371,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/笔记/' rel="nofollow">
+    <a href='/categories/数据结构/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>笔记</p>
+      <p>数据结构</p>
     </a>
   </div>
 
@@ -515,7 +387,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>577字</p>
+        <p>567字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -544,11 +416,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h1><h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><h3 id="1-1-什么是数据结构"><a href="#1-1-什么是数据结构" class="headerlink" title="1.1 什么是数据结构"></a>1.1 什么是数据结构</h3><h4 id="1-1-1-其他定义"><a href="#1-1-1-其他定义" class="headerlink" title="1.1.1 其他定义"></a>1.1.1 其他定义</h4><ul>
-<li>数据结构是数据对象，以及存在于该对象的实例和组成实例的数据元素之间的各种联系。这些联系可以通过定义相关的函数来给出。 ——Sartaj Sahni 《数据结构、算法与应用》</li>
-<li>数据结构是 ADT（Abstract Data Type，数据抽象类型）的物理实现。 ——Clifford A.Shaffer 《数据结构与算法分析》</li>
-<li>数据结构（data structure）是计算机中存储、组织数据的方式。通常情况下，精心选择的数据结构可以带来最优效率的算法。 ——中文维基百科</li>
-</ul>
+      <blockquote>
+<center><font color="#1Bc3FB">Data Structures</font><center>
+</center></center></blockquote>
       
         <div class="button readmore">
           <a href="/2019/11/14/浙大数据结构笔记/" class="flat-box">
@@ -580,6 +450,8 @@
   <section class='meta'>
     
     
+      <a title='hexo博客美化' href='/2019/11/13/hexo博客美化/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/hexo.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -599,9 +471,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -625,9 +497,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/blog/' rel="nofollow">
+    <a href='/categories/Blog/Hexo/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>blog</p>
+      <p>Blog&nbsp;/&nbsp;Hexo</p>
     </a>
   </div>
 
@@ -641,7 +513,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>78字</p>
+        <p>73字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -670,7 +542,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      
+      <blockquote>
+<center><font color="#1BC3FB" size="4">美美哒</font></center>
+</blockquote>
       
         <div class="button readmore">
           <a href="/2019/11/13/hexo博客美化/" class="flat-box">
@@ -683,7 +557,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/hexo/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> hexo</a>
+          <a href="/tags/美化/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 美化</a>
         
       </div>
     
@@ -702,12 +576,14 @@
   <section class='meta'>
     
     
+      <a title='工作技能' href='/2019/10/19/工作技能/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/combat.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
   <h2 class="title">
-    <a href="/2019/10/19/工作技能-经验/">
-      工作技能/经验
+    <a href="/2019/10/19/工作技能/">
+      工作技能
     </a>
   </h2>
 
@@ -721,9 +597,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -747,9 +623,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/job/' rel="nofollow">
+    <a href='/categories/Job/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>job</p>
+      <p>Job</p>
     </a>
   </div>
 
@@ -763,14 +639,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>3.6k字</p>
+        <p>5.9k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>12分</p>
+        <p>20分</p>
       </a>
     </div>
   
@@ -792,25 +668,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="嵌入式相关工作需要的技能经验列举"><a href="#嵌入式相关工作需要的技能经验列举" class="headerlink" title="嵌入式相关工作需要的技能经验列举"></a>嵌入式相关工作需要的技能经验列举</h1><h2 id="嵌入式系统软件工程师-高通无线通信技术-中国-有限公司-北京"><a href="#嵌入式系统软件工程师-高通无线通信技术-中国-有限公司-北京" class="headerlink" title="嵌入式系统软件工程师__ 高通无线通信技术(中国)有限公司__北京"></a>嵌入式系统软件工程师__ 高通无线通信技术(中国)有限公司__北京</h2><ul>
-<li>熟练掌握C/C++, Linux shell 编程语言，具有Python/Perl/Java/Makefile经验更佳；</li>
-<li>熟悉Linux操作系统，驱动，内核开发。 例如以下领域，u-boot, PCIe/PCI, Ethernet, DDR, LCD,Camera, USB, and Power Management；</li>
-<li>了解CPU架构，例如ARM，MIPS更佳；</li>
-<li>了解机器学习更佳；</li>
-<li>优秀的中英文沟通技巧；</li>
-<li>快速学习能力；</li>
-<li>基本的问题解决能力；</li>
-<li>通信，计算机，电子等相关专业，本科及以上学历。</li>
-</ul>
-<h2 id="新零售技术事业群-嵌入式系统工程师-阿里巴巴集团-杭州"><a href="#新零售技术事业群-嵌入式系统工程师-阿里巴巴集团-杭州" class="headerlink" title="新零售技术事业群-嵌入式系统工程师__ 阿里巴巴集团__杭州"></a>新零售技术事业群-嵌入式系统工程师__ 阿里巴巴集团__杭州</h2><p>工作职责：</p>
-<ul>
-<li>参与工厂数字化改造方案中嵌入式IoT设备端的开发工作；</li>
-<li>负责多个IoT设备系列的嵌入式端侧软件架构设计；</li>
-<li>探索当前互联网主流框架与嵌入式IoT设备端侧架构的创新结合，如Flutter、Node.js等技术在嵌入式端侧的应用</li>
-</ul>
+      <blockquote>
+<center><font color="#1Bc3FB">要变强 ！</font><center>
+</center></center></blockquote>
       
         <div class="button readmore">
-          <a href="/2019/10/19/工作技能-经验/" class="flat-box">
+          <a href="/2019/10/19/工作技能/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -831,6 +694,134 @@
         
       
         
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+      <a title='MPU6050姿态结算' href='/2019/10/13/MPU6050姿态结算/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/arm.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/10/13/MPU6050姿态结算/">
+      MPU6050姿态结算
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://skyazure.top" rel="nofollow">
+        
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
+        
+        <p>Sky Azure</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-13</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/嵌入式/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>嵌入式</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>2.3k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>8分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p><strong>IMU</strong>（Inertial measurement unit），中文翻译为惯性测量单元，是一种能够测量物体三轴加速度和角速度进而解算出物体姿态的装置。一般的，一个IMU包含了三个单轴的加速度计和三个单轴的陀螺仪，加速度计检测物体在载体坐标系统独立三轴的加速度信号，而陀螺仪检测载体相对于导航坐标系的角速度信号，测量物体在三维空间中的角速度和加速度，并以此解算出物体的姿态。在导航中有着很重要的应用价值。为了提高可靠性，还可以为每个轴配备更多的传感器，例如地磁传感器。<br>MPU6050属于IMU的一种，包含了三个单轴的加速度计和三个单轴的陀螺仪。</p>
+<ol>
+<li><p><a href="https://www.jianshu.com/p/69dd18638b8e" target="_blank" rel="noopener">加速度计原理与姿态解算</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/3c03b7fb7b38" target="_blank" rel="noopener">陀螺仪原理与姿态解算</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/5ff8de66bcaf" target="_blank" rel="noopener">融合加速度计和陀螺仪的数据</a></p>
+      
+        <div class="button readmore">
+          <a href="/2019/10/13/MPU6050姿态结算/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/IMU传感器/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> IMU传感器</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -840,6 +831,8 @@
 
   <section class='meta'>
     
+    
+      <a title='C/C++ sizeof函数总结' href='/2019/10/12/C-C-sizeof函数总结/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/c.png'></a>
     
     <div class="meta" id="header-meta">
       
@@ -860,9 +853,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -931,54 +924,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="解决sizeof求结构体大小的问题"><a href="#解决sizeof求结构体大小的问题" class="headerlink" title="解决sizeof求结构体大小的问题"></a>解决sizeof求结构体大小的问题</h1><h2 id="一、C-C-中不同数据类型所占用的内存大小"><a href="#一、C-C-中不同数据类型所占用的内存大小" class="headerlink" title="一、C/C++中不同数据类型所占用的内存大小"></a>一、C/C++中不同数据类型所占用的内存大小</h2><table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>32位</th>
-<th>64位</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>char</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>int</td>
-<td>4</td>
-<td>大多数4(少数8)</td>
-</tr>
-<tr>
-<td>short</td>
-<td>2</td>
-<td>2</td>
-</tr>
-<tr>
-<td><em>long</em></td>
-<td>4</td>
-<td>8</td>
-</tr>
-<tr>
-<td>float</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr>
-<td>double</td>
-<td>8</td>
-<td>8</td>
-</tr>
-<tr>
-<td><em>*指针</em></td>
-<td>4</td>
-<td>8</td>
-</tr>
-</tbody></table>
-<p>（单位都为字节） </p>
-<p>结构体(struct)：比较复杂，对齐问题需要考虑清楚。</p>
-<p>联合(union)：取所有成员中最长的作为联合的长度。</p>
-<p>枚举(enum)：根据数据类型。</p>
+      <blockquote>
+<center><font color="#1BC3FB" size="4">解决sizeof求结构体大小的问题</font></center>
+</blockquote>
       
         <div class="button readmore">
           <a href="/2019/10/12/C-C-sizeof函数总结/" class="flat-box">
@@ -988,6 +936,12 @@
         </div>
       
     </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/结构体/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 结构体</a>
+        
+      </div>
     
   </section>
 </article>
@@ -1004,12 +958,14 @@
   <section class='meta'>
     
     
+      <a title='数据结构与算法知识点' href='/2019/10/11/数据结构与算法知识整理/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/code.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
   <h2 class="title">
-    <a href="/2019/10/11/数据结构与算法知识随笔/">
-      数据结构与算法知识随笔
+    <a href="/2019/10/11/数据结构与算法知识整理/">
+      数据结构与算法知识点
     </a>
   </h2>
 
@@ -1023,9 +979,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -1065,7 +1021,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>693字</p>
+        <p>685字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -1094,12 +1050,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="1-完全二叉树与满二叉树的区别"><a href="#1-完全二叉树与满二叉树的区别" class="headerlink" title="1.完全二叉树与满二叉树的区别"></a>1.完全二叉树与满二叉树的区别</h2><p><strong>满二叉树</strong>是<strong>完全二叉树</strong>的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。</p>
-<h2 id="2-已知二叉树的前序遍历和中序遍历求后续遍历"><a href="#2-已知二叉树的前序遍历和中序遍历求后续遍历" class="headerlink" title="2.已知二叉树的前序遍历和中序遍历求后续遍历"></a>2.已知二叉树的前序遍历和中序遍历求后续遍历</h2><p>现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列?</p>
-<p>答：前序遍历结果序列为<strong>abdefgc</strong>，中序遍历结果序列为<strong>debgfac</strong><br>以此为条件，根据前序知道a是根，根据中知道debgf为左子树，c为右子树。<br>根据前知道b为左子树中的根，根据中知道de为b的左，gf为右，根据前和中判断d为根，e为右，f为根，g为左，<br>树成型，得出后序结果<strong>edgfbca</strong></p>
+      <blockquote>
+<center><font color="#1Bc3FB">知识点整理</font><center>
+</center></center></blockquote>
       
         <div class="button readmore">
-          <a href="/2019/10/11/数据结构与算法知识随笔/" class="flat-box">
+          <a href="/2019/10/11/数据结构与算法知识整理/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -1109,7 +1065,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/随笔/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 随笔</a>
+          <a href="/tags/算法/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 算法</a>
         
       </div>
     
@@ -1128,12 +1084,14 @@
   <section class='meta'>
     
     
+      <a title='知识点随笔' href='/2019/10/11/技术知识随笔/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/combat.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
   <h2 class="title">
     <a href="/2019/10/11/技术知识随笔/">
-      技术知识随笔
+      知识点随笔
     </a>
   </h2>
 
@@ -1147,9 +1105,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -1173,9 +1131,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/job/' rel="nofollow">
+    <a href='/categories/Job/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>job</p>
+      <p>Job</p>
     </a>
   </div>
 
@@ -1218,11 +1176,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="技术知识随笔"><a href="#技术知识随笔" class="headerlink" title="技术知识随笔"></a>技术知识随笔</h1><h2 id="1-黑盒测试与白盒测试"><a href="#1-黑盒测试与白盒测试" class="headerlink" title="1. 黑盒测试与白盒测试"></a>1. 黑盒测试与白盒测试</h2><p>任何工程产品(注意是任何工程产品)都可以使用以下两种方法之一进行测试。</p>
-<ul>
-<li>黑盒测试：已知产品的功能设计规格，可以进行测试证明每个实现了的功能是否符合要求。 </li>
-<li>白盒测试：已知产品的内部工作过程，可以通过测试证明每种内部操作是否符合设计规格要求，所有内部成分是否以经过检查。</li>
-</ul>
+      <blockquote>
+<center><font color="#1Bc3FB">知识点整理</font><center>
+</center></center></blockquote>
       
         <div class="button readmore">
           <a href="/2019/10/11/技术知识随笔/" class="flat-box">
@@ -1235,7 +1191,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/随笔/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 随笔</a>
+          <a href="/tags/知识点/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 知识点</a>
         
       </div>
     
@@ -1254,12 +1210,14 @@
   <section class='meta'>
     
     
+      <a title='Linux及计算机网络知识点汇总' href='/2019/10/11/Linux与计算机网络知识点整理/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/linux.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
   <h2 class="title">
-    <a href="/2019/10/11/Linux系统与计算机网络知识随笔/">
-      Linux知识随笔
+    <a href="/2019/10/11/Linux与计算机网络知识点整理/">
+      Linux及计算机网络知识点汇总
     </a>
   </h2>
 
@@ -1273,9 +1231,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -1315,7 +1273,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>965字</p>
+        <p>949字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -1344,19 +1302,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="Linux知识随笔"><a href="#Linux知识随笔" class="headerlink" title="Linux知识随笔"></a>Linux知识随笔</h1><h2 id="1-Linux内核五大模块"><a href="#1-Linux内核五大模块" class="headerlink" title="1.Linux内核五大模块"></a>1.Linux内核五大模块</h2><ul>
-<li><p>进程调度模块</p>
-</li>
-<li><p>内存管理模块</p>
-</li>
-<li><p>文件系统模块</p>
-</li>
-<li><p>进程间通信模块</p>
-</li>
-<li><p>网络接口模块</p>
+      <blockquote>
+<center><font color="#1Bc3FB">知识点整理</font><center>
+</center></center></blockquote>
       
         <div class="button readmore">
-          <a href="/2019/10/11/Linux系统与计算机网络知识随笔/" class="flat-box">
+          <a href="/2019/10/11/Linux与计算机网络知识点整理/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -1366,7 +1317,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/随笔/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 随笔</a>
+          <a href="/tags/知识点/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 知识点</a>
         
       </div>
     
@@ -1385,12 +1336,14 @@
   <section class='meta'>
     
     
+      <a title='Python知识点整理' href='/2019/10/11/Python知识点整理/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/python.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
   <h2 class="title">
-    <a href="/2019/10/11/Python知识随笔/">
-      Python知识随笔
+    <a href="/2019/10/11/Python知识点整理/">
+      Python知识点整理
     </a>
   </h2>
 
@@ -1404,9 +1357,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -1446,7 +1399,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>126字</p>
+        <p>123字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -1475,10 +1428,12 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      
+      <blockquote>
+<center><font color="#1Bc3FB">知识点整理</font><center>
+</center></center></blockquote>
       
         <div class="button readmore">
-          <a href="/2019/10/11/Python知识随笔/" class="flat-box">
+          <a href="/2019/10/11/Python知识点整理/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -1488,7 +1443,7 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/Python/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Python</a>
+          <a href="/tags/知识点/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 知识点</a>
         
       </div>
     
@@ -1511,8 +1466,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/09/29/职位汇总/">
-      职位汇总
+    <a href="/2019/07/02/C语言考试测试题-临时/">
+      c语言考试测试题-临时(教学用)
     </a>
   </h2>
 
@@ -1526,9 +1481,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -1542,7 +1497,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-09-29</p>
+    <p>2019-07-02</p>
   </a>
 </div>
 
@@ -1552,9 +1507,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/job/' rel="nofollow">
+    <a href='/categories/C语言/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>job</p>
+      <p>C语言</p>
     </a>
   </div>
 
@@ -1568,14 +1523,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>3.9k字</p>
+        <p>765字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>13分</p>
+        <p>3分</p>
       </a>
     </div>
   
@@ -1597,28 +1552,36 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="海康威视"><a href="#海康威视" class="headerlink" title="海康威视"></a>海康威视</h1><h2 id="软件研发类"><a href="#软件研发类" class="headerlink" title="软件研发类"></a>软件研发类</h2><h4 id="【2020校招】嵌入式软件开发工程师（BSP）"><a href="#【2020校招】嵌入式软件开发工程师（BSP）" class="headerlink" title="【2020校招】嵌入式软件开发工程师（BSP）"></a>【2020校招】嵌入式软件开发工程师（BSP）</h4><p><strong>工作地点：</strong>浙江省-杭州市,湖北省-武汉市</p>
-<p><strong>工作职责：</strong></p>
+      <h1 id="c语言能力测试基础练习题"><a href="#c语言能力测试基础练习题" class="headerlink" title="c语言能力测试基础练习题"></a>c语言能力测试基础练习题</h1><ol>
+<li><p>编写程序，输入x,求f(x)函数的值</p>
+<p>f(x)={x-2       ,  9&lt;=x&lt;10}</p>
+<p>​        {x<sup>2</sup>+10  ,  0&lt;=x&lt;9}</p>
+<p>​        {4x<sup>2</sup>-5   , x&gt;15}</p>
+</li>
+<li><p>编写程序，求解修路问题，<strong>60公里</strong>公路，<strong>60人</strong>修建，<strong>甲</strong>工程队一人一次修<strong>4</strong>公里，<strong>乙</strong>工程队一人一次修<strong>3</strong>公里，<strong>丙</strong>工程队<strong>两人</strong>一次修1公里，要求<strong>1</strong>次搬完。问各需甲、乙和丙工程队各多少人。</p>
+</li>
+<li><p>编写程序，完成以下任务：</p>
 <ul>
-<li>根据产品和业务需求开发嵌入式系统底层软件，设计和实现软件功能，并编写相应开发文档；</li>
-<li>开发、测试和维护产品中各种芯片驱动软件；</li>
-<li>对系统软件进行优化，提升系统性能、可靠性和稳定性。</li>
+<li><p>定义一个能存放<strong>50</strong>本书价格的一位数组。</p>
+</li>
+<li><p>向数组中输入或者赋给<strong>[0,200]</strong>之间的随机整数。</p>
+</li>
 </ul>
+</li>
+</ol>
+<ul>
+<li><p>输出所有数组的所有元素。</p>
+<ul>
+<li><p>统计<strong>50</strong>本书总价格，和<em>价格大于100</em>的书籍中<strong>奇数</strong>和<strong>偶数</strong>的个数，并分别计算奇数和偶数的<strong>平均值</strong>。</p>
       
         <div class="button readmore">
-          <a href="/2019/09/29/职位汇总/" class="flat-box">
+          <a href="/2019/07/02/C语言考试测试题-临时/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
         </div>
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/职位/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 职位</a>
-        
-      </div>
     
   </section>
 </article>
@@ -1739,6 +1702,9 @@
           
           
         
+          
+          
+        
       
         
           
@@ -1835,7 +1801,65 @@
           
           
         
+          
+          
+        
       
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='material'>
+  <div><i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;访客地图</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://www.revolvermaps.com/"
+    title="https://www.revolvermaps.com/">
+    <i class="fas fa-info-circle fa-fw"></i></a>
+  
+</header>
+
+  <div class='content material'>
+    <div style="position: relative;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/4.js?i=5eyl60h41k1&amp;m=6&amp;h=122&amp;c=ff0000&amp;r=30" async="async"></script></div>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
         
           
           
@@ -1869,31 +1893,27 @@
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1928,6 +1948,9 @@
         
           
           
+        
+          
+          
             
               
   <section class='widget tagcloud'>
@@ -1947,7 +1970,7 @@
 </header>
 
     <div class='content material'>
-      <a href="/tags/Data-Structures/" style="font-size: 14px; color: #999">Data Structures</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/IMU传感器/" style="font-size: 14px; color: #999">IMU传感器</a> <a href="/tags/Manjaro/" style="font-size: 14px; color: #999">Manjaro</a> <a href="/tags/Markdown编辑器/" style="font-size: 19px; color: #777">Markdown编辑器</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/c语言/" style="font-size: 14px; color: #999">c语言</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/python/" style="font-size: 19px; color: #777">python</a> <a href="/tags/skill/" style="font-size: 19px; color: #777">skill</a> <a href="/tags/职位/" style="font-size: 14px; color: #999">职位</a> <a href="/tags/踩坑/" style="font-size: 19px; color: #777">踩坑</a> <a href="/tags/随笔/" style="font-size: 24px; color: #555">随笔</a>
+      <a href="/tags/Data-Structures/" style="font-size: 14px; color: #999">Data Structures</a> <a href="/tags/Debug/" style="font-size: 19px; color: #777">Debug</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/IMU传感器/" style="font-size: 14px; color: #999">IMU传感器</a> <a href="/tags/Manjaro/" style="font-size: 14px; color: #999">Manjaro</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/Typora/" style="font-size: 14px; color: #999">Typora</a> <a href="/tags/Typore/" style="font-size: 14px; color: #999">Typore</a> <a href="/tags/skill/" style="font-size: 14px; color: #999">skill</a> <a href="/tags/双系统/" style="font-size: 14px; color: #999">双系统</a> <a href="/tags/排序/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/知识点/" style="font-size: 24px; color: #555">知识点</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/结构体/" style="font-size: 14px; color: #999">结构体</a> <a href="/tags/美化/" style="font-size: 14px; color: #999">美化</a>
     </div>
   </section>
 
@@ -1962,6 +1985,9 @@
           
         
       
+        
+          
+          
         
           
           
@@ -2098,10 +2124,10 @@
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -2137,7 +2163,7 @@
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -2214,17 +2240,17 @@
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });

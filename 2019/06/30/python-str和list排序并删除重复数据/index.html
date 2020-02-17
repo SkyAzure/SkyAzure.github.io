@@ -11,6 +11,8 @@
   
 
   
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon2.png">
   
 
   
@@ -42,6 +44,7 @@
 
   
   
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
 </head>
 
 <body>
@@ -108,7 +111,7 @@
 </div>
 
       
-    <br>
+    <!-- <br> -->
     <!--    Hitokoto 一言 -->
 <!--     <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
@@ -291,6 +294,8 @@
   <section class='meta'>
     
     
+      <a title='python str和list排序并删除重复数据' href='/2019/06/30/python-str和list排序并删除重复数据/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/python.png'></a>
+    
     <div class="meta" id="header-meta">
       
         
@@ -312,9 +317,9 @@
             
   <div class='new-meta-item author'>
     
-      <a href="http://onlyorange.top" rel="nofollow">
+      <a href="http://skyazure.top" rel="nofollow">
         
-          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg">
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png">
         
         <p>Sky Azure</p>
       </a>
@@ -338,9 +343,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/python/' rel="nofollow">
+    <a href='/categories/Python/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>python</p>
+      <p>Python</p>
     </a>
   </div>
 
@@ -379,7 +384,7 @@
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>7分</p>
+        <p>8分</p>
       </a>
     </div>
   
@@ -401,14 +406,18 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody"> 
-        <h1 id="一、排序函数sort-和sort"><a href="#一、排序函数sort-和sort" class="headerlink" title="一、排序函数sort()和sort()"></a>一、排序函数sort()和sort()</h1><p>sort() 是Python列表的一个内置的排序方法，<code>list.sort()</code> 方法排序时直接修改原列表，返回None；</p>
-<p>sort() 是Python内置的一个排序函数，它会从一个<strong>迭代器</strong>返回一个排好序的新列表。</p>
+        <blockquote>
+<p>排序并删除重复数据</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="一、排序函数sort-和sorted"><a href="#一、排序函数sort-和sorted" class="headerlink" title="一、排序函数sort()和sorted()"></a>一、排序函数sort()和sorted()</h1><p>sort() 是Python列表的一个内置的排序方法，<code>list.sort()</code> 方法排序时直接修改原列表，返回None；</p>
+<p>sorted() 是Python内置的一个排序函数，它会从一个<strong>迭代器</strong>返回一个排好序的新列表。</p>
 <p>相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用于列表，而<code>sorted()</code> 函数接受一切迭代器，返回新列表。</p>
 <p>这两个方法有以下 2 个共同的参数：</p>
 <ul>
 <li>key 是带一个参数的<strong>函数</strong>，返回一个值用来排序，默认为 None。这个函数只调用一次，所以fast。</li>
-<li>reverse 表示排序结果是否反转<a id="more"></a>
-看例子</li>
+<li>reverse 表示排序结果是否反转</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>)        <span class="comment"># a 是元组，故不能用sort() 排序</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.sort()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line"> File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">'tuple'</span> object has no attribute <span class="string">'sort'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(a)              <span class="comment"># sorted() 可以为元组排序，返回一个新有序列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=[<span class="string">'1'</span>,<span class="number">1</span>,<span class="string">'a'</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="string">'n'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(a)</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'1'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                      <span class="comment"># sorted() 不改变原列表</span></span><br><span class="line">[<span class="string">'1'</span>, <span class="number">1</span>, <span class="string">'a'</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'n'</span>]     </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> a.sort()</span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                      <span class="comment"># a.sort()直接修改原列表</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="string">'1'</span>, <span class="string">'a'</span>, <span class="string">'n'</span>]</span><br></pre></td></tr></table></figure>
 
@@ -564,10 +573,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-08T21:18:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T00:07:51+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月8日</p>
+    <p>更新于 2020年2月18日</p>
   </a>
 </div>
 
@@ -576,7 +585,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>python</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/排序/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>排序</p></a></div>
 
 
         
@@ -589,13 +598,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://onlyorange.top/2019/06/30/python-str和list排序并删除重复数据/&title=python str和list排序并删除重复数据 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None；
-sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。
-相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用于列表，而sorted() 函数接受一切迭代器，返回新列表。
-这两个方法有以下 2 个共同的参数：
-
-key 是带一个参数的函数，返回一个值用来排序，默认为 None。这个函数只调用一次，所以fast。
-reverse 表示排序结果是否反转"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://skyazure.top/2019/06/30/python-str和list排序并删除重复数据/&title=python str和list排序并删除重复数据 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+排序并删除重复数据
+"
           
           >
           
@@ -607,13 +612,9 @@ reverse 表示排序结果是否反转"
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://onlyorange.top/2019/06/30/python-str和list排序并删除重复数据/&title=python str和list排序并删除重复数据 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None；
-sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。
-相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用于列表，而sorted() 函数接受一切迭代器，返回新列表。
-这两个方法有以下 2 个共同的参数：
-
-key 是带一个参数的函数，返回一个值用来排序，默认为 None。这个函数只调用一次，所以fast。
-reverse 表示排序结果是否反转"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://skyazure.top/2019/06/30/python-str和list排序并删除重复数据/&title=python str和list排序并删除重复数据 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+排序并删除重复数据
+"
           
           >
           
@@ -623,7 +624,7 @@ reverse 表示排序结果是否反转"
       
     
       
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADQElEQVR42u3awW6jUAwF0P7/T2e2I6WBa5tK4BxWUUPDO7Awvn4/P/Hx+u94//v750/nfPq198/JLyffjg5sbGzsh7Bfh8fxOdVFf/qF4/Uc3+hknb9cCxsbG3sd+7gwVC+WF79e6UoewIkRGxsbGzsoEkkRSm5rTsXGxsbGzgOj/PJ545Ez5sEWNjY29j52NTZKwqakXOWjiF5odUGWho2NjX17dj4Vvf/nP5lvY2NjY9+Y/Soe87BpUt7ya52sBBsbG3sRuxrcVF/rkzFAbxicNC0n7Q02Njb2CnZ1K2R1u8zxmcnfq9F/9HiwsbGx17En22iqY+D5Jp5e0fqlgGFjY2MvYlcvOQ/o89YipxbWiY2Njb2I3UPO25W8jFUHEnlBxcbGxt7Brobv1XLSa1p6u24KARM2Njb2Onay3Em4k2fyvUJYHntgY2Njr2Yf83oBUx5dzQteNFTAxsbGXsTOy1ivCcmbhF4pGt16bGxs7BXs5BV/XkJ6kdNkDBCNeLGxsbEXsauD28mItxc25d9G52NjY2MvYlebhMnt6NWOJOTKf6GZP2FjY2Pfnl0N5fOxwSTQ74VZ+aqwsbGxd7B7S6meOWlC8pYmf4TY2NjY+9jzUjQf/eaNSm870cdBLzY2NvbD2fMOJt9MUy1Xecw0udHY2NjYT2cn5SppDPJWoRrf5zcoL6jY2NjYm9jVhU6CpGr5mbQ90WPAxsbGXsHO7015VnwpNSl+hVKHjY2NvY6dNwn5OLY6iK2GSnkZPplvY2NjYz+cncf9f/EOPwmVqtt6CukaNjY29gPZySv+fJ6cb6lpxv3V54yNjY39Nezq7eht1qk2FXmDdHEfho2NjX17dvLP1fZjHhvNt3KWUyhsbGzsB7IniVS1mCXjhHww0GxLsLGxsVewX8UjKWO9NiaJn6pDgtFsGRsbG/sh7MnGmt4woNfS5K1Ib1sPNjY29tPZvbgnLzMJvlqEegUPGxsbezd7vqclHzD0BgDVZuPkTGxsbOwvZvcWd9UQtxpdXVbAsLGxsb+A3cNPClJePrGxsbG/gT0Z7lYHt/nGoGQN1TKGjY2NvY89CWiuKnJ5rF99GMmZ2NjY2I9l/wMgSpun47ZB7AAAAABJRU5ErkJggg=='>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOklEQVR42u3awW7bQAwE0Pz/T7tATwVaOzOk20rrp1OgKNK+zWGwJL++4uvx80ru/Hr/9TO/P/n6K8nPb76wsbGxb8J+vLyefebZQpNlbf4/yTpfP4ONjY19Knu29HzLkjt5fLbvwcbGxsZ+HVdJ2LQhlDyZH0uwsbGxsfOl5IWkWRD+t9zGxsbGvjy7Lda0b0iCLSf901oaNjY29uXZbaP3yj//xf42NjY29iXZj9G1iZD8/Xlhq34/NjY29kHsWel/07hti0SzQ0gUbNjY2NhHsF9/IC/uzEr2bWM4ibQit7GxsbEPYs/weS7kMZM3DJJm8FMXNjY29kHs5Nf5BzZPtkWrzZkCGxsb+yR2u/R9gX42dtnG4Tdbho2NjX00ezOskyz9ve2E5H4UYNjY2Ni3ZUe/HpV13htySWErDzZsbGzs89htCCXlnrxxmzcG9khsbGzsT2DvFzc7lqxGcMqhTGxsbOxPYLeva9uxbcs2P9gMS0vY2NjYt2VvltsePGaM9ltR3GJjY2Mfym6Dqg28Ng7z9kC9QdjY2NgHsWfDMXlEzRq6+21KIhMbGxv7DPYsutrQ2rRs2wHQuqiEjY2NfXN2PmqTlPjb8n0bk3nLOVoDNjY29hHsWSzN+sntASbBzFrC2NjY2Cex2/GX/PCwaf22TYV85KjOWGxsbOzLs5MIyctM7YEkP5y0k6RRcxcbGxv7CPZmRLIt6Oebm6yz3dz6P4+NjY19E/asudvG2OZbOfgrv7CxsbEPYs8CLGfMhnvaoZy8qPRNRQ0bGxv75uy89L+5M2sMzLajiFhsbGzsg9jtsSEv5bT9502UDktX2NjY2Aex983XWdGn3dC8VTyst2FjY2Pflp0X4veFnrzc30ZRPRKEjY2NfUP2o7ySsJk1YmcFo6Rc9Ye3YWNjYx/Enh1I8lbujPfe8tPbzmHY2NjYF2bnpZx3bU3blE22sm0hY2NjY5/H3hwP2gZA+7ezlkMxcImNjY39YexZC2Ez7pOssx7TxMbGxv5IdtISyLcmH6/ZlJOefgsbGxv7OPZs5LEt97TsdlXF8CU2Njb2QexZo3d/zGgbxvlRp41MbGxs7NuyfwA4E1o9D+c+qgAAAABJRU5ErkJggg=='>
         
           <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
         
@@ -633,13 +634,9 @@ reverse 表示排序结果是否反转"
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://onlyorange.top/2019/06/30/python-str和list排序并删除重复数据/&title=python str和list排序并删除重复数据 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.jpg&summary=一、排序函数sort()和sort()sort() 是Python列表的一个内置的排序方法，list.sort() 方法排序时直接修改原列表，返回None；
-sort() 是Python内置的一个排序函数，它会从一个迭代器返回一个排好序的新列表。
-相比于 sort()，sorted() 使用的范围更为广泛，但是如果不需要保留原列表，sort更有效一点。另外，sort() 只是列表的一个方法，只适用于列表，而sorted() 函数接受一切迭代器，返回新列表。
-这两个方法有以下 2 个共同的参数：
-
-key 是带一个参数的函数，返回一个值用来排序，默认为 None。这个函数只调用一次，所以fast。
-reverse 表示排序结果是否反转"
+          href="http://service.weibo.com/share/share.php?url=http://skyazure.top/2019/06/30/python-str和list排序并删除重复数据/&title=python str和list排序并删除重复数据 | Azure's BLOG&pics=https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.png&summary=
+排序并删除重复数据
+"
           
           >
           
@@ -667,16 +664,16 @@ reverse 表示排序结果是否反转"
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/2019/07/02/C语言考试测试题-临时/" rel="prev" title="c语言考试测试题-临时(教学用)">
+                              <a href="/2019/10/11/Python知识点整理/" rel="prev" title="Python知识点整理">
                                 
-                                    c语言考试测试题-临时(教学用)
+                                    Python知识点整理
                                 
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/c语言/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> c语言</a>
+                                  <a class="tag" href="/tags/知识点/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 知识点</a>
                               </h6>
                           
                       </span>
@@ -696,7 +693,7 @@ reverse 表示排序结果是否反转"
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a>
+                                  <a class="tag" href="/tags/Python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Python</a>
                               </h6>
                           
                       </span>
@@ -757,12 +754,15 @@ reverse 表示排序结果是否反转"
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、排序函数sort-和sort"><span class="toc-text">一、排序函数sort()和sort()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、python集合-set-操作"><span class="toc-text">二、python集合(set)操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作："><span class="toc-text">基本操作：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、str和list排序-删除重复数据"><span class="toc-text">三、str和list排序 删除重复数据</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、排序函数sort-和sorted"><span class="toc-text">一、排序函数sort()和sorted()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、python集合-set-操作"><span class="toc-text">二、python集合(set)操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作："><span class="toc-text">基本操作：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、str和list排序-删除重复数据"><span class="toc-text">三、str和list排序 删除重复数据</span></a></li></ol>
     </div>
   </section>
 
 
             
+          
+        
+          
           
         
           
@@ -837,6 +837,9 @@ reverse 表示排序结果是否反转"
 </section>
 
             
+          
+        
+          
           
         
           
@@ -953,7 +956,13 @@ reverse 表示排序结果是否反转"
           
           
         
+          
+          
+        
       
+        
+          
+          
         
           
           
@@ -987,31 +996,27 @@ reverse 表示排序结果是否反转"
     <div class='content material'>
       <ul class="entry">
         
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Markdown/" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badge'>(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/blog/" href="/categories/blog/"><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/c语言/" href="/categories/c语言/"><div class='name'>c语言</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/hexo/" href="/categories/hexo/"><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/job/" href="/categories/job/"><div class='name'>job</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/python/" href="/categories/python/"><div class='name'>python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/嵌入式系统/" href="/categories/嵌入式系统/"><div class='name'>嵌入式系统</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/笔记/" href="/categories/笔记/"><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1049,6 +1054,9 @@ reverse 表示排序结果是否反转"
         
           
           
+        
+          
+          
             
               
   <section class='widget related_posts'>
@@ -1059,7 +1067,7 @@ reverse 表示排序结果是否反转"
 </header>
 
     <div class="content material">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\30\python获取当前目录，上级目录，上上级目录\" title="python获取当前目录，上级目录，上上级目录" rel="bookmark">python获取当前目录，上级目录，上上级目录</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\11\Python知识点整理\" title="Python知识点整理" rel="bookmark">Python知识点整理</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\30\python获取当前目录，上级目录，上上级目录\" title="python获取当前目录，上级目录，上上级目录" rel="bookmark">python获取当前目录，上级目录，上上级目录</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1139,10 +1147,10 @@ reverse 表示排序结果是否反转"
       hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
       if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
       mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      /* seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-       snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} */
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
       document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
-      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " ;/*+ snum + " 秒"; */
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
       /*document.getElementById("times").style.color="#0056FF";*/
       }
       setInterval("createtime()",250);
@@ -1178,7 +1186,7 @@ reverse 表示排序结果是否反转"
     </div>
     <div class="github-badge">
       <a style="color: #fff"  href="/" target="_blank" title="总字数">
-      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">22.5k</span>
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">18.5k</span>
     </div>
     <div class="github-badge">
       <a style="color: #fff" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
@@ -1247,17 +1255,17 @@ reverse 表示排序结果是否反转"
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         } else {
           $.backstretch(
-          ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config@1.1.1/img/background/01.png"],
           {
             duration: "10000",
-            fade: "4000"
+            fade: "1000"
           });
         }
       });
