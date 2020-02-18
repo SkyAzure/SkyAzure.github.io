@@ -34,7 +34,7 @@ var SearchService = "";
         'hexo': {logo: '', url: ''},
         'google': {logo: 'google.svg', url: 'https://cse.google.com'},
         'algolia': {logo: 'algolia.svg', url: 'https://www.algolia.com'},
-        'baidu': {logo: 'baidu.svg', url: 'http://zn.baidu.com/cse/home/index'},
+        'baidu': {logo: 'baidu.svg', url: 'https://zn.baidu.com/cse/home/index'},
         'azure': {logo: 'azure.svg', url: 'https://azure.microsoft.com/en-us/services/search/'}
       },
       imagePath: ROOT + "img/"
@@ -493,7 +493,7 @@ var BaiduSearch;
       self.dom.input.each(function(index,elem) {
         $(elem).attr('disabled', true);
       });
-      var script = "<script src='http://zhannei.baidu.com/api/customsearch/apiaccept?sid=" +self.config.apiId+ "&v=2.0&callback=customSearch.initBaidu' type='text/javascript' charset='utf-8'></script>";
+      var script = "<script src='https://zhannei.baidu.com/api/customsearch/apiaccept?sid=" +self.config.apiId+ "&v=2.0&callback=customSearch.initBaidu' type='text/javascript' charset='utf-8'></script>";
       self.dom.body.append(script);
     };
 

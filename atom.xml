@@ -5,9 +5,9 @@
   <subtitle>Maker &amp; Developer</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://skyazure.top/"/>
+  <link href="https://skyazure.top/"/>
   <updated>2020-02-17T16:10:18.490Z</updated>
-  <id>http://skyazure.top/</id>
+  <id>https://skyazure.top/</id>
   
   <author>
     <name>Sky Azure</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Win10和Manjaro双系统记录</title>
-    <link href="http://skyazure.top/2020/02/13/Win10%E5%92%8CManjaro%E5%8F%8C%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/"/>
-    <id>http://skyazure.top/2020/02/13/Win10%E5%92%8CManjaro%E5%8F%8C%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/</id>
+    <link href="https://skyazure.top/2020/02/13/Win10%E5%92%8CManjaro%E5%8F%8C%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/"/>
+    <id>https://skyazure.top/2020/02/13/Win10%E5%92%8CManjaro%E5%8F%8C%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/</id>
     <published>2020-02-13T03:21:02.000Z</published>
     <updated>2020-02-17T16:10:18.490Z</updated>
     
@@ -34,19 +34,19 @@
     </summary>
     
     
-      <category term="折腾" scheme="http://skyazure.top/categories/%E6%8A%98%E8%85%BE/"/>
+      <category term="折腾" scheme="https://skyazure.top/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-      <category term="双系统" scheme="http://skyazure.top/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="双系统" scheme="https://skyazure.top/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>Manjaro配置命令</title>
-    <link href="http://skyazure.top/2020/02/05/Manjaro%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4/"/>
-    <id>http://skyazure.top/2020/02/05/Manjaro%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4/</id>
+    <link href="https://skyazure.top/2020/02/05/Manjaro%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4/"/>
+    <id>https://skyazure.top/2020/02/05/Manjaro%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4/</id>
     <published>2020-02-05T01:33:28.000Z</published>
-    <updated>2020-02-17T16:02:38.344Z</updated>
+    <updated>2020-02-18T03:03:05.084Z</updated>
     
     <content type="html"><![CDATA[<blockquote><center><font color="#1BC3FB" size="4">Manjaro初始化配置记录</font></center></blockquote><a id="more"></a><h1 id="换源并更新系统"><a href="#换源并更新系统" class="headerlink" title="换源并更新系统"></a>换源并更新系统</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br><span class="line">sudo pacman -Syyu</span><br><span class="line">sudo pacman -Sy vim       # 安装vim</span><br><span class="line">sudo vim /etc/pacman.conf # 设定软件源分支</span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server =https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure><!--More--><h1 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h1><p>pacman -Sy  将本地的包数据库与远程的仓库进行了同步<br>pacman -Su  同步后的更新(<strong>与-Syu的差别是-Su只升级系统，-Syu除了升级系统还同步数据库</strong>）pacman -Syu 对整个系统进行更新<br>pacman -S 包名 安装包<br>pacman -Sy 包名 同步数据库后安装包<br>pacman -Sv 包名 在显示一些操作信息后执行安装<br>pacman -U 安装本地包,其扩展名为 pkg.tar.gz<br>pacman -U <a href="http://www.example.com/repo/example.pkg.tar.xz" target="_blank" rel="noopener">http://www.example.com/repo/example.pkg.tar.xz</a> 安装一个远程包（不在 pacman 配置的源里面）</p><h1 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h1><p>pacman -R 包名 该命令将只删除包，保留其全部已经安装的依赖关系<br>pacman -Rs 包名 在删除包的同时，删除其所有没有被其他已安装软件包使用的依赖关系<br>pacman -Rsc 包名 在删除包的同时，删除所有依赖这个软件包的程序<br>pacman -Rd 包名 在删除包时不检查依赖</p><h1 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h1><p>pacman -Ss 关键字：在仓库中搜索含关键字的包<br>pacman -Qs 关键字： 搜索已安装的包<br>pacman -Qi 包名：查看有关包的详尽信息<br>pacman -Ql 包名：列出该包的文件</p><p>pacman -Sw 包名：只下载包，不安装<br>pacman -Sc：清理未安装的包文件，包文件位于 /var/cache/pacman/pkg/ 目录<br>pacman -Scc：清理所有的缓存文件</p><h1 id="双系统统一时间"><a href="#双系统统一时间" class="headerlink" title="双系统统一时间"></a>双系统统一时间</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc true </span><br><span class="line"><span class="meta">#</span><span class="bash"> 统一linux和Windows时间方案，调整linux为本地时间</span></span><br></pre></td></tr></table></figure><h1 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装中文语言包</span></span><br><span class="line">sudo pacman -Sy fcitx-im　# 默认全部安装　</span><br><span class="line">sudo pacman -Sy fcitx-configtool</span><br><span class="line">sudo pacman -Sy fcitx-sogoupinyin</span><br><span class="line">vim ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">source ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash">报错：sogou输入法异常！请删除～/.config/SougoPY并重启</span></span><br><span class="line"><span class="meta">#</span><span class="bash">尝试删除SouPY,SouPY.users,fcitx文件夹，依旧报错</span></span><br><span class="line">sogou-qimpanel # 报错</span><br><span class="line">sudo pacman -Sy fcitx-qt4  # 问题解决</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure><h1 id="安装chrome-Typora"><a href="#安装chrome-Typora" class="headerlink" title="安装chrome Typora"></a>安装chrome Typora</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy google-chorme</span><br><span class="line">sudo pacman -Ss Typora   # 查找Typora包</span><br><span class="line">sudo pacman -Sy Typora</span><br><span class="line"><span class="meta">#</span><span class="bash">yay -Sy depin-wine-tim</span></span><br></pre></td></tr></table></figure><h1 id="安装配置electron-ssr"><a href="#安装配置electron-ssr" class="headerlink" title="安装配置electron-ssr"></a>安装配置electron-ssr</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Ss electron-ssr</span><br><span class="line">sudo pacman -Sy electron-ssr</span><br><span class="line">sudo pacman -Ss proxychains # 全局模式无法使用请安装</span><br><span class="line">sudo pacman -Sy proxychains</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改系统设置－网络－代理－使用系统代理/使用手动配置的代理服务器</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> HTTP代理：127.0.0.1:12333</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> SOCKS代理：127.0.0.1:1080</span></span><br></pre></td></tr></table></figure><h1 id="终端美化"><a href="#终端美化" class="headerlink" title="终端美化"></a>终端美化</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo panman -Sy zsh # 默认已安装</span><br><span class="line">sudo vim /etc/passwd</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">修改user中/bin/bash为/bin/zsh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # 安装oh-my-zsh</span><br><span class="line"></span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">export ZSH="/home/azure/.oh-my-zsh"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">wget --no-check-certificate -O $ZSH_CUSTOM/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme # 下载Pi主题</span><br><span class="line"></span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">ZSH_THEME="pi"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启终端即可</span></span><br></pre></td></tr></table></figure><h1 id="AUR助手"><a href="#AUR助手" class="headerlink" title="AUR助手"></a>AUR助手</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy yay</span><br></pre></td></tr></table></figure><h1 id="配置SSH-Key到Github"><a href="#配置SSH-Key到Github" class="headerlink" title="配置SSH Key到Github"></a>配置SSH Key到Github</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">~</span><br><span class="line">git config --global user.email "you@example.com"</span><br><span class="line">git config --global user.name "Your Name"</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在github中添加～/.ssh/id_rsa.pub</span></span><br><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="meta">#</span><span class="bash"> Hi <span class="string">'user'</span> You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span></span><br></pre></td></tr></table></figure><h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Sy nodejs</span><br><span class="line">sudo pacman -Sy npm</span><br><span class="line">node -v # v13.7.0</span><br><span class="line">npm -v # 6.13.6</span><br><span class="line">sudo npm或cnpm config set registry https://registry.npm.taobao.org # npm换淘宝源</span><br><span class="line">sudo npm install hexo-cli -g      </span><br><span class="line">sudo npm install hexo --save </span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure><h1 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -R $(pacman -Qdtq) # 清理系统中无用包</span><br><span class="line">sudo pacman -Scc #　清除已下载安装包</span><br><span class="line">du -t 100M /var # 查看日志垃圾</span><br><span class="line">journalctl --disk-usage # 查看日志垃圾</span><br><span class="line">sudo journalctl --vacuum-size=50M # 删除指定大小日志文件</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -59,17 +59,17 @@
     </summary>
     
     
-      <category term="折腾" scheme="http://skyazure.top/categories/%E6%8A%98%E8%85%BE/"/>
+      <category term="折腾" scheme="https://skyazure.top/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-      <category term="Manjaro" scheme="http://skyazure.top/tags/Manjaro/"/>
+      <category term="Manjaro" scheme="https://skyazure.top/tags/Manjaro/"/>
     
   </entry>
   
   <entry>
     <title>浙大数据结构笔记</title>
-    <link href="http://skyazure.top/2019/11/14/%E6%B5%99%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/"/>
-    <id>http://skyazure.top/2019/11/14/%E6%B5%99%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://skyazure.top/2019/11/14/%E6%B5%99%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/"/>
+    <id>https://skyazure.top/2019/11/14/%E6%B5%99%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</id>
     <published>2019-11-14T08:02:23.000Z</published>
     <updated>2020-02-17T16:06:22.848Z</updated>
     
@@ -84,17 +84,17 @@
     </summary>
     
     
-      <category term="数据结构" scheme="http://skyazure.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://skyazure.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="Data Structures" scheme="http://skyazure.top/tags/Data-Structures/"/>
+      <category term="Data Structures" scheme="https://skyazure.top/tags/Data-Structures/"/>
     
   </entry>
   
   <entry>
     <title>hexo博客美化</title>
-    <link href="http://skyazure.top/2019/11/13/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
-    <id>http://skyazure.top/2019/11/13/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/</id>
+    <link href="https://skyazure.top/2019/11/13/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
+    <id>https://skyazure.top/2019/11/13/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/</id>
     <published>2019-11-13T03:24:43.000Z</published>
     <updated>2020-02-17T16:06:34.696Z</updated>
     
@@ -109,19 +109,19 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://skyazure.top/categories/Blog/"/>
+      <category term="Blog" scheme="https://skyazure.top/categories/Blog/"/>
     
-      <category term="Hexo" scheme="http://skyazure.top/categories/Blog/Hexo/"/>
+      <category term="Hexo" scheme="https://skyazure.top/categories/Blog/Hexo/"/>
     
     
-      <category term="美化" scheme="http://skyazure.top/tags/%E7%BE%8E%E5%8C%96/"/>
+      <category term="美化" scheme="https://skyazure.top/tags/%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>工作技能</title>
-    <link href="http://skyazure.top/2019/10/19/%E5%B7%A5%E4%BD%9C%E6%8A%80%E8%83%BD/"/>
-    <id>http://skyazure.top/2019/10/19/%E5%B7%A5%E4%BD%9C%E6%8A%80%E8%83%BD/</id>
+    <link href="https://skyazure.top/2019/10/19/%E5%B7%A5%E4%BD%9C%E6%8A%80%E8%83%BD/"/>
+    <id>https://skyazure.top/2019/10/19/%E5%B7%A5%E4%BD%9C%E6%8A%80%E8%83%BD/</id>
     <published>2019-10-19T05:51:57.000Z</published>
     <updated>2020-02-17T16:06:03.328Z</updated>
     
@@ -136,17 +136,17 @@
     </summary>
     
     
-      <category term="Job" scheme="http://skyazure.top/categories/Job/"/>
+      <category term="Job" scheme="https://skyazure.top/categories/Job/"/>
     
     
-      <category term="skill" scheme="http://skyazure.top/tags/skill/"/>
+      <category term="skill" scheme="https://skyazure.top/tags/skill/"/>
     
   </entry>
   
   <entry>
     <title>MPU6050姿态结算</title>
-    <link href="http://skyazure.top/2019/10/13/MPU6050%E5%A7%BF%E6%80%81%E7%BB%93%E7%AE%97/"/>
-    <id>http://skyazure.top/2019/10/13/MPU6050%E5%A7%BF%E6%80%81%E7%BB%93%E7%AE%97/</id>
+    <link href="https://skyazure.top/2019/10/13/MPU6050%E5%A7%BF%E6%80%81%E7%BB%93%E7%AE%97/"/>
+    <id>https://skyazure.top/2019/10/13/MPU6050%E5%A7%BF%E6%80%81%E7%BB%93%E7%AE%97/</id>
     <published>2019-10-13T03:33:28.000Z</published>
     <updated>2020-02-17T16:07:45.201Z</updated>
     
@@ -165,17 +165,17 @@
     </summary>
     
     
-      <category term="嵌入式" scheme="http://skyazure.top/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+      <category term="嵌入式" scheme="https://skyazure.top/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
     
-      <category term="IMU传感器" scheme="http://skyazure.top/tags/IMU%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+      <category term="IMU传感器" scheme="https://skyazure.top/tags/IMU%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>C/C++ sizeof函数总结</title>
-    <link href="http://skyazure.top/2019/10/12/C-C-sizeof%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/"/>
-    <id>http://skyazure.top/2019/10/12/C-C-sizeof%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/</id>
+    <link href="https://skyazure.top/2019/10/12/C-C-sizeof%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/"/>
+    <id>https://skyazure.top/2019/10/12/C-C-sizeof%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/</id>
     <published>2019-10-12T07:42:20.000Z</published>
     <updated>2020-02-17T16:07:06.686Z</updated>
     
@@ -190,17 +190,17 @@
     </summary>
     
     
-      <category term="C语言" scheme="http://skyazure.top/categories/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C语言" scheme="https://skyazure.top/categories/C%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="结构体" scheme="http://skyazure.top/tags/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
+      <category term="结构体" scheme="https://skyazure.top/tags/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
     
   </entry>
   
   <entry>
     <title>数据结构与算法知识点</title>
-    <link href="http://skyazure.top/2019/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/"/>
-    <id>http://skyazure.top/2019/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</id>
+    <link href="https://skyazure.top/2019/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/"/>
+    <id>https://skyazure.top/2019/10/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</id>
     <published>2019-10-11T05:06:33.000Z</published>
     <updated>2020-02-17T16:06:13.844Z</updated>
     
@@ -215,17 +215,17 @@
     </summary>
     
     
-      <category term="数据结构" scheme="http://skyazure.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="https://skyazure.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="算法" scheme="http://skyazure.top/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://skyazure.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>知识点随笔</title>
-    <link href="http://skyazure.top/2019/10/11/%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86%E9%9A%8F%E7%AC%94/"/>
-    <id>http://skyazure.top/2019/10/11/%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86%E9%9A%8F%E7%AC%94/</id>
+    <link href="https://skyazure.top/2019/10/11/%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86%E9%9A%8F%E7%AC%94/"/>
+    <id>https://skyazure.top/2019/10/11/%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86%E9%9A%8F%E7%AC%94/</id>
     <published>2019-10-11T02:44:57.000Z</published>
     <updated>2020-02-17T16:05:43.184Z</updated>
     
@@ -240,17 +240,17 @@
     </summary>
     
     
-      <category term="Job" scheme="http://skyazure.top/categories/Job/"/>
+      <category term="Job" scheme="https://skyazure.top/categories/Job/"/>
     
     
-      <category term="知识点" scheme="http://skyazure.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <category term="知识点" scheme="https://skyazure.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>Linux及计算机网络知识点汇总</title>
-    <link href="http://skyazure.top/2019/10/11/Linux%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/"/>
-    <id>http://skyazure.top/2019/10/11/Linux%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/</id>
+    <link href="https://skyazure.top/2019/10/11/Linux%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/"/>
+    <id>https://skyazure.top/2019/10/11/Linux%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/</id>
     <published>2019-10-11T02:44:34.000Z</published>
     <updated>2020-02-17T16:04:45.597Z</updated>
     
@@ -265,17 +265,17 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://skyazure.top/categories/Linux/"/>
+      <category term="Linux" scheme="https://skyazure.top/categories/Linux/"/>
     
     
-      <category term="知识点" scheme="http://skyazure.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <category term="知识点" scheme="https://skyazure.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>Python知识点整理</title>
-    <link href="http://skyazure.top/2019/10/11/Python%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/"/>
-    <id>http://skyazure.top/2019/10/11/Python%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/</id>
+    <link href="https://skyazure.top/2019/10/11/Python%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/"/>
+    <id>https://skyazure.top/2019/10/11/Python%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/</id>
     <published>2019-10-11T02:44:12.000Z</published>
     <updated>2020-02-17T16:03:20.309Z</updated>
     
@@ -290,17 +290,17 @@
     </summary>
     
     
-      <category term="Python" scheme="http://skyazure.top/categories/Python/"/>
+      <category term="Python" scheme="https://skyazure.top/categories/Python/"/>
     
     
-      <category term="知识点" scheme="http://skyazure.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <category term="知识点" scheme="https://skyazure.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>python str和list排序并删除重复数据</title>
-    <link href="http://skyazure.top/2019/06/30/python-str%E5%92%8Clist%E6%8E%92%E5%BA%8F%E5%B9%B6%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/"/>
-    <id>http://skyazure.top/2019/06/30/python-str%E5%92%8Clist%E6%8E%92%E5%BA%8F%E5%B9%B6%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/</id>
+    <link href="https://skyazure.top/2019/06/30/python-str%E5%92%8Clist%E6%8E%92%E5%BA%8F%E5%B9%B6%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/"/>
+    <id>https://skyazure.top/2019/06/30/python-str%E5%92%8Clist%E6%8E%92%E5%BA%8F%E5%B9%B6%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/</id>
     <published>2019-06-30T06:31:26.000Z</published>
     <updated>2020-02-17T16:07:51.572Z</updated>
     
@@ -315,17 +315,17 @@
     </summary>
     
     
-      <category term="Python" scheme="http://skyazure.top/categories/Python/"/>
+      <category term="Python" scheme="https://skyazure.top/categories/Python/"/>
     
     
-      <category term="排序" scheme="http://skyazure.top/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://skyazure.top/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>python获取当前目录，上级目录，上上级目录</title>
-    <link href="http://skyazure.top/2019/06/30/python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95/"/>
-    <id>http://skyazure.top/2019/06/30/python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95/</id>
+    <link href="https://skyazure.top/2019/06/30/python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95/"/>
+    <id>https://skyazure.top/2019/06/30/python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95%EF%BC%8C%E4%B8%8A%E4%B8%8A%E7%BA%A7%E7%9B%AE%E5%BD%95/</id>
     <published>2019-06-30T03:55:28.000Z</published>
     <updated>2020-02-17T16:05:54.411Z</updated>
     
@@ -341,17 +341,17 @@
     </summary>
     
     
-      <category term="Python" scheme="http://skyazure.top/categories/Python/"/>
+      <category term="Python" scheme="https://skyazure.top/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://skyazure.top/tags/Python/"/>
+      <category term="Python" scheme="https://skyazure.top/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Typora取消继承上一行格式</title>
-    <link href="http://skyazure.top/2019/06/27/Typora%E5%8F%96%E6%B6%88%E7%BB%A7%E6%89%BF%E4%B8%8A%E4%B8%80%E8%A1%8C%E6%A0%BC%E5%BC%8F/"/>
-    <id>http://skyazure.top/2019/06/27/Typora%E5%8F%96%E6%B6%88%E7%BB%A7%E6%89%BF%E4%B8%8A%E4%B8%80%E8%A1%8C%E6%A0%BC%E5%BC%8F/</id>
+    <link href="https://skyazure.top/2019/06/27/Typora%E5%8F%96%E6%B6%88%E7%BB%A7%E6%89%BF%E4%B8%8A%E4%B8%80%E8%A1%8C%E6%A0%BC%E5%BC%8F/"/>
+    <id>https://skyazure.top/2019/06/27/Typora%E5%8F%96%E6%B6%88%E7%BB%A7%E6%89%BF%E4%B8%8A%E4%B8%80%E8%A1%8C%E6%A0%BC%E5%BC%8F/</id>
     <published>2019-06-27T08:01:01.000Z</published>
     <updated>2020-02-17T16:05:01.091Z</updated>
     
@@ -366,17 +366,17 @@
     </summary>
     
     
-      <category term="Debug" scheme="http://skyazure.top/categories/Debug/"/>
+      <category term="Debug" scheme="https://skyazure.top/categories/Debug/"/>
     
     
-      <category term="Typora" scheme="http://skyazure.top/tags/Typora/"/>
+      <category term="Typora" scheme="https://skyazure.top/tags/Typora/"/>
     
   </entry>
   
   <entry>
     <title>Git安装及Github基本使用</title>
-    <link href="http://skyazure.top/2019/06/27/Git%E5%AE%89%E8%A3%85%E5%8F%8AGithub%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
-    <id>http://skyazure.top/2019/06/27/Git%E5%AE%89%E8%A3%85%E5%8F%8AGithub%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</id>
+    <link href="https://skyazure.top/2019/06/27/Git%E5%AE%89%E8%A3%85%E5%8F%8AGithub%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <id>https://skyazure.top/2019/06/27/Git%E5%AE%89%E8%A3%85%E5%8F%8AGithub%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</id>
     <published>2019-06-27T07:32:58.000Z</published>
     <updated>2020-02-17T16:07:21.283Z</updated>
     
@@ -389,17 +389,17 @@
     </summary>
     
     
-      <category term="Git" scheme="http://skyazure.top/categories/Git/"/>
+      <category term="Git" scheme="https://skyazure.top/categories/Git/"/>
     
     
-      <category term="GitHub" scheme="http://skyazure.top/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://skyazure.top/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>hexo不解析Markdown标题&amp;#40&amp;#35&amp;#41</title>
-    <link href="http://skyazure.top/2019/06/22/Typora%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://skyazure.top/2019/06/22/Typora%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <link href="https://skyazure.top/2019/06/22/Typora%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://skyazure.top/2019/06/22/Typora%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2019-06-22T13:07:03.000Z</published>
     <updated>2020-02-17T16:05:20.039Z</updated>
     
@@ -414,19 +414,19 @@
     </summary>
     
     
-      <category term="Debug" scheme="http://skyazure.top/categories/Debug/"/>
+      <category term="Debug" scheme="https://skyazure.top/categories/Debug/"/>
     
     
-      <category term="Markdown" scheme="http://skyazure.top/tags/Markdown/"/>
+      <category term="Markdown" scheme="https://skyazure.top/tags/Markdown/"/>
     
-      <category term="Typore" scheme="http://skyazure.top/tags/Typore/"/>
+      <category term="Typore" scheme="https://skyazure.top/tags/Typore/"/>
     
   </entry>
   
   <entry>
     <title>Hexo generate报错TypeError: Cannot read property &amp;#39utcOffset&amp;#39 of null</title>
-    <link href="http://skyazure.top/2019/06/22/Hexo-generate%E6%8A%A5%E9%94%99TypeError-Cannot-read-property-39utcOffset-39-of-null/"/>
-    <id>http://skyazure.top/2019/06/22/Hexo-generate%E6%8A%A5%E9%94%99TypeError-Cannot-read-property-39utcOffset-39-of-null/</id>
+    <link href="https://skyazure.top/2019/06/22/Hexo-generate%E6%8A%A5%E9%94%99TypeError-Cannot-read-property-39utcOffset-39-of-null/"/>
+    <id>https://skyazure.top/2019/06/22/Hexo-generate%E6%8A%A5%E9%94%99TypeError-Cannot-read-property-39utcOffset-39-of-null/</id>
     <published>2019-06-22T12:17:05.000Z</published>
     <updated>2020-02-17T16:07:27.260Z</updated>
     
@@ -441,19 +441,19 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://skyazure.top/categories/Blog/"/>
+      <category term="Blog" scheme="https://skyazure.top/categories/Blog/"/>
     
-      <category term="Hexo" scheme="http://skyazure.top/categories/Blog/Hexo/"/>
+      <category term="Hexo" scheme="https://skyazure.top/categories/Blog/Hexo/"/>
     
     
-      <category term="Debug" scheme="http://skyazure.top/tags/Debug/"/>
+      <category term="Debug" scheme="https://skyazure.top/tags/Debug/"/>
     
   </entry>
   
   <entry>
     <title>hexo删除&amp;#34Hello Word&amp;#34</title>
-    <link href="http://skyazure.top/2019/06/20/hexo%E5%88%A0%E9%99%A4Hello%20Word/"/>
-    <id>http://skyazure.top/2019/06/20/hexo%E5%88%A0%E9%99%A4Hello%20Word/</id>
+    <link href="https://skyazure.top/2019/06/20/hexo%E5%88%A0%E9%99%A4Hello%20Word/"/>
+    <id>https://skyazure.top/2019/06/20/hexo%E5%88%A0%E9%99%A4Hello%20Word/</id>
     <published>2019-06-19T16:47:14.000Z</published>
     <updated>2020-02-17T16:07:16.529Z</updated>
     
@@ -468,12 +468,12 @@
     </summary>
     
     
-      <category term="Blog" scheme="http://skyazure.top/categories/Blog/"/>
+      <category term="Blog" scheme="https://skyazure.top/categories/Blog/"/>
     
-      <category term="Hexo" scheme="http://skyazure.top/categories/Blog/Hexo/"/>
+      <category term="Hexo" scheme="https://skyazure.top/categories/Blog/Hexo/"/>
     
     
-      <category term="Debug" scheme="http://skyazure.top/tags/Debug/"/>
+      <category term="Debug" scheme="https://skyazure.top/tags/Debug/"/>
     
   </entry>
   
