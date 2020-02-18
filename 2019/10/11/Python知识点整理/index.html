@@ -644,7 +644,19 @@
 
 
 
-  
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
 
 
 
@@ -1001,7 +1013,7 @@
 </header>
 
     <div class="content material">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\11\Linux与计算机网络知识点整理\" title="Linux及计算机网络知识点汇总" rel="bookmark">Linux及计算机网络知识点汇总</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\11\技术知识随笔\" title="知识点随笔" rel="bookmark">知识点随笔</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\30\python获取当前目录，上级目录，上上级目录\" title="python获取当前目录，上级目录，上上级目录" rel="bookmark">python获取当前目录，上级目录，上上级目录</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\30\python-str和list排序并删除重复数据\" title="python str和list排序并删除重复数据" rel="bookmark">python str和list排序并删除重复数据</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\11\Linux与计算机网络知识点整理\" title="Linux及计算机网络知识点汇总" rel="bookmark">Linux及计算机网络知识点汇总</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\11\技术知识随笔\" title="知识点随笔" rel="bookmark">知识点随笔</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\30\python-str和list排序并删除重复数据\" title="python str和list排序并删除重复数据" rel="bookmark">python str和list排序并删除重复数据</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\06\30\python获取当前目录，上级目录，上上级目录\" title="python获取当前目录，上级目录，上上级目录" rel="bookmark">python获取当前目录，上级目录，上上级目录</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1214,6 +1226,23 @@
 
 
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "2cdb5b1e1ce80d3f81cf",
+      clientSecret: "c3a6a51af23d3a36a2824997716a7437f43f122b",
+      repo: "SkyAzure.github.io",
+      owner: "SkyAzure",
+      admin: "SkyAzure",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 
