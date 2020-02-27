@@ -29,7 +29,7 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting@master/Blog-config/img/favicon.png">
   
 
   
@@ -422,7 +422,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>今天给博客配置Gitalk评论插件，配置完成后出现401报错，无法初始化创建失败，提示<code>Error: Validation Failed.</code>搜索后发现很多博主出现此现象，详见</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>今天给博客配置Gitalk评论插件，配置完成后出现401报错，初始化创建失败，提示<code>Error: Validation Failed.</code>搜索后发现很多博主出现此现象，详见<a href="https://github.com/gitalk/gitalk/issues/115" target="_blank" rel="noopener">issues#115</a></p>
 <p>由此引发了我对Hexo文章链接格式的关注，我之前所用的合适类似<code>skyazure.top/2020/02/05/Manjaro配置命令/</code>Gitalk的使用是将文章名称经URL编码后添加到issues的label里，但是<strong>label的长度上限是50个字符</strong>，所以文章名有些长的(尤其是<strong>中文名称编码后会较长</strong>)都会生成label失败，也就没法评论了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://skyazure.top/2020/02/05/Manjaro配置命令/</span><br><span class="line"><span class="comment"># 转码后变为</span></span><br><span class="line">https://skyazure.top/2020/02/05/Manjaro%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4/</span><br></pre></td></tr></table></figure>
 
@@ -586,10 +586,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T21:52:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-19T13:04:59+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月18日</p>
+    <p>更新于 2020年2月19日</p>
   </a>
 </div>
 
