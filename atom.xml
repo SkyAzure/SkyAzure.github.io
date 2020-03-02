@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyazure.top/"/>
-  <updated>2020-02-19T05:04:59.336Z</updated>
+  <updated>2020-03-02T09:55:26.072Z</updated>
   <id>https://skyazure.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技术书籍汇总</title>
+    <link href="https://skyazure.top/2020/0302/code-book-update/"/>
+    <id>https://skyazure.top/2020/0302/code-book-update/</id>
+    <published>2020-03-02T06:56:26.000Z</published>
+    <updated>2020-03-02T09:55:26.072Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><center><font color="#1Bc3FB">热爱生活 ● 热爱阅读</font><center></center></center></blockquote><a id="more"></a><blockquote><p>阅读方法论</p><p><strong>一.速读一遍（最好在1~2天内完成）</strong></p><p>人的大脑记忆力有限，在一天内快速看完一本书会在大脑里留下深刻印象，对于之后复习以及总结都会有特别好的作用。<br>对于每一章的知识，先阅读标题，弄懂大概讲的是什么主题，再去快速看一遍，不懂也没有关系，但是一定要在不懂的地方做个记号，什么记号无所谓，但是要让自己后面再看的时候有个提醒的作用，看看第二次看有没有懂了些。</p><p><strong>二.精读一遍（在2周内看完）</strong></p><p>有了前面速读的感觉，第二次看会有慢慢深刻了思想和意识的作用，具体为什么不要问我，去问30年后的神经大脑专家，现在人类可能还没有总结出为什么大脑对记忆的完全方法论，但是，就像我们专业程序员，打代码都是先实践，然后就渐渐懂了过程，慢慢懂了原理，所以第二遍读的时候稍微慢下来，2周内搞定。记住一句话：没看完一个章节后，总结一下这个章节讲了啥。很关键。</p><p><strong>三.实践（在整个过程中都要）</strong></p><p>实践的时候，要注意不用都去实践，最好看着书，敲下代码，把重点的内容敲一遍有个肌肉记忆就很不错了。<br>以及到自己做过的项目中去把每个有涉及的原理的代码，研究一遍，就可以了</p></blockquote><h1 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h1><ul><li><p>C语言</p><ul><li><input disabled type="checkbox"> <p>《C primer plus》（入门首选）</p></li><li><p>《C语言程序设计：现代方法》（第2版）</p></li><li><input disabled type="checkbox"> <p>《C和指针》</p></li><li><input disabled type="checkbox"> <p>《C专家编程》</p></li><li><input disabled type="checkbox"> <p>《C陷阱与缺陷》</p></li></ul></li><li><p>C++</p><ul><li><input disabled type="checkbox"> <p>《Essential C++》</p></li><li><input disabled type="checkbox"> <p>《C++ primer plus》（第六版）</p></li><li><input disabled type="checkbox"> <p>《Effeetive C++》</p></li><li><p>《More Effeetive C++》</p></li><li><p>《C++标准程序库》</p></li><li><p>《STL源码剖析》</p></li><li><p>《深度探索C++对象模型》</p></li></ul></li><li><p>Python</p><ul><li></li></ul></li></ul><h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><ul><li><p>《数据结构与算法分析C++语言描述》</p></li><li><input disabled type="checkbox"> <p>《数据结构与算法分析C语言描述》</p></li><li><input disabled type="checkbox"> <p>《大话数据结构》</p></li><li><input disabled type="checkbox"> <p>MOOC《数据结构》浙江大学</p></li><li><p>《啊哈！算法哈磊》</p></li><li><input disabled type="checkbox"> <p>《算法竞赛入门经典》（第2版）</p></li><li><p>《算法》（第四版）</p></li><li><p><a href="https://github.com/gatieme/CodingInterviews" target="_blank" rel="noopener">剑指Offer</a></p></li><li><p>LeetCode</p></li></ul><h1 id="操作系统与组成原理"><a href="#操作系统与组成原理" class="headerlink" title="操作系统与组成原理"></a>操作系统与组成原理</h1><ul><li><input disabled type="checkbox"> <p>深入理解计算机系统（第三版）</p></li><li><input disabled type="checkbox"> <p>计算机组成与设计 硬件软件接口（第5版）</p></li></ul><h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><ul><li><input disabled type="checkbox"> 《TCP/IP详解》</li></ul><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><ul><li><input disabled type="checkbox"> 《大话设计模式》</li></ul><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ul><li><input disabled type="checkbox"> <p>《鸟哥的Linux私房菜 基础学习篇 第四版》</p></li><li><p>《Linux命令行与shell脚本编程大全》</p></li><li><p>《Linux就该这么学》</p></li><li><input disabled type="checkbox"> <p>《UNIX环境高级编程》</p></li><li><input disabled type="checkbox"> <p>《UNIX网络编程》</p></li><li><input disabled type="checkbox"> <p>《深入Linux内核架构》</p></li><li><p>《深入理解LINUX内核》</p></li><li><p>《Linux高性能服务器编程》</p></li><li><p>《POSIX多线程程序设计》</p></li></ul><h1 id="嵌入式"><a href="#嵌入式" class="headerlink" title="嵌入式"></a>嵌入式</h1><ul><li><p>gcc/makefile/cmake</p></li><li><input disabled type="checkbox"> <p>《跟我一起学Makefile》</p></li><li><p>《debugging with gdb》</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;center&gt;&lt;font color=&quot;#1Bc3FB&quot;&gt;热爱生活 ● 热爱阅读&lt;/font&gt;&lt;center&gt;
+&lt;/center&gt;&lt;/center&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="折腾" scheme="https://skyazure.top/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+      <category term="Book" scheme="https://skyazure.top/tags/Book/"/>
+    
+  </entry>
   
   <entry>
     <title>修改Hexo文章链接格式</title>
@@ -47,8 +72,8 @@
     <title>Win10和Manjaro双系统记录</title>
     <link href="https://skyazure.top/2020/0213/Win10-Manjaro-install/"/>
     <id>https://skyazure.top/2020/0213/Win10-Manjaro-install/</id>
-    <published>2020-02-13T03:21:02.000Z</published>
-    <updated>2020-02-18T14:01:40.902Z</updated>
+    <published>2020-02-13T14:36:28.000Z</published>
+    <updated>2020-03-02T07:02:48.403Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>疫情不能出门那就折腾win10和manjaro双系统吧！</p></blockquote><a id="more"></a><h1 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h1><ol><li><p>硬件信息</p><ul><li>UEFI+GPT 的架构</li><li>128G SSD(已装win10) + 1T HDD</li></ul></li><li><p>启动相关设置并分配空间</p><ul><li><p>禁用快速启动</p><p><strong>电源选项 &gt; 选择电源按钮的功能 &gt; 更改当前不可用的设置 &gt; 关机设置 &gt; [取消勾选] 启用快速启动 &gt; 保存修改</strong></p></li><li><p>禁用安全启动(Secure Boot)</p><p>如果你想在 Win 10 的电脑上双引导 Linux ，安全机制会阻止这样做。所以需要禁用 UEFI 安全引导，以支持 Linux 的双系统启动。<strong>进入bios中将安全启动关闭</strong></p></li><li><p>为Linux从HDD中划分80G未分配空间</p></li></ul></li></ol><p><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20200213150126.png"></p><ol start="3"><li><p>准备操作系</p><p>因为我的win10驱动出了问题，直接重装</p><ul><li><p>Win10：<code>LTSC 1909</code> <a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9ob25va2EtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvd2hhdGtfbGlseV9iZWVyL0VSVVZLdTdZdndST3Fod2ppbzQySE1NQlR5MVkybHZicWg0dlZTVVYxZDlmNnc/ZT1SYzd6MHQ=.esd" target="_blank" rel="noopener">OneDrive镜像</a> <a href="https://pan.baidu.com/s/1pLLL8oV#list/path=%2Fsharelink489539769-996643631769950%2FWindsys%20Win10%2FHHJLKK_191220" target="_blank" rel="noopener">百度网盘镜像</a></p></li><li><p>Linux：<code>Manjaro KDE Plasma 18.1.5</code> <a href="https://manjaro.org/download/official/kde/" target="_blank" rel="noopener">官方镜像</a></p></li></ul><p>win系统推荐镜像下载地址：<a href="https://windsys.whatk.me/" target="_blank" rel="noopener">Windsys</a>大量精简优化版本可供下载</p></li></ol><h1 id="二、安装系统"><a href="#二、安装系统" class="headerlink" title="二、安装系统"></a>二、安装系统</h1><ol><li>Windows10安装<ul><li>制作PE系统(这里推荐<a href="http://www.wepe.com.cn/" target="_blank" rel="noopener">微PE</a>)到U盘</li><li>U盘启动进入PE，使用PG格式化C盘</li><li>打开Winouws安装器，选择镜像文件，选择安装驱动器盘为C: ,<strong>选择引导驱动器盘为EFI分区盘符</strong>一般默认为Z:。挂载盘符随便选一个。</li><li>确定，重启即可进入系统</li></ul></li></ol><p><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20200213153936.jpg" alt></p><ol start="2"><li><p>Manjaro安装</p><ul><li><p>使用镜像制作U盘启动盘(推荐<a href="https://rufus.ie/" target="_blank" rel="noopener">Rufus</a>、<a href="https://www.balena.io/etcher/" target="_blank" rel="noopener">Etcher</a>)</p></li><li><p>开始安装</p><p><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20200213160732.png" alt></p><table><thead><tr><th align="center">CPU</th><th align="center">独显</th><th align="center">driver</th></tr></thead><tbody><tr><td align="center">Intel</td><td align="center">无</td><td align="center">free/intel</td></tr><tr><td align="center">Intel</td><td align="center">AMD</td><td align="center">free</td></tr><tr><td align="center">Intel</td><td align="center">NVDIA</td><td align="center">no free</td></tr><tr><td align="center">AMD</td><td align="center">NVDIA</td><td align="center">no free</td></tr><tr><td align="center">AMD</td><td align="center">无</td><td align="center">free</td></tr></tbody></table></li><li><p>选择手动分区，选择80G未分配空间</p></li><li><p>未分区磁盘72G，挂载点<code>根节点/</code>，文件系统<code>ext4</code></p><p>EFI分区100M，挂载点<code>/boot/efi</code>，文件系统<code>fat32</code>，<strong>内容：保留</strong></p><p>未分区磁盘8G，挂载点<code>swap</code></p><table><thead><tr><th align="center">RAM大小</th><th align="center">推荐的交换空间</th></tr></thead><tbody><tr><td align="center">&lt;=2G</td><td align="center">2倍RAM</td></tr><tr><td align="center">2G-8G</td><td align="center">=RAM</td></tr><tr><td align="center">&gt;8G</td><td align="center">8G</td></tr></tbody></table></li></ul></li></ol><h1 id="三、rEFInd管理启动引导"><a href="#三、rEFInd管理启动引导" class="headerlink" title="三、rEFInd管理启动引导"></a>三、rEFInd管理启动引导</h1><ol><li>进入manjaro，从<a href="http://www.rodsbooks.com/refind/" target="_blank" rel="noopener">官网</a>下载压缩包并解压</li><li>在解压好的文件目录打开终端，执行<code>./refind-install</code></li><li>调整refind配置文件，主题美化</li><li>调整启动顺序<ul><li>Manjaro<code>sudo efibootmgr</code></li><li>Win使用<code>BOOTICE</code></li></ul></li></ol><blockquote><p>注意事项：</p><ul><li>如果Win10大版本更新后，发现引导界面消失，直接进入Win10，这时需要替换引导文件，调整启动顺序即可</li><li>使用Linux某发行版一段时间后，如果想使用其他发行版，请务必将之前的引导文件删除</li><li>如果Manjaro更新内核后无法进入win10，这是不可以直接修复Win10引导，这会格式化EFI分区。应<a href="https://www.jianshu.com/p/5007e555ec12" target="_blank" rel="noopener">修复Windows引导</a></li></ul></blockquote>]]></content>
     
@@ -64,7 +89,7 @@
       <category term="折腾" scheme="https://skyazure.top/categories/%E6%8A%98%E8%85%BE/"/>
     
     
-      <category term="双系统" scheme="https://skyazure.top/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="Manjaro" scheme="https://skyazure.top/tags/Manjaro/"/>
     
   </entry>
   
