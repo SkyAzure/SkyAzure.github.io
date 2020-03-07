@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyazure.top/"/>
-  <updated>2020-03-07T10:44:47.429Z</updated>
+  <updated>2020-03-07T11:26:40.036Z</updated>
   <id>https://skyazure.top/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>生成和安装requirements.txt依赖</title>
+    <link href="https://skyazure.top/2020/0307/pip-requirements/"/>
+    <id>https://skyazure.top/2020/0307/pip-requirements/</id>
+    <published>2020-03-07T11:14:01.000Z</published>
+    <updated>2020-03-07T11:26:40.036Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>Github上的Python项目中，通常存在一个<code>requirements.txt</code>的文件，其记录了当前环境中存在的所有依赖包及其版本号。用来在其他设备上快速重构项目所需依赖。</p><ul><li><p>生成<code>requirements.txt</code></p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line">pip freeze   <span class="comment">#此命令可打印出存在的依赖，可预览</span></span><br></pre></td></tr></table></figure></li><li><p>安装<code>requirements.txt</code>中依赖</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;p&gt;Github上的Python项目中，通常存在一个&lt;code&gt;requirements.txt&lt;/code&gt;的文件，其记录了当前环境中存在的所有依赖包及其版本号。用来在其他设备上快速重构项目所需依赖。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;生成
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://skyazure.top/categories/Python/"/>
+    
+    
+      <category term="pip" scheme="https://skyazure.top/tags/pip/"/>
+    
+      <category term="requirements" scheme="https://skyazure.top/tags/requirements/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jupyter notebook使用虚拟环境中module</title>
     <link href="https://skyazure.top/2020/0307/Jupyter-venv-module/"/>
     <id>https://skyazure.top/2020/0307/Jupyter-venv-module/</id>
     <published>2020-03-07T09:41:36.000Z</published>
-    <updated>2020-03-07T10:44:47.429Z</updated>
+    <updated>2020-03-07T11:17:06.579Z</updated>
     
     <content type="html"><![CDATA[<ul><li>Jupyter notebook选择不同虚拟环境中module</li><li>Jupyter notebook改变工作路径</li><li>Jupyter notebook中文化</li></ul><a id="more"></a><h1 id="Jupyter-notebook选择不同虚拟环境中module"><a href="#Jupyter-notebook选择不同虚拟环境中module" class="headerlink" title="Jupyter notebook选择不同虚拟环境中module"></a>Jupyter notebook选择不同虚拟环境中module</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda activate <span class="variable">$Your</span>-env-name <span class="comment">#激活对应虚拟环境</span></span><br><span class="line">conda install ipykernel       <span class="comment">#在此环境中安装ipykernel module</span></span><br><span class="line">ipython kernel install --user --name= <span class="variable">$Your</span>-like-name</span><br><span class="line"><span class="comment">#为此虚拟环境添加对应的kernel</span></span><br></pre></td></tr></table></figure><p>打开jupyter notebook，在界面选择对应虚拟环境的kernel，即可使用其中的模块</p><p><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20200307175530.png" alt></p><p>Jupyter kernel管理命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看当前已有的 jupyter kernel</span></span><br><span class="line">juputer kernelspec list</span><br><span class="line"><span class="comment">#删除不再需要的 kernel</span></span><br><span class="line">jupyter kernelspec uninstall <span class="variable">$kernel_name</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/0200307172439.png" alt></p><h1 id="Jupyter-notebook改变工作路径"><a href="#Jupyter-notebook改变工作路径" class="headerlink" title="Jupyter notebook改变工作路径"></a>Jupyter notebook改变工作路径</h1><p>生成配置文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br><span class="line"><span class="meta">#</span><span class="bash">路径应为<span class="variable">$user</span>/.jupyter/`jupyter_notebook_config.py`</span></span><br></pre></td></tr></table></figure><p>执行命令后会显示生成的路径，前往该路径，并打开<code>jupyter_notebook_config.py</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#c.NotebookApp.notebook_dir = ''</span></span><br><span class="line"><span class="comment">#将此处修改为</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">'你希望的路径'</span></span><br></pre></td></tr></table></figure><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20200307183528.png" style="zoom:140%;"><h1 id="Jupyter-notebook中文化"><a href="#Jupyter-notebook中文化" class="headerlink" title="Jupyter notebook中文化"></a>Jupyter notebook中文化</h1><p>使用中文终端打开<code>jupyter notebook</code>，界面会自动变为中文</p><p>例如使用windows端的<code>Git Bash</code></p><img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20200307184133.png">]]></content>
     
@@ -501,31 +533,6 @@
     
     
       <category term="Python" scheme="https://skyazure.top/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora取消继承上一行格式</title>
-    <link href="https://skyazure.top/2019/0627/Typora-cancel-inherit/"/>
-    <id>https://skyazure.top/2019/0627/Typora-cancel-inherit/</id>
-    <published>2019-06-27T08:01:01.000Z</published>
-    <updated>2020-02-18T13:44:32.732Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><center><font color="#1Bc3FB">Debug !</font><center></center></center></blockquote><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>使用Typora写列表时，换行会继承上一行的格式</p><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p><strong>Mac</strong></p><p><code>command+[</code></p><p><strong>windows</strong></p><p><code>ctrl+[</code></p><p>即可取消继承</p><blockquote><p><strong>补充</strong>：直接按方向键时不自动继承上一行的，按Enter会继承上一行</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;center&gt;&lt;font color=&quot;#1Bc3FB&quot;&gt;Debug !&lt;/font&gt;&lt;center&gt;
-&lt;/center&gt;&lt;/center&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="Debug" scheme="https://skyazure.top/categories/Debug/"/>
-    
-    
-      <category term="Typora" scheme="https://skyazure.top/tags/Typora/"/>
     
   </entry>
   

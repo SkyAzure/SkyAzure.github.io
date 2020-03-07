@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>生成和安装requirements.txt依赖</title>
+      <link href="/2020/0307/pip-requirements/"/>
+      <url>/2020/0307/pip-requirements/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><p>Github上的Python项目中，通常存在一个<code>requirements.txt</code>的文件，其记录了当前环境中存在的所有依赖包及其版本号。用来在其他设备上快速重构项目所需依赖。</p><ul><li><p>生成<code>requirements.txt</code></p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line">pip freeze   <span class="comment">#此命令可打印出存在的依赖，可预览</span></span><br></pre></td></tr></table></figure></li><li><p>安装<code>requirements.txt</code>中依赖</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pip </tag>
+            
+            <tag> requirements </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Jupyter notebook使用虚拟环境中module</title>
       <link href="/2020/0307/Jupyter-venv-module/"/>
       <url>/2020/0307/Jupyter-venv-module/</url>
