@@ -388,7 +388,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>685字</p>
+        <p>692字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -424,27 +424,27 @@
 
 <h1 id="●-完全二叉树与满二叉树的区别"><a href="#●-完全二叉树与满二叉树的区别" class="headerlink" title="● 完全二叉树与满二叉树的区别"></a>● 完全二叉树与满二叉树的区别</h1><p><strong>满二叉树</strong>是<strong>完全二叉树</strong>的特例，因为满二叉树已经满了，而完全并不代表满。所以形态你也应该想象出来了吧，满指的是出了叶子节点外每个节点都有两个孩子，而完全的含义则是最后一层没有满，并没有满。</p>
 <h1 id="●-已知二叉树的前序遍历和中序遍历求后续遍历"><a href="#●-已知二叉树的前序遍历和中序遍历求后续遍历" class="headerlink" title="● 已知二叉树的前序遍历和中序遍历求后续遍历"></a>● 已知二叉树的前序遍历和中序遍历求后续遍历</h1><p>现有二叉搜索树（BST）前序遍历结果序列为abdefgc，中序遍历结果序列为debgfac，请问后序遍历结果序列?</p>
-<p>答：前序遍历结果序列为<strong>abdefgc</strong>，中序遍历结果序列为<strong>debgfac</strong><br>以此为条件，根据前序知道a是根，根据中知道debgf为左子树，c为右子树。<br>根据前知道b为左子树中的根，根据中知道de为b的左，gf为右，根据前和中判断d为根，e为右，f为根，g为左，<br>树成型，得出后序结果<strong>edgfbca</strong></p>
-<h1 id="●-已知啊a-b-c，求系统进制"><a href="#●-已知啊a-b-c，求系统进制" class="headerlink" title="● 已知啊a * b = c，求系统进制"></a>● 已知啊a * b = c，求系统进制</h1><p>如果某系统15*4=112成立，则系统采用的是几进制？</p>
-<p>将原式转为X进制：<br>1 5 * 4 = 1 1 2<br>（X+5）* 4 = X^2+X+2<br>解方程即可x=6</p>
+<p>答：前序遍历结果序列为 <strong>abdefgc</strong>，中序遍历结果序列为 <strong>debgfac</strong><br>以此为条件，根据前序知道a是根，根据中知道debgf为左子树，c为右子树。<br>根据前知道b为左子树中的根，根据中知道de为b的左，gf为右，根据前和中判断d为根，e为右，f为根，g为左，<br>树成型，得出后序结果 <strong>edgfbca</strong></p>
+<h1 id="●-已知啊-a-b-c，求系统进制"><a href="#●-已知啊-a-b-c，求系统进制" class="headerlink" title="● 已知啊 a * b = c，求系统进制"></a>● 已知啊 a * b = c，求系统进制</h1><p>如果某系统 15*4=112 成立，则系统采用的是几进制？</p>
+<p>将原式转为 X进制：<br>1 5 * 4 = 1 1 2<br>（X+5）* 4 = X^2+X+2<br>解方程即可 x=6</p>
 <h1 id="●-栈"><a href="#●-栈" class="headerlink" title="● 栈"></a>● 栈</h1><ol>
-<li><p>设栈S和队列Q的初始状态均为空，元素啊，a,b,c,d,e,f,g依次进入栈S。若每个元素出栈后立即进入推列Q，且7个元素出队的顺序是b,d,,c,f,e,a,g，则栈S的容量至少是？</p>
-<p>栈是先进后出，队列是先进先出，所以元素出队列的顺序就是出栈的顺序。<br>出栈的顺序为b,d,c,f,e,a,g，这意味着</p>
+<li><p>设栈 S 和队列 Q 的初始状态均为空，元素啊，a,b,c,d,e,f,g 依次进入栈 S。若每个元素出栈后立即进入推列Q，且7个元素出队的顺序是 b,d,,c,f,e,a,g，则栈 S 的容量至少是？</p>
+<p>栈是先进后出，队列是先进先出，所以元素出队列的顺序就是出栈的顺序。<br>出栈的顺序为 b,d,c,f,e,a,g，这意味着</p>
 <ol>
-<li><p>a,b进入，b出；</p>
+<li><p>a,b 进入，b 出；</p>
 </li>
-<li><p>c,d进入，此时栈中有a,d,c，出来d,c；</p>
+<li><p>c,d 进入，此时栈中有 a,d,c，出来 d,c；</p>
 </li>
-<li><p>e,f进入， 此时栈中有a,e,f，出来f,e,a；</p>
+<li><p>e,f 进入， 此时栈中有 a,e,f，出来 f,e,a；</p>
 </li>
-<li><p>g进入，此时栈中有g，出来g；</p>
-<p><strong>由此看出整个过程中栈中存在的元素最多有3个，所以栈S的容量至少是3</strong></p>
+<li><p>g 进入，此时栈中有 g，出来 g；</p>
+<p><strong>由此看出整个过程中栈中存在的元素最多有 3 个，所以栈 S 的容量至少是 3</strong></p>
 </li>
 </ol>
 </li>
-<li><p>一个栈的入栈序列是a,b,c,d,e,f,则栈的不可能的输出序列是（）</p>
+<li><p>一个栈的入栈序列是 a,b,c,d,e,f,则栈的不可能的输出序列是（）</p>
 <p>A:fedcba     <strong>B:defbca</strong>     C:defcba     D:abcdef</p>
-<p>A可以 全进栈 然后依次出栈<br>B不可以<br>C先进adcd 然后d出 再进e e出 再进f f出 剩下的依次cba出<br>D一个进 一个出</p>
+<p>A. 可以全进栈然后依次出栈<br>B. 不可以<br>C. 先进 adcd 然后 d 出，再进 e，e 出再进 f，f 出剩下的依次 cba出<br>D. 一个进，一个出</p>
 </li>
 </ol>
 <h1 id="●-网络延迟"><a href="#●-网络延迟" class="headerlink" title="●  网络延迟"></a>●  网络延迟</h1><p>网络延迟是指在传输介质中传输所用的时间，即从报文开始进入网络到它开始离开网络之间的时间。</p>
@@ -537,10 +537,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-18T21:55:40+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-08T18:57:29+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月18日</p>
+    <p>更新于 2020年3月8日</p>
   </a>
 </div>
 
@@ -730,7 +730,7 @@
 </header>
 
     <div class='content material'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#●-完全二叉树与满二叉树的区别"><span class="toc-text">● 完全二叉树与满二叉树的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-已知二叉树的前序遍历和中序遍历求后续遍历"><span class="toc-text">● 已知二叉树的前序遍历和中序遍历求后续遍历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-已知啊a-b-c，求系统进制"><span class="toc-text">● 已知啊a * b = c，求系统进制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-栈"><span class="toc-text">● 栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-网络延迟"><span class="toc-text">●  网络延迟</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-完全二叉树的存储"><span class="toc-text">● 完全二叉树的存储</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#●-完全二叉树与满二叉树的区别"><span class="toc-text">● 完全二叉树与满二叉树的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-已知二叉树的前序遍历和中序遍历求后续遍历"><span class="toc-text">● 已知二叉树的前序遍历和中序遍历求后续遍历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-已知啊-a-b-c，求系统进制"><span class="toc-text">● 已知啊 a * b = c，求系统进制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-栈"><span class="toc-text">● 栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-网络延迟"><span class="toc-text">●  网络延迟</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#●-完全二叉树的存储"><span class="toc-text">● 完全二叉树的存储</span></a></li></ol>
     </div>
   </section>
 
@@ -1045,7 +1045,7 @@
 </header>
 
     <div class="content material">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\1114\zju-DataStructures-notebook\" title="浙大数据结构笔记" rel="bookmark">浙大数据结构笔记</a></h3></div></li></ul>
+      
     </div>
   </section>
 
