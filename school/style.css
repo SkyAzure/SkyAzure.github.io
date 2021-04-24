@@ -1,0 +1,42 @@
+div {
+	margin-top :35px;
+	margin-bottom :40px;
+        
+}
+.main {
+        font-size: calc(1rem + 1vw);
+        margin-left :12px;
+
+}
+.big {
+        font-size: calc(2.1rem + 4.5vw);
+        font-weight: 600;
+        letter-spacing: 8px;
+        margin-left :12px;
+
+}
+
+
+.other {
+        font-size: calc(1.5rem + 2.4vw);
+        letter-spacing: 3px;
+        margin-left :12px;
+        font-weight: 550;
+}
+
+
+.fenge {
+        display: flex;
+        align-items: center;
+        font-size: 0.4rem;
+        color: #D3D3D3;
+}
+
+.fenge::before,
+.fenge::after {
+        content: '';
+        flex: 1.2;
+        height: 2px;
+        background: #D3D3D3;
+}
+
