@@ -40,3 +40,22 @@ div {
         background: #D3D3D3;
 }
 
+input {
+        font-size: calc(1rem + 1vw);
+        border: none;
+        outline: none;
+        width: auto;
+        padding: 0;
+}
+
+.other input{
+        font-size: calc(1.5rem + 2.4vw);
+        letter-spacing: 3px;
+        font-weight: 550;
+        border: none;
+        outline: none;
+        min-width: 500px;
+        max-width: 540px;
+        padding: 0;
+}
+
