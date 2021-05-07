@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Azure&#39;s BLOG</title>
+  
+  
+  <meta name="description" content="“所有的事情，所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧。这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。” —— Steve Jobs">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Azure's BLOG">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/thumbnail/command.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8491543459b4c7d10810eb00518bbdf1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  
+<link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover page half'>
+      
+        
+  <img class='logo' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/logo.png'/>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="Just Search it!" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-book-open fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/"
+            
+            
+            id="categories">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/"
+            
+            
+            id="projects">
+            <i class='fas fa-code fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="friends">
+            <i class='fas fa-users fa-fw'></i>&nbsp;朋友
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    <br>
+    <!--    Hitokoto 一言 -->
+<!--     <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
+    <!-- 打字特效 -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <div style="text-align: center;font-weight: bold;color: #1BC3FB;">
+      <span id="subtitle"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+      var typed = new Typed("#subtitle", { strings: ["缘，妙不可言!", "Talk is cheap. Show me the code.","愿人生如剑、立起寒光四射、躺倒四射寒光", "程序员最讨厌的事情是维护没有注释的代码，第二讨厌的的事情是自己写注释", "给时光以生命，给岁月以文明", "聆听雨落的声音，俯看凋零的落叶。伫细雨之中，感雨落之殇",  "要想学会递归，首先学会递归"], startDelay: 1000, typeSpeed: 100, loop: !0, backSpeed: 60, backDelay: 2000, showCursor: !0 })
+    </script>
+
+    </cover>
+    <header class="l_header material">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="material"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          Azure's BLOG
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-home fa-fw'></i>&nbsp;主页
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code fa-fw'></i>&nbsp;项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-users fa-fw'></i>&nbsp;朋友
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/love/index.html">
+        2021-05-07
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://skyazure.top" rel="nofollow">
+        
+          <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting@master/Blog-config/img/avatar.png">
+        
+        <p>Sky Azure</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-05-07</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>1.9k字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>11分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody"> 
+        
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>LOVE❤️纪实小屋</title>
+        <link rel="Shortcut Icon" href="/images/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+                background: #79a8ae;
+                color: #CFEBE4;
+                font-size: 18px;
+                line-height: 2;
+                letter-spacing: 1.2px;
+                margin: 0;
+            }
+            a {
+                color: #ebf7f4;
+            }
+            .body--ready {
+                background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+                background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+                background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+                background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+                background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            }
+            .text {
+                position: fixed;
+                bottom: 100px;
+                text-align: center;
+                width: 100%;
+            }
+            .canvas {
+                margin: 0 auto;
+                display: block;
+            }
+            img#logo {
+                width: 128px;
+                background-size: cover;
+                border-radius: 200px;
+                box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+                border: 3px solid #00a0ff;
+                opacity: 1;
+                margin: 0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                transition: all 1.0s;
+            }
+            #logo:hover {
+                box-shadow: 0 0 10px #fff;
+                -webkit-box-shadow: 0 0 19px #fff;
+                transform: rotate(360deg);
+                -ms-transform: rotate(360deg); /* IE 9 */
+                -moz-transform: rotate(360deg); /* Firefox */
+                -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+                -o-transform: rotate(360deg); /* Opera */
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            }
+            .cs {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                position: absolute;
+                text-align: center;
+            }
+            .text {
+                position: fixed;
+                bottom: 20px;
+                text-align: center;
+                width: 100%;
+                font-weight: bold;
+            }
+            .text-right {
+                position: fixed;
+                bottom: 50px;
+                text-align: right;
+                width: 100%;
+                font-weight: bold;
+            }
+        </style>
+    <link rel="alternate" href="/atom.xml" title="Azure's BLOG" type="application/atom+xml">
+</head>
+    <body>
+    <!--头像-->
+    <div class="cs">
+        <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Azure-Img/article/20210507231735.jpg" id="logo">
+    </div>
+    <canvas class="canvas" width="1820" height="905"></canvas>
+    <p class="text" style="color: #ed3073;">我们已经相爱了
+    <span id="span_dt_dt"></span><br>推荐使用1920*1080分辨率、谷歌或者火狐浏览器浏览此页😘
+    </p>
+    <script language="javascript">
+        function show_date_time() {
+            window.setTimeout("show_date_time()", 1000);
+            BirthDay = new Date("03/29/2021 23:30:30");
+            today = new Date();
+            timeold = (today.getTime() - BirthDay.getTime());
+            sectimeold = timeold / 1000
+            secondsold = Math.floor(sectimeold);
+            msPerDay = 24 * 60 * 60 * 1000
+            e_daysold = timeold / msPerDay
+            daysold = Math.floor(e_daysold);
+            e_hrsold = (e_daysold - daysold) * 24;
+            hrsold = Math.floor(e_hrsold);
+            e_minsold = (e_hrsold - hrsold) * 60;
+            minsold = Math.floor((e_hrsold - hrsold) * 60);
+            seconds = Math.floor((e_minsold - minsold) * 60);
+            span_dt_dt.innerHTML = daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒 ";
+        }
+        show_date_time();
+    </script>
+    <script>
+        var S = {
+            init: function () {
+                S.Drawing.init('.canvas');
+                document.body.classList.add('body--ready');
+                S.UI.simulate("婷婷❤️|我喜欢的样子，你都有|我们都是世上多余的人|但至少我们对于彼此|都是世界最重要的人|想穿越人世间所有的悲剧|永远拥抱你|#countdown 3|I love you！❤️|#time");
+                S.Drawing.loop(function () {
+                    S.Shape.render();
+                });
+            }
+        };
+        S.Drawing = (function () {
+            var canvas,
+                context,
+                renderFn,
+                requestFrame = window.requestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    function (callback) {
+                        window.setTimeout(callback, 1000 / 60);
+                    };
+            return {
+                init: function (el) {
+                    canvas = document.querySelector(el);
+                    context = canvas.getContext('2d');
+                    this.adjustCanvas();
+                    window.addEventListener('resize', function (e) {
+                        S.Drawing.adjustCanvas();
+                    });
+                },
+                loop: function (fn) {
+                    renderFn = !renderFn ? fn : renderFn;
+                    this.clearFrame();
+                    renderFn();
+                    requestFrame.call(window, this.loop.bind(this));
+                },
+                adjustCanvas: function () {
+                    canvas.width = window.innerWidth - 100;
+                    canvas.height = window.innerHeight - 30;
+                },
+                clearFrame: function () {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                },
+                getArea: function () {
+                    return {w: canvas.width, h: canvas.height};
+                },
+                drawCircle: function (p, c) {
+                    context.fillStyle = c.render();
+                    context.beginPath();
+                    context.arc(p.x, p.y, p.z, 0, 2 * Math.PI, true);
+                    context.closePath();
+                    context.fill();
+                }
+            };
+        }());
+        S.UI = (function () {
+            var interval,
+                currentAction,
+                time,
+                maxShapeSize = 30,
+                sequence = [],
+                cmd = '#';
+            function formatTime(date) {
+                var h = date.getHours(),
+                    m = date.getMinutes(),
+                    m = m < 10 ? '0' + m : m;
+                return h + ':' + m;
+            }
+            function getValue(value) {
+                return value && value.split(' ')[1];
+            }
+            function getAction(value) {
+                value = value && value.split(' ')[0];
+                return value && value[0] === cmd && value.substring(1);
+            }
+            function timedAction(fn, delay, max, reverse) {
+                clearInterval(interval);
+                currentAction = reverse ? max : 1;
+                fn(currentAction);
+                if (!max || (!reverse && currentAction < max) || (reverse && currentAction > 0)) {
+                    interval = setInterval(function () {
+                        currentAction = reverse ? currentAction - 1 : currentAction + 1;
+                        fn(currentAction);
+                        if ((!reverse && max && currentAction === max) || (reverse && currentAction === 0)) {
+                            clearInterval(interval);
+                        }
+                    }, delay);
+                }
+            }
+            function performAction(value) {
+                var action,
+                    value,
+                    current;
+                sequence = typeof (value) === 'object' ? value : sequence.concat(value.split('|'));
+                timedAction(function (index) {
+                    current = sequence.shift();
+                    action = getAction(current);
+                    value = getValue(current);
+                    switch (action) {
+                        case 'countdown':
+                            value = parseInt(value) || 10;
+                            value = value > 0 ? value : 10;
+                            timedAction(function (index) {
+                                if (index === 0) {
+                                    if (sequence.length === 0) {
+                                        S.Shape.switchShape(S.ShapeBuilder.letter(''));
+                                    } else {
+                                        performAction(sequence);
+                                    }
+                                } else {
+                                    S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
+                                }
+                            }, 1000, value, true);
+                            break;
+                        case 'rectangle':
+                            value = value && value.split('x');
+                            value = (value && value.length === 2) ? value : [maxShapeSize, maxShapeSize / 2];
+                            S.Shape.switchShape(S.ShapeBuilder.rectangle(Math.min(maxShapeSize, parseInt(value[0])), Math.min(maxShapeSize, parseInt(value[1]))));
+                            break;
+                        case 'circle':
+                            value = parseInt(value) || maxShapeSize;
+                            value = Math.min(value, maxShapeSize);
+                            S.Shape.switchShape(S.ShapeBuilder.circle(value));
+                            break;
+                        case 'time':
+                            var t = formatTime(new Date());
+                            if (sequence.length > 0) {
+                                S.Shape.switchShape(S.ShapeBuilder.letter(t));
+                            } else {
+                                timedAction(function () {
+                                    t = formatTime(new Date());
+                                    if (t !== time) {
+                                        time = t;
+                                        S.Shape.switchShape(S.ShapeBuilder.letter(time));
+                                    }
+                                }, 1000);
+                            }
+                            break;
+                        default:
+                            S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'HacPai' : current));
+                    }
+                }, 2000, sequence.length);
+            }
+            return {
+                simulate: function (action) {
+                    performAction(action);
+                }
+            };
+        }());
+        S.Point = function (args) {
+            this.x = args.x;
+            this.y = args.y;
+            this.z = args.z;
+            this.a = args.a;
+            this.h = args.h;
+        };
+        S.Color = function (r, g, b, a) {
+            this.r = r;
+            this.g = g;
+            this.b = b;
+            this.a = a;
+        };
+        S.Color.prototype = {
+            render: function () {
+                return 'rgba(' + this.r + ',' + +this.g + ',' + this.b + ',' + this.a + ')';
+            }
+        };
+        S.Dot = function (x, y) {
+            this.p = new S.Point({
+                x: x,
+                y: y,
+                z: 5,
+                a: 1,
+                h: 0
+            });
+            this.e = 0.07;
+            this.s = true;
+            this.c = new S.Color(255, 255, 255, this.p.a);
+            this.t = this.clone();
+            this.q = [];
+        };
+        S.Dot.prototype = {
+            clone: function () {
+                return new S.Point({
+                    x: this.x,
+                    y: this.y,
+                    z: this.z,
+                    a: this.a,
+                    h: this.h
+                });
+            },
+            _draw: function () {
+                this.c.a = this.p.a;
+                S.Drawing.drawCircle(this.p, this.c);
+            },
+            _moveTowards: function (n) {
+                var details = this.distanceTo(n, true),
+                    dx = details[0],
+                    dy = details[1],
+                    d = details[2],
+                    e = this.e * d;
+                if (this.p.h === -1) {
+                    this.p.x = n.x;
+                    this.p.y = n.y;
+                    return true;
+                }
+                if (d > 1) {
+                    this.p.x -= ((dx / d) * e);
+                    this.p.y -= ((dy / d) * e);
+                } else {
+                    if (this.p.h > 0) {
+                        this.p.h--;
+                    } else {
+                        return true;
+                    }
+                }
+                return false;
+            },
+            _update: function () {
+                if (this._moveTowards(this.t)) {
+                    var p = this.q.shift();
+                    if (p) {
+                        this.t.x = p.x || this.p.x;
+                        this.t.y = p.y || this.p.y;
+                        this.t.z = p.z || this.p.z;
+                        this.t.a = p.a || this.p.a;
+                        this.p.h = p.h || 0;
+                    } else {
+                        if (this.s) {
+                            this.p.x -= Math.sin(Math.random() * 3.142);
+                            this.p.y -= Math.sin(Math.random() * 3.142);
+                        } else {
+                            this.move(new S.Point({
+                                x: this.p.x + (Math.random() * 50) - 25,
+                                y: this.p.y + (Math.random() * 50) - 25
+                            }));
+                        }
+                    }
+                }
+                d = this.p.a - this.t.a;
+                this.p.a = Math.max(0.1, this.p.a - (d * 0.05));
+                d = this.p.z - this.t.z;
+                this.p.z = Math.max(1, this.p.z - (d * 0.05));
+            },
+            distanceTo: function (n, details) {
+                var dx = this.p.x - n.x,
+                    dy = this.p.y - n.y,
+                    d = Math.sqrt(dx * dx + dy * dy);
+                return details ? [dx, dy, d] : d;
+            },
+            move: function (p, avoidStatic) {
+                if (!avoidStatic || (avoidStatic && this.distanceTo(p) > 1)) {
+                    this.q.push(p);
+                }
+            },
+            render: function () {
+                this._update();
+                this._draw();
+            }
+        };
+        S.ShapeBuilder = (function () {
+            var gap = 13,
+                shapeCanvas = document.createElement('canvas'),
+                shapeContext = shapeCanvas.getContext('2d'),
+                fontSize = 500,
+                fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
+            function fit() {
+                shapeCanvas.width = Math.floor(window.innerWidth / gap) * gap;
+                shapeCanvas.height = Math.floor(window.innerHeight / gap) * gap;
+                shapeContext.fillStyle = 'red';
+                shapeContext.textBaseline = 'middle';
+                shapeContext.textAlign = 'center';
+            }
+            function processCanvas() {
+                var pixels = shapeContext.getImageData(0, 0, shapeCanvas.width, shapeCanvas.height).data;
+                dots = [],
+                    pixels,
+                    x = 0,
+                    y = 0,
+                    fx = shapeCanvas.width,
+                    fy = shapeCanvas.height,
+                    w = 0,
+                    h = 0;
+                for (var p = 0; p < pixels.length; p += (4 * gap)) {
+                    if (pixels[p + 3] > 0) {
+                        dots.push(new S.Point({
+                            x: x,
+                            y: y
+                        }));
+                        w = x > w ? x : w;
+                        h = y > h ? y : h;
+                        fx = x < fx ? x : fx;
+                        fy = y < fy ? y : fy;
+                    }
+                    x += gap;
+                    if (x >= shapeCanvas.width) {
+                        x = 0;
+                        y += gap;
+                        p += gap * 4 * shapeCanvas.width;
+                    }
+                }
+                return {dots: dots, w: w + fx, h: h + fy};
+            }
+            function setFontSize(s) {
+                shapeContext.font = 'bold ' + s + 'px ' + fontFamily;
+            }
+            function isNumber(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+            }
+            function init() {
+                fit();
+                window.addEventListener('resize', fit);
+            }
+            // Init
+            init();
+            return {
+                imageFile: function (url, callback) {
+                    var image = new Image(),
+                        a = S.Drawing.getArea();
+                    image.onload = function () {
+                        shapeContext.clearRect(0, 0, shapeCanvas.width, shapeCanvas.height);
+                        shapeContext.drawImage(this, 0, 0, a.h * 0.6, a.h * 0.6);
+                        callback(processCanvas());
+                    };
+                    image.onerror = function () {
+                        callback(S.ShapeBuilder.letter('What?'));
+                    };
+                    image.src = url;
+                },
+                circle: function (d) {
+                    var r = Math.max(0, d) / 2;
+                    shapeContext.clearRect(0, 0, shapeCanvas.width, shapeCanvas.height);
+                    shapeContext.beginPath();
+                    shapeContext.arc(r * gap, r * gap, r * gap, 0, 2 * Math.PI, false);
+                    shapeContext.fill();
+                    shapeContext.closePath();
+                    return processCanvas();
+                },
+                letter: function (l) {
+                    var s = 0;
+                    setFontSize(fontSize);
+                    s = Math.min(fontSize,
+                        (shapeCanvas.width / shapeContext.measureText(l).width) * 0.8 * fontSize,
+                        (shapeCanvas.height / fontSize) * (isNumber(l) ? 1 : 0.45) * fontSize);
+                    setFontSize(s);
+                    shapeContext.clearRect(0, 0, shapeCanvas.width, shapeCanvas.height);
+                    shapeContext.fillText(l, shapeCanvas.width / 2, shapeCanvas.height / 2);
+                    return processCanvas();
+                },
+                rectangle: function (w, h) {
+                    var dots = [],
+                        width = gap * w,
+                        height = gap * h;
+                    for (var y = 0; y < height; y += gap) {
+                        for (var x = 0; x < width; x += gap) {
+                            dots.push(new S.Point({
+                                x: x,
+                                y: y
+                            }));
+                        }
+                    }
+                    return {dots: dots, w: width, h: height};
+                }
+            };
+        }());
+        S.Shape = (function () {
+            var dots = [],
+                width = 0,
+                height = 0,
+                cx = 0,
+                cy = 0;
+            function compensate() {
+                var a = S.Drawing.getArea();
+                cx = a.w / 2 - width / 2;
+                cy = a.h / 2 - height / 2;
+            }
+            return {
+                shuffleIdle: function () {
+                    var a = S.Drawing.getArea();
+                    for (var d = 0; d < dots.length; d++) {
+                        if (!dots[d].s) {
+                            dots[d].move({
+                                x: Math.random() * a.w,
+                                y: Math.random() * a.h
+                            });
+                        }
+                    }
+                },
+                switchShape: function (n, fast) {
+                    var size,
+                        a = S.Drawing.getArea();
+                    width = n.w;
+                    height = n.h;
+                    compensate();
+                    if (n.dots.length > dots.length) {
+                        size = n.dots.length - dots.length;
+                        for (var d = 1; d <= size; d++) {
+                            dots.push(new S.Dot(a.w / 2, a.h / 2));
+                        }
+                    }
+                    var d = 0,
+                        i = 0;
+                    while (n.dots.length > 0) {
+                        i = Math.floor(Math.random() * n.dots.length);
+                        dots[d].e = fast ? 0.25 : (dots[d].s ? 0.14 : 0.11);
+                        if (dots[d].s) {
+                            dots[d].move(new S.Point({
+                                z: Math.random() * 20 + 10,
+                                a: Math.random(),
+                                h: 18
+                            }));
+                        } else {
+                            dots[d].move(new S.Point({
+                                z: Math.random() * 5 + 5,
+                                h: fast ? 18 : 30
+                            }));
+                        }
+                        dots[d].s = true;
+                        dots[d].move(new S.Point({
+                            x: n.dots[i].x + cx,
+                            y: n.dots[i].y + cy,
+                            a: 1,
+                            z: 5,
+                            h: 0
+                        }));
+                        n.dots = n.dots.slice(0, i).concat(n.dots.slice(i + 1));
+                        d++;
+                    }
+                    for (var i = d; i < dots.length; i++) {
+                        if (dots[i].s) {
+                            dots[i].move(new S.Point({
+                                z: Math.random() * 20 + 10,
+                                a: Math.random(),
+                                h: 20
+                            }));
+                            dots[i].s = false;
+                            dots[i].e = 0.04;
+                            dots[i].move(new S.Point({
+                                x: Math.random() * a.w,
+                                y: Math.random() * a.h,
+                                a: 0.3, //.4
+                                z: Math.random() * 4,
+                                h: 0
+                            }));
+                        }
+                    }
+                },
+                render: function () {
+                    for (var d = 0; d < dots.length; d++) {
+                        dots[d].render();
+                    }
+                }
+            };
+        }());
+        S.init();
+    </script>
+    <audio autoplay="autoplay" loop="loop">
+        <source src="http://www.ytmp3.cn/down/57693.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
+
+      </div>
+
+      
+
+      
+
+
+      
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+        
+          
+          
+            
+              
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content material'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/avatar.gif'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+          <h2>⌛ Azure ⌛</h2>
+        
+        
+        
+          <p><span id="jinrishici-sentence">Just Do it</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/SkyAzure"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@skyazure.top"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='material'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content material'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          所有文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/projects/" href="/projects/"
+          
+          
+          id="projects">
+          
+            <i class="fas fa-code fa-fw" aria-hidden="true"></i>
+          
+          项目展示
+        </a></li>
+      
+        <li><a class="flat-box" title="/friends/" href="/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="friends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/"
+          
+            rel="nofollow"
+          
+          
+          id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='material'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content material'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Blog/" href="/categories/Blog/"><div class='name'>Blog</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Blog/Hexo/" href="/categories/Blog/Hexo/"><div class='name'>Hexo</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/C语言/" href="/categories/C语言/"><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/DL/" href="/categories/DL/"><div class='name'>DL</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Debug/" href="/categories/Debug/"><div class='name'>Debug</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Git/" href="/categories/Git/"><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Job/" href="/categories/Job/"><div class='name'>Job</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Linux/" href="/categories/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/Python/" href="/categories/Python/"><div class='name'>Python</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/嵌入式/" href="/categories/嵌入式/"><div class='name'>嵌入式</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/折腾/" href="/categories/折腾/"><div class='name'>折腾</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数据结构/" href="/categories/数据结构/"><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+
+            
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/SkyAzure"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@skyazure.top"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+
+<!--   <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div> -->
+    Copyright <i class="far fa-copyright"></i> 2019-2021
+    <a href="https://skyazure.top/" target="_blank"> Azure&#39;s BLOG </a>丨
+    <!-- <img src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/icp.png">
+    <a href="http://www.beian.miit.gov.cn/" target="_blank">津ICP备.......号-4</a> 丨 -->
+
+    <!-- 网站运行时间 -->
+    <span id="timeDate">正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("06/20/2019 12:00:00");//建站时间2019-06-20
+      now.setTime(now.getTime()+250); 
+      middle = (now - grt ) / 1000 / 60 ;
+      days = middle / 60 / 24; dnum = Math.floor(days); 
+      hours = middle / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = middle - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = middle * 60 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已悄无声息度过了 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script><!-- 丨
+    <a href="https://tongji.baidu.com/web/welcome/ico?s=df0bc7c6bdbd80356ba4db429724ccad" target="_blank">站长统计</a> -->
+    <br><br>
+    
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+    </div>
+    <div class="github-badge">
+        <a style="color: #fff" rel="license" href="https://xaoxuu.com/wiki/material-x/" target="_blank" title="站点使用 Material X 主题">
+      <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Material X</span></a>
+    </div>    
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.aliyun.com/" target="_blank" title="阿里云提供域名相关服务">
+      <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">Aliyun</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff"  href="/" target="_blank" title="访客数">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff"  href="/" target="_blank" title="浏览量">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff"  href="/" target="_blank" title="总字数">
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">21.7k</span>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
+      <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@20.2/js/backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('') {
+          $('').backstretch(
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/background/01.png"],
+          {
+            duration: "10000",
+            fade: "1000"
+          });
+        } else {
+          $.backstretch(
+          ["https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/img/background/01.png"],
+          {
+            duration: "10000",
+            fade: "1000"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "2cdb5b1e1ce80d3f81cf",
+      clientSecret: "c3a6a51af23d3a36a2824997716a7437f43f122b",
+      repo: "SkyAzure.github.io",
+      owner: "SkyAzure",
+      admin: "SkyAzure",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/search.js"></script>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/commentTyping.js"></script>
+  
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  
+  <!-- 单击显示文字 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/ClickShowText.js"></script>
+  <!-- 单击粒子散落 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/scattered.js"></script>
+  <!-- 浏览器搞笑标题 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/FunnyTitle.js"></script>
+  <!-- 访问加速脚本 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SkyAzure/ImgHosting/Blog-config/js/instant3.0.0.js"></script>  
+  
+</body>
+</html>
